@@ -6,11 +6,11 @@
     <Company>Kevin Gliewe</Company>
     <Description>A tree structure with inherited propertys.</Description>
     <Copyright>Kevin Gliewe</Copyright>
-    <PackageLicenseUrl>https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/kevingliewe/GCore.Data.Structure.InheritedTree/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree</RepositoryUrl>
     <PackageTags>Tree;Inhertance</PackageTags>
     <PackageProjectUrl>https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree</PackageProjectUrl>
-    <PackageIconUrl>https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/doc/icon.jpg</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/kevingliewe/GCore.Data.Structure.InheritedTree/master/doc/icon.jpg</PackageIconUrl>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
