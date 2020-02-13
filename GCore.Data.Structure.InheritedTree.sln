@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GCore.Data.Structure.InheritedTree", "src\GCore.Data.Structure.InheritedTree\GCore.Data.Structure.InheritedTree.csproj", "{03BD7A04-8EFF-46E7-9BF3-442F6DFE42D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCore.Data.Structure.InheritedTree.Test", "src\GCore.Data.Structure.InheritedTree.Test\GCore.Data.Structure.InheritedTree.Test.csproj", "{20C3B0CB-40E9-40EA-B01B-52FF26F24352}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03BD7A04-8EFF-46E7-9BF3-442F6DFE42D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03BD7A04-8EFF-46E7-9BF3-442F6DFE42D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03BD7A04-8EFF-46E7-9BF3-442F6DFE42D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03BD7A04-8EFF-46E7-9BF3-442F6DFE42D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20C3B0CB-40E9-40EA-B01B-52FF26F24352}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20C3B0CB-40E9-40EA-B01B-52FF26F24352}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20C3B0CB-40E9-40EA-B01B-52FF26F24352}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20C3B0CB-40E9-40EA-B01B-52FF26F24352}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE426066-70C0-4262-9863-B0625E1CFBA3}
+	EndGlobalSection
+EndGlobal
