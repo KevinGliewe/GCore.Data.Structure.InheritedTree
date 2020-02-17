@@ -59,9 +59,14 @@ namespace GCore.Data.Structure.InheritedTree
 
             if (props != null)
                 foreach (var kv in props)
+                {
                     _props.Add(new Property<TKey, TValue>(this, kv.Key, kv.Value));
+#pragma warning disable RECS0021
+                    UpdateIOverridingProperty(kv.Key);
+#pragma warning restore RECS0021
+                }
 
-            if(children != null)
+            if (children != null)
                 foreach (var child in children)
                     this.AddChild(child);
         }
@@ -72,7 +77,12 @@ namespace GCore.Data.Structure.InheritedTree
             Name = rawNode.Name;
 
             foreach (var kv in rawNode.Propertys)
+            {
                 _props.Add(new Property<TKey, TValue>(this, kv.Key, kv.Value));
+#pragma warning disable RECS0021
+                UpdateIOverridingProperty(kv.Key);
+#pragma warning restore RECS0021
+            }
 
             foreach (var child in rawNode.Children)
                 this.AddChild(new Node<TKey, TValue>(child, tree));
@@ -256,6 +266,8 @@ namespace GCore.Data.Structure.InheritedTree
 
         protected void RaisePropertyChanged(PropertyChangedEventArgs<TKey, TValue> args)
         {
+
+            UpdateIOverridingProperty(args.Property.Key, false);
             PropertyChanged?.Invoke(this, args);
         }
 
@@ -264,10 +276,33 @@ namespace GCore.Data.Structure.InheritedTree
             ChildrenChanged?.Invoke(this, args);
         }
 
+        protected virtual void UpdateIOverridingProperty(TKey key, bool raisePropertyChangedEvent = true)
+        {
+            var thisProp = _props.FirstOrDefault(p => p.Key.Equals(key));
+
+            if (thisProp is null)
+                return;
+
+            if (!(thisProp.Value is IOverridingProperty<TKey, TValue>))
+                return;
+
+            var lastProp = CollectPropertys(key).Last();
+
+            if (lastProp is null)
+                return;
+
+            (thisProp.Value as IOverridingProperty<TKey, TValue>).OnOverridesProperty(lastProp);
+
+            if(raisePropertyChangedEvent)
+                RaisePropertyChanged(new PropertyChangedEventArgs<TKey, TValue>(thisProp, thisProp.Value));
+        }
+
         private void Parent_PropertyChanged(INode<TKey, TValue> sender, PropertyChangedEventArgs<TKey, TValue> e)
         {
             if (!this.Defines(e.Property.Key))
                 RaisePropertyChanged(e);
+            else
+                UpdateIOverridingProperty(e.Property.Key);
         }
 
         internal RawNode<TKey, TValue> ToRawNode()
