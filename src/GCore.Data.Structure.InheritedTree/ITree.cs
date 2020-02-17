@@ -12,5 +12,9 @@ namespace GCore.Data.Structure.InheritedTree
         INode<TKey, TValue> FindNode(string path);
 
         IEnumerable<IProperty<TKey, TValue>> CollectPropertys(TKey keys);
+
+        void Update<TArgs>(TKey key, TArgs args);
+
+        void UpdateOverrides();
     }
 }

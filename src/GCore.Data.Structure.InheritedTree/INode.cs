@@ -28,13 +28,23 @@ namespace GCore.Data.Structure.InheritedTree
         INode<TKey, TValue> Parent { get; }
 
         /// <summary>
+        /// Direct children of this node.
+        /// </summary>
+        IEnumerable<INode<TKey, TValue>> Children { get; }
+
+        /// <summary>
         /// The tree this node belongs to.
         /// </summary>
         ITree<TKey, TValue> Tree { get; }
 
         /// <summary>
+        /// All propertys this node defines itfelf.
+        /// </summary>
+        IEnumerable<IProperty<TKey, TValue>> SelfPropertys { get; }
+
+        /// <summary>
         /// All propertys this node has.
-        /// Inherited or seld defined.
+        /// Inherited or self-defined.
         /// </summary>
         IEnumerable<IProperty<TKey, TValue>> Propertys { get; }
 
@@ -77,6 +87,13 @@ namespace GCore.Data.Structure.InheritedTree
         /// <param name="value"></param>
         /// <returns></returns>
         bool Set(TKey key, TValue value);
+
+        /// <summary>
+        /// Removes the definition of a property.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        bool ResetDefinition(TKey key);
 
         /// <summary>
         /// Gets all propertys this node has.
@@ -177,5 +194,18 @@ namespace GCore.Data.Structure.InheritedTree
         /// <param name="path"></param>
         /// <returns></returns>
         INode<TKey, TValue> FindNode(IEnumerable<string> path);
+
+        /// <summary>
+        /// Spawns a update-wave
+        /// </summary>
+        /// <typeparam name="TArgs"></typeparam>
+        /// <param name="key"></param>
+        /// <param name="args"></param>
+        void Update<TArgs>(TKey key, TArgs args);
+
+        /// <summary>
+        /// Spawns a update-wave for propertys implementing IOverridingProperty
+        /// </summary>
+        void UpdateOverrides();
     }
 }

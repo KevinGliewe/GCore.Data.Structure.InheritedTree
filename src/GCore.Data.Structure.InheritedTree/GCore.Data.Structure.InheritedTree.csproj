@@ -12,6 +12,7 @@
     <PackageProjectUrl>https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/kevingliewe/GCore.Data.Structure.InheritedTree/master/doc/icon.jpg</PackageIconUrl>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
 </Project>

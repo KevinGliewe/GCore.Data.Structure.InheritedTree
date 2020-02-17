@@ -46,6 +46,10 @@ namespace GCore.Data.Structure.InheritedTree
 
         public ITree<TKey, TValue> Tree => _tree;
 
+        public IEnumerable<IProperty<TKey, TValue>> SelfPropertys => _props;
+
+        public IEnumerable<INode<TKey, TValue>> Children => _children;
+
         internal Node(String name, Tree<TKey, TValue> tree)
         {
             _tree = tree;
@@ -101,7 +105,9 @@ namespace GCore.Data.Structure.InheritedTree
         public void AddChildren(IEnumerable<INode<TKey, TValue>> child)
         {
             foreach (var node in child)
+            {
                 AddChild(node);
+            }
         }
 
         public bool Defines(TKey key) => _props.FirstOrDefault(p => p.Key.Equals(key)) != null;
@@ -116,6 +122,24 @@ namespace GCore.Data.Structure.InheritedTree
                 return this.Parent.Get(key);
 
             return default(TValue);
+        }
+
+        public bool ResetDefinition(TKey key)
+        {
+            var prop = _props.FirstOrDefault(p => p.Key.Equals(key));
+
+            if (prop is null)
+                return false;
+
+            _props.Remove(prop);
+
+            RaisePropertyChanged(
+                new PropertyChangedEventArgs<TKey, TValue>(
+                    new Property<TKey, TValue>(this, prop.Key, default(TValue)),
+                    prop.Value,
+                    PropertyChangedEventArgs<TKey, TValue>.PropertyChangedMode.Removed));
+
+            return true;
         }
 
         public IEnumerable<IProperty<TKey, TValue>> CollectPropertys(TKey keys)
@@ -266,13 +290,14 @@ namespace GCore.Data.Structure.InheritedTree
 
         protected void RaisePropertyChanged(PropertyChangedEventArgs<TKey, TValue> args)
         {
-
-            UpdateIOverridingProperty(args.Property.Key, false);
+            if(args.Mode != PropertyChangedEventArgs<TKey, TValue>.PropertyChangedMode.Removed)
+                UpdateIOverridingProperty(args.Property.Key, false);
             PropertyChanged?.Invoke(this, args);
         }
 
         protected void RaiseChildrenChanged(ChildrenChangedEventArgs<TKey, TValue> args)
         {
+            args.Child.UpdateOverrides();
             ChildrenChanged?.Invoke(this, args);
         }
 
@@ -286,10 +311,16 @@ namespace GCore.Data.Structure.InheritedTree
             if (!(thisProp.Value is IOverridingProperty<TKey, TValue>))
                 return;
 
-            var lastProp = CollectPropertys(key).Last();
+            IProperty<TKey, TValue> lastProp = null;
 
-            if (lastProp is null)
-                return;
+            try
+            {
+                lastProp = CollectPropertys(key).Reverse().Skip(1).First();
+            }
+            catch (Exception ex) { }
+
+            //if (lastProp is null)
+            //    return;
 
             (thisProp.Value as IOverridingProperty<TKey, TValue>).OnOverridesProperty(lastProp);
 
@@ -317,5 +348,33 @@ namespace GCore.Data.Structure.InheritedTree
                 Children = _children.Select(c => (c as Node<TKey, TValue>).ToRawNode()).ToArray()
             };
         }
+
+        public void Update<TArgs>(TKey key, TArgs args)
+        {
+            var updateQueue = new Queue<INode<TKey, TValue>>();
+            updateQueue.Enqueue(this);
+
+            while(updateQueue.Count > 0)
+            {
+                var node = updateQueue.Dequeue();
+                var prop = node.SelfPropertys.FirstOrDefault(
+                    p => p.Key.Equals(key) && p.Value is IUpdatableProperty<TArgs>);
+
+                if(prop != null)
+                    (prop.Value as IUpdatableProperty<TArgs>)?.Update(args);
+
+                foreach (var child in node.Children)
+                    updateQueue.Enqueue(child);
+            }
+        }
+
+        public void UpdateOverrides()
+        {
+            foreach (var key in _props.Select(p => p.Key))
+                UpdateIOverridingProperty(key, false);
+            foreach (var child in _children)
+                child.UpdateOverrides();
+        }
+
     }
 }

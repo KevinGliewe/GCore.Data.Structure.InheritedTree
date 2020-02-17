@@ -49,5 +49,15 @@ namespace GCore.Data.Structure.InheritedTree
         {
             return _root?.ToRawNode();
         }
+
+        public void Update<TArgs>(TKey key, TArgs args)
+        {
+            _root?.Update(key, args);
+        }
+
+        public void UpdateOverrides()
+        {
+            _root?.UpdateOverrides();
+        }
     }
 }

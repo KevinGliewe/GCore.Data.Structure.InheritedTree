@@ -12,14 +12,22 @@ namespace GCore.Data.Structure.InheritedTree
     //
     public class PropertyChangedEventArgs<TKey, TValue>
     {
-        public PropertyChangedEventArgs(IProperty<TKey, TValue> property, TValue oldValue)
+        public enum PropertyChangedMode
+        {
+            Changed,
+            Removed
+        }
+
+        public PropertyChangedEventArgs(IProperty<TKey, TValue> property, TValue oldValue, PropertyChangedMode mode = PropertyChangedMode.Changed)
         {
             Property = property;
             OldValue = oldValue;
+            Mode = mode;
         }
         
         public IProperty<TKey, TValue> Property { get; private set; }
         public TValue OldValue { get; private set; }
+        public PropertyChangedMode Mode { get; private set; }
     }
 
     public delegate void PropertyChangedEventHandler<TKey, TValue>(INode<TKey, TValue> sender, PropertyChangedEventArgs<TKey, TValue> e);
