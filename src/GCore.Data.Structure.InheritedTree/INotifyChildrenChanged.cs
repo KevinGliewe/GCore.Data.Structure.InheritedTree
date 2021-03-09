@@ -4,9 +4,9 @@ using System.Text;
 
 namespace GCore.Data.Structure.InheritedTree
 {
-    public interface INotifyChildrenChanged<TKey, TValue>
+    public interface INotifyChildrenChanged<TImpl, TKey, TValue>
     {
-        event ChildrenChangedEventHandler<TKey, TValue> ChildrenChanged;
+        event ChildrenChangedEventHandler<TImpl, TKey, TValue> ChildrenChanged;
     }
 
     public enum ChildrenChangeAction
@@ -15,16 +15,16 @@ namespace GCore.Data.Structure.InheritedTree
         Removed
     }
 
-    public class ChildrenChangedEventArgs<TKey, TValue>
+    public class ChildrenChangedEventArgs<TImpl, TKey, TValue>
     {
-        public ChildrenChangedEventArgs(INode<TKey, TValue> child, ChildrenChangeAction action)
+        public ChildrenChangedEventArgs(TImpl child, ChildrenChangeAction action)
         {
             Child = child;
             Action = action;
         }
-        public virtual INode<TKey, TValue> Child { get; private set; }
+        public virtual TImpl Child { get; private set; }
         public virtual ChildrenChangeAction Action { get; private set; }
     }
 
-    public delegate void ChildrenChangedEventHandler<TKey, TValue>(INode<TKey, TValue> sender, ChildrenChangedEventArgs<TKey, TValue> e);
+    public delegate void ChildrenChangedEventHandler<TImpl, TKey, TValue>(TImpl sender, ChildrenChangedEventArgs<TImpl, TKey, TValue> e);
 }

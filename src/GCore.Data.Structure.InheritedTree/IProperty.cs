@@ -4,9 +4,9 @@ using System.Text;
 
 namespace GCore.Data.Structure.InheritedTree
 {
-    public interface IProperty<TKey, TValue>
+    public interface IProperty<TImpl, TKey, TValue>
     {
-        INode<TKey, TValue> DefinedNode { get; }
+        TImpl DefinedNode { get; }
 
         TKey Key { get; }
         TValue Value { get; }

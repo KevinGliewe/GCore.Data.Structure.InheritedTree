@@ -4,7 +4,9 @@ using System.Text;
 
 namespace GCore.Data.Structure.InheritedTree
 {
-    public interface INode<TKey, TValue> : INotifyChildrenChanged<TKey, TValue>, INotifyPropertyChanged<TKey, TValue>
+    public interface INode<TImpl, TKey, TValue> :
+        INotifyChildrenChanged<TImpl, TKey, TValue>, INotifyPropertyChanged<TImpl, TKey, TValue>
+        where TImpl : INode<TImpl, TKey, TValue>
     {
         /// <summary>
         /// The name of this node.
@@ -25,28 +27,52 @@ namespace GCore.Data.Structure.InheritedTree
         /// The parent node of this node.
         /// Null if this node is the root node.
         /// </summary>
-        INode<TKey, TValue> Parent { get; }
+        TImpl Parent { get; }
 
         /// <summary>
         /// Direct children of this node.
         /// </summary>
-        IEnumerable<INode<TKey, TValue>> Children { get; }
+        IEnumerable<TImpl> Children { get; }
 
         /// <summary>
         /// The tree this node belongs to.
         /// </summary>
-        ITree<TKey, TValue> Tree { get; }
+        ITree<TImpl, TKey, TValue> Tree { get; }
 
         /// <summary>
         /// All propertys this node defines itfelf.
         /// </summary>
-        IEnumerable<IProperty<TKey, TValue>> SelfPropertys { get; }
+        IEnumerable<IProperty<TImpl, TKey, TValue>> SelfPropertys { get; }
 
         /// <summary>
         /// All propertys this node has.
         /// Inherited or self-defined.
         /// </summary>
-        IEnumerable<IProperty<TKey, TValue>> Propertys { get; }
+        IEnumerable<IProperty<TImpl, TKey, TValue>> Propertys { get; }
+
+        /// <summary>
+        /// Initializes the tree node
+        /// </summary>
+        /// <param name="nodeName">The name of this node</param>
+        /// <param name="tree">The tree ths node belongs to</param>
+        void InitNode(string nodeName, ITree<TImpl, TKey, TValue> tree);
+
+        /// <summary>
+        /// Initializes the tree node
+        /// </summary>
+        /// <param name="name">The name of this node</param>
+        /// <param name="tree">The tree ths node belongs to</param>
+        /// <param name="props">Pre-populate with Properties</param>
+        /// <param name="children">Pre-populate with Children</param>
+        void InitNode(String name, Tree<TImpl, TKey, TValue> tree, IDictionary<TKey, TValue> props = null,
+            IEnumerable<TImpl> children = null);
+
+        /// <summary>
+        /// Initializes the tree node
+        /// </summary>
+        /// <param name="rawNode">The serializeable node representation</param>
+        /// <param name="tree">The tree ths node belongs to</param>
+        void InitNode(RawNode<TImpl, TKey, TValue> rawNode, Tree<TImpl, TKey, TValue> tree);
 
         /// <summary>
         /// Returns true if the property is defined by by a parent and not
@@ -100,7 +126,7 @@ namespace GCore.Data.Structure.InheritedTree
         /// Either througth inheritance of self defining.
         /// </summary>
         /// <returns></returns>
-        IEnumerable<IProperty<TKey, TValue>> GetAll();
+        IEnumerable<IProperty<TImpl, TKey, TValue>> GetAll();
 
         /// <summary>
         /// Returns the property the node has either througth inheritance of self defining.
@@ -120,27 +146,27 @@ namespace GCore.Data.Structure.InheritedTree
         /// </summary>
         /// <param name="keys"></param>
         /// <returns></returns>
-        IEnumerable<IProperty<TKey, TValue>> CollectPropertys(TKey keys);
+        IEnumerable<IProperty<TImpl, TKey, TValue>> CollectPropertys(TKey keys);
 
         /// <summary>
         /// Get all child nodes beneeth this node recursive.
         /// </summary>
         /// <param name="mexDepth">The maximal depth for the recursion</param>
         /// <returns></returns>
-        IEnumerable<INode<TKey, TValue>> GetChildren(uint mexDepth = 0);
+        IEnumerable<TImpl> GetChildren(uint mexDepth = 0);
 
         /// <summary>
         /// Returns all nodes from the root node to this node (inclusive) in this order.
         /// </summary>
         /// <returns></returns>
-        IEnumerable<INode<TKey, TValue>> GetParents();
+        IEnumerable<TImpl> GetParents();
 
         /// <summary>
         /// Sets the parent of this node.
         /// Throws exception if a parent is already defined.
         /// </summary>
         /// <param name="parent">The new parent node</param>
-        void SetParent(INode<TKey, TValue> parent);
+        void SetParent(TImpl parent);
 
         /// <summary>
         /// Resets the parent node.
@@ -153,47 +179,53 @@ namespace GCore.Data.Structure.InheritedTree
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        INode<TKey, TValue> GetChild(string name);
+        TImpl GetChild(string name);
 
         /// <summary>
         /// Adds a new child to this node.
         /// </summary>
         /// <param name="child"></param>
-        void AddChild(INode<TKey, TValue> child);
+        void AddChild(TImpl child);
 
         /// <summary>
         /// Adds multible childs to this node.
         /// </summary>
         /// <param name="child"></param>
-        void AddChildren(IEnumerable<INode<TKey, TValue>> child);
+        void AddChildren(IEnumerable<TImpl> child);
 
         /// <summary>
         /// Creates a new node and adds it as a child.
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        INode<TKey, TValue> CreateChild(string name);
+        TImpl CreateChild(string name);
 
         /// <summary>
         /// Removes a child from this node.
         /// </summary>
         /// <param name="child"></param>
         /// <returns>False if it wasn't a child of this node</returns>
-        bool RemoveChild(INode<TKey, TValue> child);
+        bool RemoveChild(TImpl child);
 
         /// <summary>
         /// Find a node by its relative path.
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
-        INode<TKey, TValue> FindNode(String path);
+        TImpl FindNode(String path);
 
         /// <summary>
         /// Find a node by its relative path.
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
-        INode<TKey, TValue> FindNode(IEnumerable<string> path);
+        TImpl FindNode(IEnumerable<string> path);
+
+        /// <summary>
+        /// Converts the node to a serializeable RawNode
+        /// </summary>
+        /// <returns></returns>
+        RawNode<TImpl, TKey, TValue> ToRawNode();
 
         /// <summary>
         /// Spawns a update-wave

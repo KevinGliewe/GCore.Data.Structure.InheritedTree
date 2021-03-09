@@ -5,47 +5,62 @@ using System.Text;
 
 namespace GCore.Data.Structure.InheritedTree
 {
-    public class Tree<TKey, TValue> : ITree<TKey, TValue>
+    public class Tree<TImpl, TKey, TValue> :
+        ITree<TImpl, TKey, TValue>
+        where TImpl : INode<TImpl, TKey, TValue>
     {
 
-        protected Node<TKey, TValue> _root;
-        public INode<TKey, TValue> Root => _root;
+        protected TImpl _root;
+        public TImpl Root => _root;
 
-        public Tree(String root)
+        public string Separator { get; private set; }
+
+        public Tree(String root, String separator = ":")
         {
-            _root = new Node<TKey, TValue>(root, this);
+            Separator = separator;
+
+            _root = Activator.CreateInstance<TImpl>();
+            _root.InitNode(root, this);
         }
 
-        public Tree(RawNode<TKey, TValue> rawNode)
+        public Tree(RawNode<TImpl, TKey, TValue> rawNode, String separator = ":")
         {
-            _root = new Node<TKey, TValue>(rawNode, this);
+            Separator = separator;
+
+            _root = Activator.CreateInstance<TImpl>();
+            _root.InitNode(rawNode, this);
         }
 
-        public INode<TKey, TValue> CreateNode(string name)
+        public TImpl CreateNode(string name)
         {
-            return new Node<TKey, TValue>(name, this);
+            var node = Activator.CreateInstance<TImpl>();
+            node.InitNode(name, this);
+            return node;
         }
 
-        public INode<TKey, TValue> CreateNode(string name, IDictionary<TKey, TValue> props = null, params INode<TKey, TValue>[] childs)
+        public TImpl CreateNode(string name, IDictionary<TKey, TValue> props = null, params TImpl[] childs)
         {
-            return new Node<TKey, TValue>(name, this, props, childs);
+            var node = Activator.CreateInstance<TImpl>();
+            node.InitNode(name, this, props, childs);
+
+            return node;
         }
 
-        public INode<TKey, TValue> FindNode(string path)
+        public TImpl FindNode(string path)
         {
-            var p = path.Split(Node<TKey, TValue>.SEPARATOR);
+            var p = path.Split(new []{ Separator }, StringSplitOptions.None);
             if (p[0] == _root.Name)
-                return _root?.FindNode(p.Skip(1)) ?? null;
+                return _root.FindNode(p.Skip(1));
             else
-                return null;
+                return default(TImpl);
         }
 
-        public IEnumerable<IProperty<TKey, TValue>> CollectPropertys(TKey keys)
+        public IEnumerable<IProperty<TImpl, TKey, TValue>> CollectPropertys(TKey keys)
         {
-            return _root?.CollectPropertys(keys) ?? new IProperty<TKey, TValue>[0];
+            return _root?.CollectPropertys(keys) ?? new IProperty<TImpl, TKey, TValue>[0];
         }
 
-        public RawNode<TKey, TValue> ToRawNodes()
+        public RawNode<TImpl, TKey, TValue> ToRawNodes()
         {
             return _root?.ToRawNode();
         }

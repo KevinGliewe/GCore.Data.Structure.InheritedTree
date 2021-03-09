@@ -5,17 +5,19 @@ using System.Text;
 
 namespace GCore.Data.Structure.InheritedTree.Test
 {
+    class StringUpdatablePropertyNode : Node<StringUpdatablePropertyNode, String, UpdatableProperty> { }
+
     [TestFixture]
     public class UpdatablePropertyTest
     {
-        Tree<String, UpdatableProperty> tree;
+        Tree<StringUpdatablePropertyNode, String, UpdatableProperty> tree;
 
         public static int LastUpdate = -1;
 
         [SetUp]
         public void Setup()
         {
-            tree = new Tree<string, UpdatableProperty>("Test");
+            tree = new Tree<StringUpdatablePropertyNode, string, UpdatableProperty>("Test");
             tree.Root.AddChildren(
                 new[]
                 {

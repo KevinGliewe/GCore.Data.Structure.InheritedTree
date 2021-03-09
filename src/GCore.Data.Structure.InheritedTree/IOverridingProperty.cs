@@ -1,8 +1,8 @@
 ﻿using System;
 namespace GCore.Data.Structure.InheritedTree
 {
-    public interface IOverridingProperty<TKey, TValue>
+    public interface IOverridingProperty<TImpl, TKey, TValue>
     {
-        void OnOverridesProperty(IProperty<TKey, TValue> property);
+        void OnOverridesProperty(IProperty<TImpl, TKey, TValue> property);
     }
 }

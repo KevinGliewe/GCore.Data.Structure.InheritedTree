@@ -4,13 +4,13 @@ using System.Text;
 
 namespace GCore.Data.Structure.InheritedTree
 {
-    public interface INotifyPropertyChanged<TKey, TValue>
+    public interface INotifyPropertyChanged<TImpl, TKey, TValue>
     {
-        event PropertyChangedEventHandler<TKey, TValue> PropertyChanged;
+        event PropertyChangedEventHandler<TImpl, TKey, TValue> PropertyChanged;
     }
 
     //
-    public class PropertyChangedEventArgs<TKey, TValue>
+    public class PropertyChangedEventArgs<TImpl, TKey, TValue>
     {
         public enum PropertyChangedMode
         {
@@ -18,17 +18,17 @@ namespace GCore.Data.Structure.InheritedTree
             Removed
         }
 
-        public PropertyChangedEventArgs(IProperty<TKey, TValue> property, TValue oldValue, PropertyChangedMode mode = PropertyChangedMode.Changed)
+        public PropertyChangedEventArgs(IProperty<TImpl, TKey, TValue> property, TValue oldValue, PropertyChangedMode mode = PropertyChangedMode.Changed)
         {
             Property = property;
             OldValue = oldValue;
             Mode = mode;
         }
         
-        public IProperty<TKey, TValue> Property { get; private set; }
+        public IProperty<TImpl, TKey, TValue> Property { get; private set; }
         public TValue OldValue { get; private set; }
         public PropertyChangedMode Mode { get; private set; }
     }
 
-    public delegate void PropertyChangedEventHandler<TKey, TValue>(INode<TKey, TValue> sender, PropertyChangedEventArgs<TKey, TValue> e);
+    public delegate void PropertyChangedEventHandler<TImpl, TKey, TValue>(TImpl sender, PropertyChangedEventArgs<TImpl, TKey, TValue> e);
 }

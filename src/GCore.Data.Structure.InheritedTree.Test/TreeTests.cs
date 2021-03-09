@@ -7,15 +7,17 @@ using GCore.Data.Structure.InheritedTree;
 
 namespace GCore.Data.Structure.InheritedTree.Test
 {
+    class StringIntNode : Node<StringIntNode, String, int> { }
+
     [TestFixture]
     public class TreeTests
     {
-        Tree<String, int> tree;
+        Tree<StringIntNode, string, int> tree;
 
         [SetUp]
         public void Setup()
         {
-            tree = new Tree<string, int>("Test");
+            tree = new Tree<StringIntNode, string, int>("Test");
             tree.Root.AddChildren(
                 new[]
                 {
@@ -106,8 +108,8 @@ namespace GCore.Data.Structure.InheritedTree.Test
         [Test]
         public void PropertyChangedEvent()
         {
-            PropertyChangedEventArgs<String, int> e1 = null;
-            PropertyChangedEventArgs<String, int> e2 = null;
+            PropertyChangedEventArgs<StringIntNode, String, int> e1 = null;
+            PropertyChangedEventArgs<StringIntNode, String, int> e2 = null;
 
             tree.FindNode("Test:N1")["changing"] = 1;
 
@@ -126,7 +128,7 @@ namespace GCore.Data.Structure.InheritedTree.Test
         [Test]
         public void ChildrenChangedEvent()
         {
-            ChildrenChangedEventArgs<String, int> e1 = null;
+            ChildrenChangedEventArgs<StringIntNode, String, int> e1 = null;
 
             int count = tree.Root.GetChildren(int.MaxValue).Count();
 
@@ -150,9 +152,9 @@ namespace GCore.Data.Structure.InheritedTree.Test
             var raw = tree.ToRawNodes();
             string json = Newtonsoft.Json.JsonConvert.SerializeObject(raw);
 
-            raw = Newtonsoft.Json.JsonConvert.DeserializeObject<RawNode<String, int>>(json);
+            raw = Newtonsoft.Json.JsonConvert.DeserializeObject<RawNode<StringIntNode, String, int>>(json);
 
-            tree = new Tree<String, int>(raw);
+            tree = new Tree<StringIntNode, String, int>(raw);
 
             this.Defines();
             this.DefinesFalse();

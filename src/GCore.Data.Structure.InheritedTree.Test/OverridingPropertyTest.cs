@@ -4,15 +4,17 @@ using NUnit.Framework;
 
 namespace GCore.Data.Structure.InheritedTree.Test
 {
+    class StringObjectNode : Node<StringObjectNode, String, object> { }
+
     [TestFixture]
     public class OverridingPropertyTest
     {
-        Tree<String, object> tree;
+        Tree<StringObjectNode, String, object> tree;
 
         [SetUp]
         public void Setup()
         {
-            tree = new Tree<string, object>("Test");
+            tree = new Tree<StringObjectNode, String, object>("Test");
             tree.Root.AddChildren(
                 new[]
                 {
@@ -51,13 +53,13 @@ namespace GCore.Data.Structure.InheritedTree.Test
         }
     }
 
-    class OverridingProperty: IOverridingProperty<String, object>
+    class OverridingProperty: IOverridingProperty<StringObjectNode, String, object>
     {
         int _overrides = 0;
 
         public int Overrides => _overrides;
 
-        public void OnOverridesProperty(IProperty<String, object> property)
+        public void OnOverridesProperty(IProperty<StringObjectNode, String, object> property)
         {
             if (property is null)
             {
