@@ -5,17 +5,18 @@ using System.Text;
 
 namespace GCore.Data.Structure.InheritedTree
 {
-    public class Node<TImpl, TKey, TValue> :
-        INode<TImpl, TKey, TValue>
-        where TImpl : Node<TImpl, TKey, TValue>
+    public class Node<TTree, TNode, TKey, TValue> :
+        INode<TTree, TNode, TKey, TValue>
+        where TNode : Node<TTree, TNode, TKey, TValue>
+        where TTree : ITree<TTree, TNode, TKey, TValue>
     {
 
-        protected List<Property<TImpl, TKey, TValue>> _props = new List<Property<TImpl, TKey, TValue>>();
-        protected List<TImpl> _children = new List<TImpl>();
-        protected ITree<TImpl, TKey, TValue> _tree;
+        protected List<Property<TNode, TKey, TValue>> _props = new List<Property<TNode, TKey, TValue>>();
+        protected List<TNode> _children = new List<TNode>();
+        protected TTree _tree;
 
-        public event PropertyChangedEventHandler<TImpl, TKey, TValue> PropertyChanged;
-        public event ChildrenChangedEventHandler<TImpl, TKey, TValue> ChildrenChanged;
+        public event PropertyChangedEventHandler<TNode, TKey, TValue> PropertyChanged;
+        public event ChildrenChangedEventHandler<TNode, TKey, TValue> ChildrenChanged;
 
         public TValue this[TKey key] { get => Get(key); set => Set(key, value); }
 
@@ -25,9 +26,9 @@ namespace GCore.Data.Structure.InheritedTree
 
         public uint Depth => (uint)this.GetParents().Count();
 
-        public TImpl Parent { get; protected set; }
+        public TNode Parent { get; protected set; }
 
-        public IEnumerable<IProperty<TImpl, TKey, TValue>> Propertys
+        public IEnumerable<IProperty<TNode, TKey, TValue>> Propertys
         {
             get
             {
@@ -45,27 +46,27 @@ namespace GCore.Data.Structure.InheritedTree
             }
         }
 
-        public ITree<TImpl, TKey, TValue> Tree => _tree;
+        public TTree Tree => _tree;
 
-        public IEnumerable<IProperty<TImpl, TKey, TValue>> SelfPropertys => _props;
+        public IEnumerable<IProperty<TNode, TKey, TValue>> SelfPropertys => _props;
 
-        public IEnumerable<TImpl> Children => _children;
+        public IEnumerable<TNode> Children => _children;
 
         public Node()
         {
         }
 
-        public void AddChild(TImpl child)
+        public void AddChild(TNode child)
         {
             if (_children.Contains(child))
                 return;
             _children.Add(child);
-            child.SetParent((TImpl)this);
+            child.SetParent((TNode)this);
 
-            RaiseChildrenChanged(new ChildrenChangedEventArgs<TImpl, TKey, TValue>(child, ChildrenChangeAction.Added));
+            RaiseChildrenChanged(new ChildrenChangedEventArgs<TNode, TKey, TValue>(child, ChildrenChangeAction.Added));
         }
 
-        public void AddChildren(IEnumerable<TImpl> child)
+        public void AddChildren(IEnumerable<TNode> child)
         {
             foreach (var node in child)
             {
@@ -97,20 +98,20 @@ namespace GCore.Data.Structure.InheritedTree
             _props.Remove(prop);
 
             RaisePropertyChanged(
-                new PropertyChangedEventArgs<TImpl, TKey, TValue>(
-                    new Property<TImpl, TKey, TValue>((TImpl)this, prop.Key, default(TValue)),
+                new PropertyChangedEventArgs<TNode, TKey, TValue>(
+                    new Property<TNode, TKey, TValue>((TNode)this, prop.Key, default(TValue)),
                     prop.Value,
-                    PropertyChangedEventArgs<TImpl, TKey, TValue>.PropertyChangedMode.Removed));
+                    PropertyChangedEventArgs<TNode, TKey, TValue>.PropertyChangedMode.Removed));
 
             return true;
         }
 
-        public IEnumerable<IProperty<TImpl, TKey, TValue>> CollectPropertys(TKey keys)
+        public IEnumerable<IProperty<TNode, TKey, TValue>> CollectPropertys(TKey keys)
         {
             return GetAll().Where(p => p.Key.Equals(keys));
         }
 
-        public IEnumerable<IProperty<TImpl, TKey, TValue>> GetAll()
+        public IEnumerable<IProperty<TNode, TKey, TValue>> GetAll()
         {
             if (this.Parent != null)
             {
@@ -124,7 +125,7 @@ namespace GCore.Data.Structure.InheritedTree
                 yield return prop;
         }
 
-        public IEnumerable<TImpl> GetChildren(uint maxDepth = 0)
+        public IEnumerable<TNode> GetChildren(uint maxDepth = 0)
         {
             foreach(var n in _children)
             {
@@ -137,9 +138,9 @@ namespace GCore.Data.Structure.InheritedTree
             }
         }
 
-        public IEnumerable<TImpl> GetParents()
+        public IEnumerable<TNode> GetParents()
         {
-            var parents = new List<TImpl>();
+            var parents = new List<TNode>();
 
             var parent = this.Parent;
 
@@ -161,13 +162,13 @@ namespace GCore.Data.Structure.InheritedTree
             return Parent?.Has(key) ?? false;
         }
 
-        public void InitNode(string nodeName, ITree<TImpl, TKey, TValue> tree)
+        public void InitNode(string nodeName, TTree tree)
         {
             _tree = tree;
             Name = nodeName;
         }
 
-        public void InitNode(String name, Tree<TImpl, TKey, TValue> tree, IDictionary<TKey, TValue> props = null, IEnumerable<TImpl> children = null)
+        public void InitNode(String name, TTree tree, IDictionary<TKey, TValue> props = null, IEnumerable<TNode> children = null)
         {
             _tree = tree;
             Name = name;
@@ -175,7 +176,7 @@ namespace GCore.Data.Structure.InheritedTree
             if (props != null)
                 foreach (var kv in props)
                 {
-                    _props.Add(new Property<TImpl, TKey, TValue>((TImpl)this, kv.Key, kv.Value));
+                    _props.Add(new Property<TNode, TKey, TValue>((TNode)this, kv.Key, kv.Value));
 #pragma warning disable RECS0021
                     UpdateIOverridingProperty(kv.Key);
 #pragma warning restore RECS0021
@@ -186,14 +187,14 @@ namespace GCore.Data.Structure.InheritedTree
                     this.AddChild(child);
         }
 
-        public void InitNode(RawNode<TImpl, TKey, TValue> rawNode, Tree<TImpl, TKey, TValue> tree)
+        public void InitNode(RawNode<TNode, TKey, TValue> rawNode, TTree tree)
         {
             _tree = tree;
             Name = rawNode.Name;
 
             foreach (var kv in rawNode.Propertys)
             {
-                _props.Add(new Property<TImpl, TKey, TValue>((TImpl)this, kv.Key, kv.Value));
+                _props.Add(new Property<TNode, TKey, TValue>((TNode)this, kv.Key, kv.Value));
 #pragma warning disable RECS0021
                 UpdateIOverridingProperty(kv.Key);
 #pragma warning restore RECS0021
@@ -201,7 +202,7 @@ namespace GCore.Data.Structure.InheritedTree
 
             foreach (var child in rawNode.Children)
             {
-                var node = Activator.CreateInstance<TImpl>();
+                var node = Activator.CreateInstance<TNode>();
                 node.InitNode(child, tree);
                 this.AddChild(node);
             }
@@ -217,7 +218,7 @@ namespace GCore.Data.Structure.InheritedTree
             if (Parent != null)
             {
                 Parent.PropertyChanged -= Parent_PropertyChanged;
-                Parent.RemoveChild((TImpl)this);
+                Parent.RemoveChild((TNode)this);
             }
             Parent = null;
         }
@@ -228,18 +229,18 @@ namespace GCore.Data.Structure.InheritedTree
 
             _props.RemoveAll(p => p.Key.Equals(key));
 
-            var prop = new Property<TImpl, TKey, TValue>((TImpl)this, key, value);
+            var prop = new Property<TNode, TKey, TValue>((TNode)this, key, value);
 
             _props.Add(prop);
 
-            RaisePropertyChanged(new PropertyChangedEventArgs<TImpl, TKey, TValue>(prop, old));
+            RaisePropertyChanged(new PropertyChangedEventArgs<TNode, TKey, TValue>(prop, old));
 
             return !old.Equals(value);
         }
 
-        public void SetParent(TImpl parent)
+        public void SetParent(TNode parent)
         {
-            if (_tree != parent.Tree)
+            if (!_tree.Equals(parent.Tree))
                 throw new Exception("Nodes are not from the same Tree");
 
             var tmp = parent;
@@ -260,12 +261,12 @@ namespace GCore.Data.Structure.InheritedTree
                 throw new Exception(Path + " already has a Parent");
         }
 
-        public TImpl GetChild(string name)
+        public TNode GetChild(string name)
         {
             return _children.FirstOrDefault(c => c.Name == name);
         }
 
-        public TImpl CreateChild(string name)
+        public TNode CreateChild(string name)
         {
             var node = _tree.CreateNode(name);
 
@@ -274,41 +275,41 @@ namespace GCore.Data.Structure.InheritedTree
             return node;
         }
 
-        public bool RemoveChild(TImpl child)
+        public bool RemoveChild(TNode child)
         {
             if (_children.Remove(child))
             {
-                RaiseChildrenChanged(new ChildrenChangedEventArgs<TImpl, TKey, TValue>(child, ChildrenChangeAction.Removed));
+                RaiseChildrenChanged(new ChildrenChangedEventArgs<TNode, TKey, TValue>(child, ChildrenChangeAction.Removed));
                 return true;
             }
             return false;
         }
 
-        public TImpl FindNode(string path)
+        public TNode FindNode(string path)
         {
             
             return FindNode(path.Split(new []{ Tree.Separator }, StringSplitOptions.None));
         }
 
-        public TImpl FindNode(IEnumerable<string> path)
+        public TNode FindNode(IEnumerable<string> path)
         {
             if (path.Count() == 0)
-                return (TImpl)this;
+                return (TNode)this;
 
             return GetChild(path.ElementAt(0))?.FindNode(path.Skip(1)) ?? null;
         }
 
-        protected void RaisePropertyChanged(PropertyChangedEventArgs<TImpl, TKey, TValue> args)
+        protected void RaisePropertyChanged(PropertyChangedEventArgs<TNode, TKey, TValue> args)
         {
-            if(args.Mode != PropertyChangedEventArgs<TImpl, TKey, TValue>.PropertyChangedMode.Removed)
+            if(args.Mode != PropertyChangedEventArgs<TNode, TKey, TValue>.PropertyChangedMode.Removed)
                 UpdateIOverridingProperty(args.Property.Key, false);
-            PropertyChanged?.Invoke((TImpl)this, args);
+            PropertyChanged?.Invoke((TNode)this, args);
         }
 
-        protected void RaiseChildrenChanged(ChildrenChangedEventArgs<TImpl, TKey, TValue> args)
+        protected void RaiseChildrenChanged(ChildrenChangedEventArgs<TNode, TKey, TValue> args)
         {
             args.Child.UpdateOverrides();
-            ChildrenChanged?.Invoke((TImpl)this, args);
+            ChildrenChanged?.Invoke((TNode)this, args);
         }
 
         protected virtual void UpdateIOverridingProperty(TKey key, bool raisePropertyChangedEvent = true)
@@ -318,10 +319,10 @@ namespace GCore.Data.Structure.InheritedTree
             if (thisProp is null)
                 return;
 
-            if (!(thisProp.Value is IOverridingProperty<TImpl, TKey, TValue>))
+            if (!(thisProp.Value is IOverridingProperty<TNode, TKey, TValue>))
                 return;
 
-            IProperty<TImpl, TKey, TValue> lastProp = null;
+            IProperty<TNode, TKey, TValue> lastProp = null;
 
             try
             {
@@ -332,13 +333,13 @@ namespace GCore.Data.Structure.InheritedTree
             //if (lastProp is null)
             //    return;
 
-            (thisProp.Value as IOverridingProperty<TImpl, TKey, TValue>).OnOverridesProperty(lastProp);
+            (thisProp.Value as IOverridingProperty<TNode, TKey, TValue>).OnOverridesProperty(lastProp);
 
             if(raisePropertyChangedEvent)
-                RaisePropertyChanged(new PropertyChangedEventArgs<TImpl, TKey, TValue>(thisProp, thisProp.Value));
+                RaisePropertyChanged(new PropertyChangedEventArgs<TNode, TKey, TValue>(thisProp, thisProp.Value));
         }
 
-        private void Parent_PropertyChanged(TImpl sender, PropertyChangedEventArgs<TImpl, TKey, TValue> e)
+        private void Parent_PropertyChanged(TNode sender, PropertyChangedEventArgs<TNode, TKey, TValue> e)
         {
             if (!this.Defines(e.Property.Key))
                 RaisePropertyChanged(e);
@@ -346,23 +347,23 @@ namespace GCore.Data.Structure.InheritedTree
                 UpdateIOverridingProperty(e.Property.Key);
         }
 
-        public RawNode<TImpl, TKey, TValue> ToRawNode()
+        public RawNode<TNode, TKey, TValue> ToRawNode()
         {
             var props = new Dictionary<TKey, TValue>();
             foreach (var prop in this._props)
                 props[prop.Key] = prop.Value;
-            return new RawNode<TImpl, TKey, TValue>()
+            return new RawNode<TNode, TKey, TValue>()
             {
                 Name = this.Name,
                 Propertys = props,
-                Children = _children.Select(c => (c as TImpl).ToRawNode()).ToArray()
+                Children = _children.Select(c => (c as TNode).ToRawNode()).ToArray()
             };
         }
 
         public void Update<TArgs>(TKey key, TArgs args)
         {
-            var updateQueue = new Queue<TImpl>();
-            updateQueue.Enqueue((TImpl)this);
+            var updateQueue = new Queue<TNode>();
+            updateQueue.Enqueue((TNode)this);
 
             while(updateQueue.Count > 0)
             {

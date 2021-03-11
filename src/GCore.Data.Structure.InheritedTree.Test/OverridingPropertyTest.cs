@@ -4,17 +4,18 @@ using NUnit.Framework;
 
 namespace GCore.Data.Structure.InheritedTree.Test
 {
-    class StringObjectNode : Node<StringObjectNode, String, object> { }
+    class StringObjectNode : Node<StringObjectTree, StringObjectNode, String, object> { }
+    class StringObjectTree : Tree<StringObjectTree, StringObjectNode, String, object> { }
 
     [TestFixture]
     public class OverridingPropertyTest
     {
-        Tree<StringObjectNode, String, object> tree;
+        StringObjectTree tree;
 
         [SetUp]
         public void Setup()
         {
-            tree = new Tree<StringObjectNode, String, object>("Test");
+            tree = new StringObjectTree();
             tree.Root.AddChildren(
                 new[]
                 {
@@ -41,15 +42,15 @@ namespace GCore.Data.Structure.InheritedTree.Test
         public void Overrides()
         {
             tree.UpdateOverrides();
-            Assert.AreEqual(2, (tree.FindNode("Test:N1:N11:N111").Get("override") as OverridingProperty)?.Overrides);
+            Assert.AreEqual(2, (tree.FindNode("root:N1:N11:N111").Get("override") as OverridingProperty)?.Overrides);
         }
 
         [Test]
         public void RemovedOverride()
         {
             tree.UpdateOverrides();
-            tree.FindNode("Test:N1:N11").ResetDefinition("override");
-            Assert.AreEqual(0, (tree.FindNode("Test:N1:N11:N111").Get("override") as OverridingProperty)?.Overrides);
+            tree.FindNode("root:N1:N11").ResetDefinition("override");
+            Assert.AreEqual(0, (tree.FindNode("root:N1:N11:N111").Get("override") as OverridingProperty)?.Overrides);
         }
     }
 

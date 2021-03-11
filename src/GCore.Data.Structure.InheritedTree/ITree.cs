@@ -4,17 +4,18 @@ using System.Text;
 
 namespace GCore.Data.Structure.InheritedTree
 {
-    public interface ITree<TImpl, TKey, TValue>
-        where TImpl : INode<TImpl, TKey, TValue>
+    public interface ITree<TTree, TNode, TKey, TValue>
+        where TNode : INode<TTree, TNode, TKey, TValue>
+        where TTree : ITree<TTree, TNode, TKey, TValue>
     {
         string Separator { get; }
 
-        TImpl Root { get; }
-        TImpl CreateNode(String name);
+        TNode Root { get; }
+        TNode CreateNode(String name);
 
-        TImpl FindNode(string path);
+        TNode FindNode(string path);
 
-        IEnumerable<IProperty<TImpl, TKey, TValue>> CollectPropertys(TKey keys);
+        IEnumerable<IProperty<TNode, TKey, TValue>> CollectPropertys(TKey keys);
 
         void Update<TArgs>(TKey key, TArgs args);
 

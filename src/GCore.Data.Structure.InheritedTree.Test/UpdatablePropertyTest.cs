@@ -5,19 +5,21 @@ using System.Text;
 
 namespace GCore.Data.Structure.InheritedTree.Test
 {
-    class StringUpdatablePropertyNode : Node<StringUpdatablePropertyNode, String, UpdatableProperty> { }
+    class StringUpdatablePropertyNode : Node<StringUpdatablePropertyTree, StringUpdatablePropertyNode, string, UpdatableProperty> { }
+    class StringUpdatablePropertyTree : Tree<StringUpdatablePropertyTree, StringUpdatablePropertyNode, string, UpdatableProperty> { }
+
 
     [TestFixture]
     public class UpdatablePropertyTest
     {
-        Tree<StringUpdatablePropertyNode, String, UpdatableProperty> tree;
+        StringUpdatablePropertyTree tree;
 
         public static int LastUpdate = -1;
 
         [SetUp]
         public void Setup()
         {
-            tree = new Tree<StringUpdatablePropertyNode, string, UpdatableProperty>("Test");
+            tree = new StringUpdatablePropertyTree();
             tree.Root.AddChildren(
                 new[]
                 {
@@ -48,8 +50,8 @@ namespace GCore.Data.Structure.InheritedTree.Test
             tree.Update("override", 1000);
 
 
-            Assert.AreEqual(1001, tree.FindNode("Test:N1").Get("override").Value);
-            Assert.AreEqual(1002, tree.FindNode("Test:N1:N11").Get("override").Value);
+            Assert.AreEqual(1001, tree.FindNode("root:N1").Get("override").Value);
+            Assert.AreEqual(1002, tree.FindNode("root:N1:N11").Get("override").Value);
             Assert.AreEqual(1002, LastUpdate);
 
         }
