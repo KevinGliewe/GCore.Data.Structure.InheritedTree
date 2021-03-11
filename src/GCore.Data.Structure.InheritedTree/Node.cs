@@ -20,7 +20,7 @@ namespace GCore.Data.Structure.InheritedTree
 
         public TValue this[TKey key] { get => Get(key); set => Set(key, value); }
 
-        public string Name { get; protected set; }
+        public string Name { get; protected set; } = null;
 
         public string Path => String.Join(Tree.Separator, this.GetParents().Select(p => p.Name)) + Tree.Separator + Name;
 
@@ -202,7 +202,9 @@ namespace GCore.Data.Structure.InheritedTree
 
             foreach (var child in rawNode.Children)
             {
-                var node = Activator.CreateInstance<TNode>();
+                var type = Type.GetType(child.NodeType);
+                var node = Activator.CreateInstance(type) as TNode ?? throw new Exception($"Can't create {child.NodeType} instance");
+                
                 node.InitNode(child, tree);
                 this.AddChild(node);
             }
@@ -352,8 +354,14 @@ namespace GCore.Data.Structure.InheritedTree
             var props = new Dictionary<TKey, TValue>();
             foreach (var prop in this._props)
                 props[prop.Key] = prop.Value;
+
+            var typeNameElements = this.GetType().AssemblyQualifiedName.Split(',');
+            var typeName = typeNameElements[0] + "," + typeNameElements[1];
+
             return new RawNode<TNode, TKey, TValue>()
             {
+                NodeType = typeName,
+                NodeData = null, // No data for this implementation
                 Name = this.Name,
                 Propertys = props,
                 Children = _children.Select(c => (c as TNode).ToRawNode()).ToArray()

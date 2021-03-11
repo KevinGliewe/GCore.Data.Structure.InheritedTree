@@ -16,12 +16,20 @@ namespace GCore.Data.Structure.InheritedTree
 
         public string Separator { get; private set; }
 
-        public Tree(String root = "root", String separator = ":")
+        public Tree(TNode root, String rootName = null, String separator = ":")
         {
             Separator = separator;
 
+            _root = root;
+            _root.InitNode(rootName ?? _root.Name ?? throw new Exception("Root node needs a name!"), (TTree)this);
+        }
+
+        public Tree(String root = "root", String separator = ":")
+        {
+            Separator = separator ?? throw new Exception("Separator can't be null!");
+
             _root = Activator.CreateInstance<TNode>();
-            _root.InitNode(root, (TTree)this);
+            _root.InitNode(root ?? throw new Exception("Root node needs a name!"), (TTree)this);
         }
 
         public Tree(RawNode<TNode, TKey, TValue> rawNode, String separator = ":")
@@ -29,20 +37,20 @@ namespace GCore.Data.Structure.InheritedTree
             Separator = separator;
 
             _root = Activator.CreateInstance<TNode>();
-            _root.InitNode(rawNode, (TTree)this);
+            _root.InitNode(rawNode ?? throw new Exception("Root node needs a name!"), (TTree)this);
         }
 
         public TNode CreateNode(string name)
         {
             var node = Activator.CreateInstance<TNode>();
-            node.InitNode(name, (TTree)this);
+            node.InitNode(name ?? throw new Exception("Root node needs a name!"), (TTree)this);
             return node;
         }
 
         public TNode CreateNode(string name, IDictionary<TKey, TValue> props = null, params TNode[] childs)
         {
             var node = Activator.CreateInstance<TNode>();
-            node.InitNode(name, (TTree)this, props, childs);
+            node.InitNode(name ?? throw new Exception("Root node needs a name!"), (TTree)this, props, childs);
 
             return node;
         }

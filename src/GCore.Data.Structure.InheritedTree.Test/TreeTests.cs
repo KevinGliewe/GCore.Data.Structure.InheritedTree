@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GCore.Data.Structure.InheritedTree;
+using Newtonsoft.Json;
 
 namespace GCore.Data.Structure.InheritedTree.Test
 {
@@ -13,6 +14,7 @@ namespace GCore.Data.Structure.InheritedTree.Test
     class StringIntTree : Tree<StringIntTree, StringIntNode, string, int>
     {
         public StringIntTree() : base() { }
+        public StringIntTree(StringIntNode root, string rootName) : base(root, rootName) { }
         public StringIntTree(RawNode<StringIntNode, string, int> rawNode) : base(rawNode) {}
     }
 
@@ -24,7 +26,7 @@ namespace GCore.Data.Structure.InheritedTree.Test
         [SetUp]
         public void Setup()
         {
-            tree = new StringIntTree();
+            tree = new StringIntTree(new StringIntNode(), "root");
             tree.Root.AddChildren(
                 new[]
                 {
@@ -157,7 +159,12 @@ namespace GCore.Data.Structure.InheritedTree.Test
         public void Serialization()
         {
             var raw = tree.ToRawNodes();
-            string json = Newtonsoft.Json.JsonConvert.SerializeObject(raw);
+
+            var jsonSerializerSettings = new JsonSerializerSettings()
+            {
+                TypeNameHandling = TypeNameHandling.All
+            };
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(raw, jsonSerializerSettings);
 
             raw = Newtonsoft.Json.JsonConvert.DeserializeObject<RawNode<StringIntNode, String, int>>(json);
 
