@@ -23,14 +23,14 @@ namespace GCore.Data.Structure.InheritedTree.Test
             tree.Root.AddChildren(
                 new[]
                 {
-                    tree.CreateNode("N1",
+                    tree.CreateNode<StringUpdatablePropertyNode>("N1",
                         new Dictionary<string, UpdatableProperty>(){
                             {"propN1_1", 11 },
                             {"propN1_2", 12 },
                             {"override", 1 },
                             {"changing", 0 },
                         },
-                        tree.CreateNode("N11",
+                        tree.CreateNode<StringUpdatablePropertyNode>("N11",
                             new Dictionary<string, UpdatableProperty>(){
                                 {"propN2_1", 21 },
                                 {"propN2_2", 22 },

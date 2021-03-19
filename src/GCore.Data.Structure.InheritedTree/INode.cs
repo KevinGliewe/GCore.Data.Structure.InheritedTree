@@ -199,7 +199,7 @@ namespace GCore.Data.Structure.InheritedTree
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        TNode CreateChild(string name);
+        TNewNode CreateChild<TNewNode>(string name) where TNewNode : TNode;
 
         /// <summary>
         /// Removes a child from this node.

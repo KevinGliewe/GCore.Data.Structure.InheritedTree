@@ -19,15 +19,15 @@ namespace GCore.Data.Structure.InheritedTree.Test
             tree.Root.AddChildren(
                 new[]
                 {
-                    tree.CreateNode("N1",
+                    tree.CreateNode<StringObjectNode>("N1",
                         new Dictionary<string, object>(){
                             {"override", null },
                         },
-                        tree.CreateNode("N11",
+                        tree.CreateNode<StringObjectNode>("N11",
                             new Dictionary<string, object>(){
                                 {"override", new OverridingProperty() },
                             },
-                            tree.CreateNode("N111",
+                            tree.CreateNode<StringObjectNode>("N111",
                                 new Dictionary<string, object>(){
                                     {"override", new OverridingProperty() },
                                 }

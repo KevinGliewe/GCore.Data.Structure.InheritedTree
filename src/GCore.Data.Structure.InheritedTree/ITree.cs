@@ -11,7 +11,7 @@ namespace GCore.Data.Structure.InheritedTree
         string Separator { get; }
 
         TNode Root { get; }
-        TNode CreateNode(String name);
+        TNewNode CreateNode<TNewNode>(String name) where TNewNode : TNode;
 
         TNode FindNode(string path);
 

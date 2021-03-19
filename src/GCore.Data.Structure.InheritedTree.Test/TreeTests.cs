@@ -30,14 +30,14 @@ namespace GCore.Data.Structure.InheritedTree.Test
             tree.Root.AddChildren(
                 new[]
                 {
-                    tree.CreateNode("N1",
+                    tree.CreateNode<StringIntNode>("N1",
                         new Dictionary<string, int>(){
                             {"propN1_1", 11 },
                             {"propN1_2", 12 },
                             {"override", 1 },
                             {"changing", 0 },
                         },
-                        tree.CreateNode("N11",
+                        tree.CreateNode<StringIntNode>("N11",
                             new Dictionary<string, int>(){
                                 {"propN2_1", 21 },
                                 {"propN2_2", 22 },
@@ -142,7 +142,7 @@ namespace GCore.Data.Structure.InheritedTree.Test
             int count = tree.Root.GetChildren(int.MaxValue).Count();
 
             tree.FindNode("root:N1:N11").ChildrenChanged += (s, e) => e1 = e;
-            var node = tree.FindNode("root:N1:N11").CreateChild("N111");
+            var node = tree.FindNode("root:N1:N11").CreateChild<StringIntNode>("N111");
 
             Assert.AreEqual("N111", e1.Child.Name);
             Assert.AreEqual("root:N1:N11:N111", e1.Child.Path);

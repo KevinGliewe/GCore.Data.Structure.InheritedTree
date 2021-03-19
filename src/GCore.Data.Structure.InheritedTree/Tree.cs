@@ -40,16 +40,16 @@ namespace GCore.Data.Structure.InheritedTree
             _root.InitNode(rawNode ?? throw new Exception("Root node needs a name!"), (TTree)this);
         }
 
-        public TNode CreateNode(string name)
+        public TNewNode CreateNode<TNewNode>(string name) where TNewNode : TNode
         {
-            var node = Activator.CreateInstance<TNode>();
+            var node = Activator.CreateInstance<TNewNode>();
             node.InitNode(name ?? throw new Exception("Root node needs a name!"), (TTree)this);
             return node;
         }
 
-        public TNode CreateNode(string name, IDictionary<TKey, TValue> props = null, params TNode[] childs)
+        public TNewNode CreateNode<TNewNode>(string name, IDictionary<TKey, TValue> props = null, params TNode[] childs) where TNewNode : TNode
         {
-            var node = Activator.CreateInstance<TNode>();
+            var node = Activator.CreateInstance<TNewNode>();
             node.InitNode(name ?? throw new Exception("Root node needs a name!"), (TTree)this, props, childs);
 
             return node;
