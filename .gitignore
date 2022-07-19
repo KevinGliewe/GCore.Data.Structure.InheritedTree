@@ -6,6 +6,10 @@ project.lock.json
 nupkg/
 pack/
 
+# docfx
+doc/docfx/_site
+doc/docfx/api/*.yml
+
 # Rider
 .idea
 
