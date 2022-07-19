@@ -18,12 +18,12 @@
   - [Name](#P-GCore-Data-Structure-InheritedTree-INode`4-Name 'GCore.Data.Structure.InheritedTree.INode`4.Name')
   - [Parent](#P-GCore-Data-Structure-InheritedTree-INode`4-Parent 'GCore.Data.Structure.InheritedTree.INode`4.Parent')
   - [Path](#P-GCore-Data-Structure-InheritedTree-INode`4-Path 'GCore.Data.Structure.InheritedTree.INode`4.Path')
-  - [Propertys](#P-GCore-Data-Structure-InheritedTree-INode`4-Propertys 'GCore.Data.Structure.InheritedTree.INode`4.Propertys')
-  - [SelfPropertys](#P-GCore-Data-Structure-InheritedTree-INode`4-SelfPropertys 'GCore.Data.Structure.InheritedTree.INode`4.SelfPropertys')
+  - [Properties](#P-GCore-Data-Structure-InheritedTree-INode`4-Properties 'GCore.Data.Structure.InheritedTree.INode`4.Properties')
+  - [SelfProperties](#P-GCore-Data-Structure-InheritedTree-INode`4-SelfProperties 'GCore.Data.Structure.InheritedTree.INode`4.SelfProperties')
   - [Tree](#P-GCore-Data-Structure-InheritedTree-INode`4-Tree 'GCore.Data.Structure.InheritedTree.INode`4.Tree')
   - [AddChild(child)](#M-GCore-Data-Structure-InheritedTree-INode`4-AddChild-`1- 'GCore.Data.Structure.InheritedTree.INode`4.AddChild(`1)')
   - [AddChildren(child)](#M-GCore-Data-Structure-InheritedTree-INode`4-AddChildren-System-Collections-Generic-IEnumerable{`1}- 'GCore.Data.Structure.InheritedTree.INode`4.AddChildren(System.Collections.Generic.IEnumerable{`1})')
-  - [CollectPropertys(keys)](#M-GCore-Data-Structure-InheritedTree-INode`4-CollectPropertys-`2- 'GCore.Data.Structure.InheritedTree.INode`4.CollectPropertys(`2)')
+  - [CollectProperties(keys)](#M-GCore-Data-Structure-InheritedTree-INode`4-CollectProperties-`2- 'GCore.Data.Structure.InheritedTree.INode`4.CollectProperties(`2)')
   - [CreateChild(name)](#M-GCore-Data-Structure-InheritedTree-INode`4-CreateChild-System-String- 'GCore.Data.Structure.InheritedTree.INode`4.CreateChild(System.String)')
   - [CreateChild\`\`1(name)](#M-GCore-Data-Structure-InheritedTree-INode`4-CreateChild``1-System-String- 'GCore.Data.Structure.InheritedTree.INode`4.CreateChild``1(System.String)')
   - [Defines(key)](#M-GCore-Data-Structure-InheritedTree-INode`4-Defines-`2- 'GCore.Data.Structure.InheritedTree.INode`4.Defines(`2)')
@@ -84,12 +84,12 @@
   - [Name](#P-GCore-Data-Structure-InheritedTree-Node`4-Name 'GCore.Data.Structure.InheritedTree.Node`4.Name')
   - [Parent](#P-GCore-Data-Structure-InheritedTree-Node`4-Parent 'GCore.Data.Structure.InheritedTree.Node`4.Parent')
   - [Path](#P-GCore-Data-Structure-InheritedTree-Node`4-Path 'GCore.Data.Structure.InheritedTree.Node`4.Path')
-  - [Propertys](#P-GCore-Data-Structure-InheritedTree-Node`4-Propertys 'GCore.Data.Structure.InheritedTree.Node`4.Propertys')
-  - [SelfPropertys](#P-GCore-Data-Structure-InheritedTree-Node`4-SelfPropertys 'GCore.Data.Structure.InheritedTree.Node`4.SelfPropertys')
+  - [Properties](#P-GCore-Data-Structure-InheritedTree-Node`4-Properties 'GCore.Data.Structure.InheritedTree.Node`4.Properties')
+  - [SelfProperties](#P-GCore-Data-Structure-InheritedTree-Node`4-SelfProperties 'GCore.Data.Structure.InheritedTree.Node`4.SelfProperties')
   - [Tree](#P-GCore-Data-Structure-InheritedTree-Node`4-Tree 'GCore.Data.Structure.InheritedTree.Node`4.Tree')
   - [AddChild()](#M-GCore-Data-Structure-InheritedTree-Node`4-AddChild-`1- 'GCore.Data.Structure.InheritedTree.Node`4.AddChild(`1)')
   - [AddChildren()](#M-GCore-Data-Structure-InheritedTree-Node`4-AddChildren-System-Collections-Generic-IEnumerable{`1}- 'GCore.Data.Structure.InheritedTree.Node`4.AddChildren(System.Collections.Generic.IEnumerable{`1})')
-  - [CollectPropertys()](#M-GCore-Data-Structure-InheritedTree-Node`4-CollectPropertys-`2- 'GCore.Data.Structure.InheritedTree.Node`4.CollectPropertys(`2)')
+  - [CollectProperties()](#M-GCore-Data-Structure-InheritedTree-Node`4-CollectProperties-`2- 'GCore.Data.Structure.InheritedTree.Node`4.CollectProperties(`2)')
   - [CreateChild()](#M-GCore-Data-Structure-InheritedTree-Node`4-CreateChild-System-String- 'GCore.Data.Structure.InheritedTree.Node`4.CreateChild(System.String)')
   - [CreateChild\`\`1()](#M-GCore-Data-Structure-InheritedTree-Node`4-CreateChild``1-System-String- 'GCore.Data.Structure.InheritedTree.Node`4.CreateChild``1(System.String)')
   - [Defines()](#M-GCore-Data-Structure-InheritedTree-Node`4-Defines-`2- 'GCore.Data.Structure.InheritedTree.Node`4.Defines(`2)')
@@ -135,7 +135,7 @@
   - [Name](#P-GCore-Data-Structure-InheritedTree-RawNode`3-Name 'GCore.Data.Structure.InheritedTree.RawNode`3.Name')
   - [NodeData](#P-GCore-Data-Structure-InheritedTree-RawNode`3-NodeData 'GCore.Data.Structure.InheritedTree.RawNode`3.NodeData')
   - [NodeType](#P-GCore-Data-Structure-InheritedTree-RawNode`3-NodeType 'GCore.Data.Structure.InheritedTree.RawNode`3.NodeType')
-  - [Propertys](#P-GCore-Data-Structure-InheritedTree-RawNode`3-Propertys 'GCore.Data.Structure.InheritedTree.RawNode`3.Propertys')
+  - [Properties](#P-GCore-Data-Structure-InheritedTree-RawNode`3-Properties 'GCore.Data.Structure.InheritedTree.RawNode`3.Properties')
 - [Tree](#T-GCore-Data-Structure-InheritedTree-Tree 'GCore.Data.Structure.InheritedTree.Tree')
 - [Tree\`1](#T-GCore-Data-Structure-InheritedTree-Tree`1 'GCore.Data.Structure.InheritedTree.Tree`1')
 - [Tree\`2](#T-GCore-Data-Structure-InheritedTree-Tree`2 'GCore.Data.Structure.InheritedTree.Tree`2')
@@ -290,8 +290,8 @@ Distance from the root node.
 
 ##### Summary
 
-Returns the property the node has either througth inheritance of self defining.
-Returns null if the property is not denined for this node.
+Returns the property the node has either by inheritance of self defining.
+Returns null if the property is not defined for this node.
 
 ##### Returns
 
@@ -325,20 +325,20 @@ Null if this node is the root node.
 
 All names from the root to this node joined with ':'.
 
-<a name='P-GCore-Data-Structure-InheritedTree-INode`4-Propertys'></a>
-### Propertys `property`
+<a name='P-GCore-Data-Structure-InheritedTree-INode`4-Properties'></a>
+### Properties `property`
 
 ##### Summary
 
-All propertys this node has.
+All properties this node has.
 Inherited or self-defined.
 
-<a name='P-GCore-Data-Structure-InheritedTree-INode`4-SelfPropertys'></a>
-### SelfPropertys `property`
+<a name='P-GCore-Data-Structure-InheritedTree-INode`4-SelfProperties'></a>
+### SelfProperties `property`
 
 ##### Summary
 
-All propertys this node defines itfelf.
+All properties this node defines itself.
 
 <a name='P-GCore-Data-Structure-InheritedTree-INode`4-Tree'></a>
 ### Tree `property`
@@ -365,7 +365,7 @@ Adds a new child to this node.
 
 ##### Summary
 
-Adds multible children to this node.
+Adds multiple children to this node.
 
 ##### Parameters
 
@@ -373,13 +373,13 @@ Adds multible children to this node.
 | ---- | ---- | ----------- |
 | child | [System.Collections.Generic.IEnumerable{\`1}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{`1}') |  |
 
-<a name='M-GCore-Data-Structure-InheritedTree-INode`4-CollectPropertys-`2-'></a>
-### CollectPropertys(keys) `method`
+<a name='M-GCore-Data-Structure-InheritedTree-INode`4-CollectProperties-`2-'></a>
+### CollectProperties(keys) `method`
 
 ##### Summary
 
-Returns all propertys beween the root and this nodes in order.
-Ignores if the property is overritten by a child node.
+Returns all properties between the root and this nodes in order.
+Ignores if the property is overwritten by a child node.
 
 ##### Returns
 
@@ -481,8 +481,8 @@ Find a node by its relative path.
 
 ##### Summary
 
-Returns the property the node has either througth inheritance of self defining.
-Returns null if the property is not denined for this node.
+Returns the property the node has either by inheritance of self defining.
+Returns null if the property is not denied for this node.
 
 ##### Returns
 
@@ -499,8 +499,8 @@ Returns null if the property is not denined for this node.
 
 ##### Summary
 
-Gets all propertys this node has.
-Either througth inheritance of self defining.
+Gets all properties this node has.
+Either by inheritance of self defining.
 
 ##### Returns
 
@@ -533,7 +533,7 @@ This is NOT recursive!
 
 ##### Summary
 
-Get all child nodes beneeth this node recursive.
+Get all child nodes beneath this node recursive.
 
 ##### Returns
 
@@ -566,7 +566,7 @@ This method has no parameters.
 ##### Summary
 
 Returns true if this node has the defined property.
-Either througth inheritance of self defining.
+Either by inheritance of self defining.
 
 ##### Returns
 
@@ -619,7 +619,7 @@ Initializes the tree node
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| rawNode | [GCore.Data.Structure.InheritedTree.RawNode{\`1,\`2,\`3}](#T-GCore-Data-Structure-InheritedTree-RawNode{`1,`2,`3} 'GCore.Data.Structure.InheritedTree.RawNode{`1,`2,`3}') | The serializeable node representation |
+| rawNode | [GCore.Data.Structure.InheritedTree.RawNode{\`1,\`2,\`3}](#T-GCore-Data-Structure-InheritedTree-RawNode{`1,`2,`3} 'GCore.Data.Structure.InheritedTree.RawNode{`1,`2,`3}') | The serializable node representation |
 | tree | [\`0](#T-`0 '`0') | The tree ths node belongs to |
 
 <a name='M-GCore-Data-Structure-InheritedTree-INode`4-IsInherted-`2-'></a>
@@ -691,7 +691,7 @@ Removes the definition of a property.
 ##### Summary
 
 (Re)Defines the property for this node.
-This overrides a inherted property.
+This overrides a inherited property.
 
 ##### Returns
 
@@ -723,7 +723,7 @@ Throws exception if a parent is already defined.
 
 ##### Summary
 
-Converts the node to a serializeable RawNode
+Converts the node to a serializable RawNode
 
 ##### Returns
 
@@ -738,7 +738,7 @@ This method has no parameters.
 
 ##### Summary
 
-Spawns a update-wave for propertys implementing [IOverridingProperty\`3](#T-GCore-Data-Structure-InheritedTree-IOverridingProperty`3 'GCore.Data.Structure.InheritedTree.IOverridingProperty`3')
+Spawns a update-wave for properties implementing [IOverridingProperty\`3](#T-GCore-Data-Structure-InheritedTree-IOverridingProperty`3 'GCore.Data.Structure.InheritedTree.IOverridingProperty`3')
 and invokes [](#E-GCore-Data-Structure-InheritedTree-Node`4-PropertyChanged 'GCore.Data.Structure.InheritedTree.Node`4.PropertyChanged')
 
 ##### Parameters
@@ -1039,7 +1039,7 @@ The node found in this path
 
 ##### Summary
 
-Spawns a update-wave for propertys implementing [IOverridingProperty\`3](#T-GCore-Data-Structure-InheritedTree-IOverridingProperty`3 'GCore.Data.Structure.InheritedTree.IOverridingProperty`3')
+Spawns a update-wave for properties implementing [IOverridingProperty\`3](#T-GCore-Data-Structure-InheritedTree-IOverridingProperty`3 'GCore.Data.Structure.InheritedTree.IOverridingProperty`3')
 and invokes [](#E-GCore-Data-Structure-InheritedTree-Node`4-PropertyChanged 'GCore.Data.Structure.InheritedTree.Node`4.PropertyChanged')
 
 ##### Parameters
@@ -1248,15 +1248,15 @@ Converts this to the base node type.
 
 *Inherit from parent.*
 
-<a name='P-GCore-Data-Structure-InheritedTree-Node`4-Propertys'></a>
-### Propertys `property`
+<a name='P-GCore-Data-Structure-InheritedTree-Node`4-Properties'></a>
+### Properties `property`
 
 ##### Summary
 
 *Inherit from parent.*
 
-<a name='P-GCore-Data-Structure-InheritedTree-Node`4-SelfPropertys'></a>
-### SelfPropertys `property`
+<a name='P-GCore-Data-Structure-InheritedTree-Node`4-SelfProperties'></a>
+### SelfProperties `property`
 
 ##### Summary
 
@@ -1291,8 +1291,8 @@ This method has no parameters.
 
 This method has no parameters.
 
-<a name='M-GCore-Data-Structure-InheritedTree-Node`4-CollectPropertys-`2-'></a>
-### CollectPropertys() `method`
+<a name='M-GCore-Data-Structure-InheritedTree-Node`4-CollectProperties-`2-'></a>
+### CollectProperties() `method`
 
 ##### Summary
 
@@ -1796,8 +1796,8 @@ Additional properties of the node.
 
 The .NET type of the node.
 
-<a name='P-GCore-Data-Structure-InheritedTree-RawNode`3-Propertys'></a>
-### Propertys `property`
+<a name='P-GCore-Data-Structure-InheritedTree-RawNode`3-Properties'></a>
+### Properties `property`
 
 ##### Summary
 
