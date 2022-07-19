@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/src/GCore.Data.Structure.InheritedTree.Test/bin/Debug/netcoreapp2.1/GCore.Data.Structure.InheritedTree.Test.dll",
+            "program": "${workspaceFolder}/src/GCore.Data.Structure.InheritedTree.Test/bin/Debug/net6.0/GCore.Data.Structure.InheritedTree.Test.dll",
             "args": [],
             "cwd": "${workspaceFolder}/src/GCore.Data.Structure.InheritedTree.Test",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console

@@ -1,6 +1,6 @@
 language: csharp
 solution: GCore.Data.Structure.InheritedTree.sln
-dotnet: 5.0.201
+dotnet: 6.0.302
 script:
  - dotnet restore
  - dotnet test
