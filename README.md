@@ -5,3 +5,5 @@
 [![NuGet Package](https://img.shields.io/nuget/v/GCore.Data.Structure.InheritedTree.svg)](https://www.nuget.org/packages/GCore.Data.Structure.InheritedTree)
 
 A tree structure with inherited properties.
+
+For the API Documentation go [here](doc/GCore.Data.Structure.InheritedTree.md).
