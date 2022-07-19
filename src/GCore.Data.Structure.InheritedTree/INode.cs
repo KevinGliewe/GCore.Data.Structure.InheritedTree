@@ -187,7 +187,7 @@ namespace GCore.Data.Structure.InheritedTree
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        TNode GetChild(string name);
+        TNode? GetChild(string name);
 
         /// <summary>
         /// Adds a new child to this node.

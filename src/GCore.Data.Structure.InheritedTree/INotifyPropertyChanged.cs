@@ -13,6 +13,9 @@ namespace GCore.Data.Structure.InheritedTree
     /// <typeparam name="TValue">The type used for the value</typeparam>
     public interface INotifyPropertyChanged<TNode, TKey, TValue>
     {
+        /// <summary>
+        /// Gets invoked after a property changes.
+        /// </summary>
         event PropertyChangedEventHandler<TNode, TKey, TValue> PropertyChanged;
     }
 
@@ -40,6 +43,12 @@ namespace GCore.Data.Structure.InheritedTree
     /// <typeparam name="TValue">The type used for the value</typeparam>
     public class PropertyChangedEventArgs<TNode, TKey, TValue>
     {
+        /// <summary>
+        /// ctor
+        /// </summary>
+        /// <param name="property">The property that changed</param>
+        /// <param name="oldValue">The old value before the change</param>
+        /// <param name="mode">The kind of change that triggered this event</param>
         public PropertyChangedEventArgs(IProperty<TNode, TKey, TValue> property, TValue oldValue, PropertyChangedMode mode = PropertyChangedMode.Changed)
         {
             Property = property;

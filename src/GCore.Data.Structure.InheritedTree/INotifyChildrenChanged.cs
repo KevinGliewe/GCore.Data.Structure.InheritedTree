@@ -8,11 +8,12 @@ namespace GCore.Data.Structure.InheritedTree
     /// Possible trait for Node types.
     /// Notifies the node if children changes.
     /// </summary>
-    /// <typeparam name="TNode"></typeparam>
-    /// <typeparam name="TKey"></typeparam>
-    /// <typeparam name="TValue"></typeparam>
+    /// <typeparam name="TNode">The used <seealso cref="INode{TTree, TNode, TKey, TValue}"/> implementation</typeparam>
     public interface INotifyChildrenChanged<TNode>
     {
+        /// <summary>
+        /// Gets invoked after a child node changes.
+        /// </summary>
         event ChildrenChangedEventHandler<TNode> ChildrenChanged;
     }
 
@@ -38,6 +39,11 @@ namespace GCore.Data.Structure.InheritedTree
     /// <typeparam name="TNode">The used <seealso cref="INode{TTree, TNode, TKey, TValue}"/> implementation</typeparam>
     public class ChildrenChangedEventArgs<TNode>
     {
+        /// <summary>
+        /// ctor
+        /// </summary>
+        /// <param name="child">The involved child node.</param>
+        /// <param name="action">The kind of change that triggered this event.</param>
         public ChildrenChangedEventArgs(TNode child, ChildrenChangeAction action)
         {
             Child = child;

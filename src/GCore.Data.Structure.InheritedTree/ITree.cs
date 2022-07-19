@@ -42,9 +42,29 @@ namespace GCore.Data.Structure.InheritedTree
         /// <summary>
         /// Create a node with this tree as origin.
         /// </summary>
+        /// <typeparam name="TNewNode">The type of the node</typeparam>
+        /// <param name="name">The name of this node</param>
+        /// <param name="props">The properties for the node</param>
+        /// <param name="children">The children for the node</param>
+        /// <returns></returns>
+        TNewNode CreateNode<TNewNode>(string name, IDictionary<TKey, TValue>? props = null,
+            params TNode[] children) where TNewNode : TNode, new();
+
+        /// <summary>
+        /// Create a node with this tree as origin.
+        /// </summary>
         /// <param name="name">The name of this node</param>
         /// <returns></returns>
         TNode CreateNode(String name);
+
+        /// <summary>
+        /// Create a node with this tree as origin.
+        /// </summary>
+        /// <param name="name">The name of this node</param>
+        /// <param name="props">The properties for the node</param>
+        /// <param name="children">The children for the node</param>
+        /// <returns></returns>
+        TNode CreateNode(string name, IDictionary<TKey, TValue>? props = null, params TNode[] children);
 
         /// <summary>
         /// Find a node by its absolute path.

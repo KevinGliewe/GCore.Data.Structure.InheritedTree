@@ -14,10 +14,29 @@ namespace GCore.Data.Structure.InheritedTree
     /// <typeparam name="TValue">The type used for the value</typeparam>
     public class RawNode<TNode, TKey, TValue>
     {
+        /// <summary>
+        /// The .NET type of the node.
+        /// </summary>
         public String? NodeType { get; set; }
+
+        /// <summary>
+        /// Additional properties of the node.
+        /// </summary>
         public Object? NodeData { get; set; }
+
+        /// <summary>
+        /// The name of the node.
+        /// </summary>
         public String? Name { get; set; }
+
+        /// <summary>
+        /// The child nodes of the node.
+        /// </summary>
         public RawNode<TNode, TKey, TValue>[]? Children { get; set; }
+
+        /// <summary>
+        /// The properties of the node.
+        /// </summary>
         public Dictionary<TKey, TValue>? Propertys { get; set; }
     }
 }

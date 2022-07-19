@@ -7,7 +7,7 @@ namespace GCore.Data.Structure.InheritedTree
 {
     /// <summary>
     /// Represents one node of a tree.
-    /// Generic <seealso cref="INode{TTree, TNode, TKey, TValue}"/> implamentation.
+    /// Generic <seealso cref="INode{TTree, TNode, TKey, TValue}"/> implementation.
     /// </summary>
     /// <typeparam name="TTree">The used <seealso cref="ITree{TTree, TNode, TKey, TValue}"/> implementation</typeparam>
     /// <typeparam name="TNode">The used <seealso cref="INode{TTree, TNode, TKey, TValue}"/> implementation</typeparam>
@@ -19,11 +19,24 @@ namespace GCore.Data.Structure.InheritedTree
         where TTree : class, ITree<TTree, TNode, TKey, TValue?>
         where TKey : notnull
     {
-
+        /// <summary>
+        /// The properties of this node.
+        /// </summary>
         protected List<Property<TNode, TKey, TValue?>> _props = new List<Property<TNode, TKey, TValue?>>();
+
+        /// <summary>
+        /// The children of this node.
+        /// </summary>
         protected List<TNode> _children = new List<TNode>();
+
+        /// <summary>
+        /// The tree this node belongs to.
+        /// </summary>
         protected TTree? _tree;
 
+        /// <summary>
+        /// Converts this to the base node type.
+        /// </summary>
         public TNode AsBase => this as TNode ?? throw new Exception("this is not convert able to " + typeof(TNode));
 
         /// <inheritdoc />
@@ -75,6 +88,9 @@ namespace GCore.Data.Structure.InheritedTree
         /// <inheritdoc />
         public IEnumerable<TNode> Children => _children;
 
+        /// <summary>
+        /// ctor
+        /// </summary>
         public Node()
         {
         }
@@ -164,7 +180,8 @@ namespace GCore.Data.Structure.InheritedTree
                 if(maxDepth > 0)
                 {
                     foreach (var nn in n.GetChildren(maxDepth - 1))
-                        yield return nn;
+                        if(nn is not null)
+                            yield return nn;
                 }
             }
         }
@@ -257,6 +274,9 @@ namespace GCore.Data.Structure.InheritedTree
             return !Defines(key);
         }
 
+        /// <summary>
+        /// Removes the parent from this node.
+        /// </summary>
         public void RemoveParent()
         {
             if (Parent != null)
@@ -308,7 +328,7 @@ namespace GCore.Data.Structure.InheritedTree
         }
 
         /// <inheritdoc />
-        public TNode GetChild(string name)
+        public TNode? GetChild(string name)
         {
             return _children.FirstOrDefault(c => c.Name == name);
         }
@@ -350,7 +370,13 @@ namespace GCore.Data.Structure.InheritedTree
             if (path.Count() == 0)
                 return this.AsBase;
 
-            return GetChild(path.ElementAt(0))?.FindNode(path.Skip(1)) ?? null;
+            var key = path.ElementAt(0);
+            var child = GetChild(key);
+            var rest = path.Skip(1);
+            var result = child?.FindNode(rest);
+            return result;
+
+            //return GetChild(path.ElementAt(0))?.FindNode(path.Skip(1)) ?? null;
         }
 
         /// <inheritdoc />
@@ -453,11 +479,33 @@ namespace GCore.Data.Structure.InheritedTree
     }
 
     /// <summary>
+    /// Represents one node of a tree.
+    /// More specified version of <seealso cref="Node{TTree, TNode, TKey, TValue}"/>.
+    /// </summary>
+    /// <typeparam name="TKey">The type used for the keys</typeparam>
+    /// <typeparam name="TValue">The type used for the value</typeparam>
+    public class Node<TKey, TValue> :
+        Node<Tree<TKey, TValue?>, Node<TKey, TValue?>, TKey, TValue?>
+        where TKey : notnull
+    {
+    }
+
+    /// <summary>
+    /// Represents one node of a tree.
     /// More specified version of <seealso cref="Node{TTree, TNode, TKey, TValue}"/> with <seealso cref="String"/> as key.
     /// </summary>
     /// <typeparam name="TValue">The type used for the value</typeparam>
     public class Node<TValue> :
-        Node<Tree<TValue>, Node<TValue>, String, TValue?>
+        Node<Tree<TValue?>, Node<TValue?>, string, TValue?>
     {
-    }      
+    }
+
+    /// <summary>
+    /// Represents one node of a tree.
+    /// Non generic version of <seealso cref="Node{TTree, TNode, TKey, TValue}"/>.
+    /// </summary>
+    public class Node :
+        Node<Tree, Node, string, object?>
+    {
+    }    
 }

@@ -39,13 +39,6 @@ namespace GCore.Data.Structure.InheritedTree.Test
         }
 
         [Test]
-        public void Overrides()
-        {
-            tree.UpdateOverrides();
-            Assert.AreEqual(2, (tree.FindNode("root:N1:N11:N111").Get("override") as OverridingProperty)?.Overrides);
-        }
-
-        [Test]
         public void RemovedOverride()
         {
             tree.UpdateOverrides();

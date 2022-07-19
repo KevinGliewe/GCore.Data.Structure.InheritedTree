@@ -7,6 +7,7 @@
   - [Added](#F-GCore-Data-Structure-InheritedTree-ChildrenChangeAction-Added 'GCore.Data.Structure.InheritedTree.ChildrenChangeAction.Added')
   - [Removed](#F-GCore-Data-Structure-InheritedTree-ChildrenChangeAction-Removed 'GCore.Data.Structure.InheritedTree.ChildrenChangeAction.Removed')
 - [ChildrenChangedEventArgs\`1](#T-GCore-Data-Structure-InheritedTree-ChildrenChangedEventArgs`1 'GCore.Data.Structure.InheritedTree.ChildrenChangedEventArgs`1')
+  - [#ctor(child,action)](#M-GCore-Data-Structure-InheritedTree-ChildrenChangedEventArgs`1-#ctor-`0,GCore-Data-Structure-InheritedTree-ChildrenChangeAction- 'GCore.Data.Structure.InheritedTree.ChildrenChangedEventArgs`1.#ctor(`0,GCore.Data.Structure.InheritedTree.ChildrenChangeAction)')
   - [Action](#P-GCore-Data-Structure-InheritedTree-ChildrenChangedEventArgs`1-Action 'GCore.Data.Structure.InheritedTree.ChildrenChangedEventArgs`1.Action')
   - [Child](#P-GCore-Data-Structure-InheritedTree-ChildrenChangedEventArgs`1-Child 'GCore.Data.Structure.InheritedTree.ChildrenChangedEventArgs`1.Child')
 - [ChildrenChangedEventHandler\`1](#T-GCore-Data-Structure-InheritedTree-ChildrenChangedEventHandler`1 'GCore.Data.Structure.InheritedTree.ChildrenChangedEventHandler`1')
@@ -60,14 +61,23 @@
   - [Separator](#P-GCore-Data-Structure-InheritedTree-ITree`4-Separator 'GCore.Data.Structure.InheritedTree.ITree`4.Separator')
   - [CollectProperties(keys)](#M-GCore-Data-Structure-InheritedTree-ITree`4-CollectProperties-`2- 'GCore.Data.Structure.InheritedTree.ITree`4.CollectProperties(`2)')
   - [CreateNode(name)](#M-GCore-Data-Structure-InheritedTree-ITree`4-CreateNode-System-String- 'GCore.Data.Structure.InheritedTree.ITree`4.CreateNode(System.String)')
+  - [CreateNode(name,props,children)](#M-GCore-Data-Structure-InheritedTree-ITree`4-CreateNode-System-String,System-Collections-Generic-IDictionary{`2,`3},`1[]- 'GCore.Data.Structure.InheritedTree.ITree`4.CreateNode(System.String,System.Collections.Generic.IDictionary{`2,`3},`1[])')
   - [CreateNode\`\`1(name)](#M-GCore-Data-Structure-InheritedTree-ITree`4-CreateNode``1-System-String- 'GCore.Data.Structure.InheritedTree.ITree`4.CreateNode``1(System.String)')
+  - [CreateNode\`\`1(name,props,children)](#M-GCore-Data-Structure-InheritedTree-ITree`4-CreateNode``1-System-String,System-Collections-Generic-IDictionary{`2,`3},`1[]- 'GCore.Data.Structure.InheritedTree.ITree`4.CreateNode``1(System.String,System.Collections.Generic.IDictionary{`2,`3},`1[])')
   - [FindNode(path)](#M-GCore-Data-Structure-InheritedTree-ITree`4-FindNode-System-String- 'GCore.Data.Structure.InheritedTree.ITree`4.FindNode(System.String)')
   - [UpdateOverrides()](#M-GCore-Data-Structure-InheritedTree-ITree`4-UpdateOverrides 'GCore.Data.Structure.InheritedTree.ITree`4.UpdateOverrides')
   - [Update\`\`1(key,args)](#M-GCore-Data-Structure-InheritedTree-ITree`4-Update``1-`2,``0- 'GCore.Data.Structure.InheritedTree.ITree`4.Update``1(`2,``0)')
 - [IUpdatableProperty\`1](#T-GCore-Data-Structure-InheritedTree-IUpdatableProperty`1 'GCore.Data.Structure.InheritedTree.IUpdatableProperty`1')
   - [Update(args)](#M-GCore-Data-Structure-InheritedTree-IUpdatableProperty`1-Update-`0- 'GCore.Data.Structure.InheritedTree.IUpdatableProperty`1.Update(`0)')
+- [Node](#T-GCore-Data-Structure-InheritedTree-Node 'GCore.Data.Structure.InheritedTree.Node')
 - [Node\`1](#T-GCore-Data-Structure-InheritedTree-Node`1 'GCore.Data.Structure.InheritedTree.Node`1')
+- [Node\`2](#T-GCore-Data-Structure-InheritedTree-Node`2 'GCore.Data.Structure.InheritedTree.Node`2')
 - [Node\`4](#T-GCore-Data-Structure-InheritedTree-Node`4 'GCore.Data.Structure.InheritedTree.Node`4')
+  - [#ctor()](#M-GCore-Data-Structure-InheritedTree-Node`4-#ctor 'GCore.Data.Structure.InheritedTree.Node`4.#ctor')
+  - [_children](#F-GCore-Data-Structure-InheritedTree-Node`4-_children 'GCore.Data.Structure.InheritedTree.Node`4._children')
+  - [_props](#F-GCore-Data-Structure-InheritedTree-Node`4-_props 'GCore.Data.Structure.InheritedTree.Node`4._props')
+  - [_tree](#F-GCore-Data-Structure-InheritedTree-Node`4-_tree 'GCore.Data.Structure.InheritedTree.Node`4._tree')
+  - [AsBase](#P-GCore-Data-Structure-InheritedTree-Node`4-AsBase 'GCore.Data.Structure.InheritedTree.Node`4.AsBase')
   - [Children](#P-GCore-Data-Structure-InheritedTree-Node`4-Children 'GCore.Data.Structure.InheritedTree.Node`4.Children')
   - [Depth](#P-GCore-Data-Structure-InheritedTree-Node`4-Depth 'GCore.Data.Structure.InheritedTree.Node`4.Depth')
   - [Item](#P-GCore-Data-Structure-InheritedTree-Node`4-Item-`2- 'GCore.Data.Structure.InheritedTree.Node`4.Item(`2)')
@@ -98,6 +108,7 @@
   - [RaiseChildrenChanged()](#M-GCore-Data-Structure-InheritedTree-Node`4-RaiseChildrenChanged-GCore-Data-Structure-InheritedTree-ChildrenChangedEventArgs{`1}- 'GCore.Data.Structure.InheritedTree.Node`4.RaiseChildrenChanged(GCore.Data.Structure.InheritedTree.ChildrenChangedEventArgs{`1})')
   - [RaisePropertyChanged()](#M-GCore-Data-Structure-InheritedTree-Node`4-RaisePropertyChanged-GCore-Data-Structure-InheritedTree-PropertyChangedEventArgs{`1,`2,`3}- 'GCore.Data.Structure.InheritedTree.Node`4.RaisePropertyChanged(GCore.Data.Structure.InheritedTree.PropertyChangedEventArgs{`1,`2,`3})')
   - [RemoveChild()](#M-GCore-Data-Structure-InheritedTree-Node`4-RemoveChild-`1- 'GCore.Data.Structure.InheritedTree.Node`4.RemoveChild(`1)')
+  - [RemoveParent()](#M-GCore-Data-Structure-InheritedTree-Node`4-RemoveParent 'GCore.Data.Structure.InheritedTree.Node`4.RemoveParent')
   - [ResetDefinition()](#M-GCore-Data-Structure-InheritedTree-Node`4-ResetDefinition-`2- 'GCore.Data.Structure.InheritedTree.Node`4.ResetDefinition(`2)')
   - [Set()](#M-GCore-Data-Structure-InheritedTree-Node`4-Set-`2,`3- 'GCore.Data.Structure.InheritedTree.Node`4.Set(`2,`3)')
   - [SetParent()](#M-GCore-Data-Structure-InheritedTree-Node`4-SetParent-`1- 'GCore.Data.Structure.InheritedTree.Node`4.SetParent(`1)')
@@ -106,6 +117,7 @@
   - [UpdateOverrides()](#M-GCore-Data-Structure-InheritedTree-Node`4-UpdateOverrides 'GCore.Data.Structure.InheritedTree.Node`4.UpdateOverrides')
   - [Update\`\`1()](#M-GCore-Data-Structure-InheritedTree-Node`4-Update``1-`2,``0- 'GCore.Data.Structure.InheritedTree.Node`4.Update``1(`2,``0)')
 - [PropertyChangedEventArgs\`3](#T-GCore-Data-Structure-InheritedTree-PropertyChangedEventArgs`3 'GCore.Data.Structure.InheritedTree.PropertyChangedEventArgs`3')
+  - [#ctor(property,oldValue,mode)](#M-GCore-Data-Structure-InheritedTree-PropertyChangedEventArgs`3-#ctor-GCore-Data-Structure-InheritedTree-IProperty{`0,`1,`2},`2,GCore-Data-Structure-InheritedTree-PropertyChangedMode- 'GCore.Data.Structure.InheritedTree.PropertyChangedEventArgs`3.#ctor(GCore.Data.Structure.InheritedTree.IProperty{`0,`1,`2},`2,GCore.Data.Structure.InheritedTree.PropertyChangedMode)')
   - [Mode](#P-GCore-Data-Structure-InheritedTree-PropertyChangedEventArgs`3-Mode 'GCore.Data.Structure.InheritedTree.PropertyChangedEventArgs`3.Mode')
   - [OldValue](#P-GCore-Data-Structure-InheritedTree-PropertyChangedEventArgs`3-OldValue 'GCore.Data.Structure.InheritedTree.PropertyChangedEventArgs`3.OldValue')
   - [Property](#P-GCore-Data-Structure-InheritedTree-PropertyChangedEventArgs`3-Property 'GCore.Data.Structure.InheritedTree.PropertyChangedEventArgs`3.Property')
@@ -114,16 +126,31 @@
   - [Changed](#F-GCore-Data-Structure-InheritedTree-PropertyChangedMode-Changed 'GCore.Data.Structure.InheritedTree.PropertyChangedMode.Changed')
   - [Removed](#F-GCore-Data-Structure-InheritedTree-PropertyChangedMode-Removed 'GCore.Data.Structure.InheritedTree.PropertyChangedMode.Removed')
 - [Property\`3](#T-GCore-Data-Structure-InheritedTree-Property`3 'GCore.Data.Structure.InheritedTree.Property`3')
+  - [#ctor(node,key,value)](#M-GCore-Data-Structure-InheritedTree-Property`3-#ctor-`0,`1,`2- 'GCore.Data.Structure.InheritedTree.Property`3.#ctor(`0,`1,`2)')
   - [DefinedNode](#P-GCore-Data-Structure-InheritedTree-Property`3-DefinedNode 'GCore.Data.Structure.InheritedTree.Property`3.DefinedNode')
   - [Key](#P-GCore-Data-Structure-InheritedTree-Property`3-Key 'GCore.Data.Structure.InheritedTree.Property`3.Key')
   - [Value](#P-GCore-Data-Structure-InheritedTree-Property`3-Value 'GCore.Data.Structure.InheritedTree.Property`3.Value')
 - [RawNode\`3](#T-GCore-Data-Structure-InheritedTree-RawNode`3 'GCore.Data.Structure.InheritedTree.RawNode`3')
+  - [Children](#P-GCore-Data-Structure-InheritedTree-RawNode`3-Children 'GCore.Data.Structure.InheritedTree.RawNode`3.Children')
+  - [Name](#P-GCore-Data-Structure-InheritedTree-RawNode`3-Name 'GCore.Data.Structure.InheritedTree.RawNode`3.Name')
+  - [NodeData](#P-GCore-Data-Structure-InheritedTree-RawNode`3-NodeData 'GCore.Data.Structure.InheritedTree.RawNode`3.NodeData')
+  - [NodeType](#P-GCore-Data-Structure-InheritedTree-RawNode`3-NodeType 'GCore.Data.Structure.InheritedTree.RawNode`3.NodeType')
+  - [Propertys](#P-GCore-Data-Structure-InheritedTree-RawNode`3-Propertys 'GCore.Data.Structure.InheritedTree.RawNode`3.Propertys')
+- [Tree](#T-GCore-Data-Structure-InheritedTree-Tree 'GCore.Data.Structure.InheritedTree.Tree')
+- [Tree\`1](#T-GCore-Data-Structure-InheritedTree-Tree`1 'GCore.Data.Structure.InheritedTree.Tree`1')
+- [Tree\`2](#T-GCore-Data-Structure-InheritedTree-Tree`2 'GCore.Data.Structure.InheritedTree.Tree`2')
 - [Tree\`4](#T-GCore-Data-Structure-InheritedTree-Tree`4 'GCore.Data.Structure.InheritedTree.Tree`4')
+  - [#ctor(root,rootName,separator)](#M-GCore-Data-Structure-InheritedTree-Tree`4-#ctor-`1,System-String,System-String- 'GCore.Data.Structure.InheritedTree.Tree`4.#ctor(`1,System.String,System.String)')
+  - [#ctor(root,separator)](#M-GCore-Data-Structure-InheritedTree-Tree`4-#ctor-System-String,System-String- 'GCore.Data.Structure.InheritedTree.Tree`4.#ctor(System.String,System.String)')
+  - [#ctor(rawNode,separator)](#M-GCore-Data-Structure-InheritedTree-Tree`4-#ctor-GCore-Data-Structure-InheritedTree-RawNode{`1,`2,`3},System-String- 'GCore.Data.Structure.InheritedTree.Tree`4.#ctor(GCore.Data.Structure.InheritedTree.RawNode{`1,`2,`3},System.String)')
+  - [_root](#F-GCore-Data-Structure-InheritedTree-Tree`4-_root 'GCore.Data.Structure.InheritedTree.Tree`4._root')
+  - [AsBase](#P-GCore-Data-Structure-InheritedTree-Tree`4-AsBase 'GCore.Data.Structure.InheritedTree.Tree`4.AsBase')
   - [RawNodeActivator](#P-GCore-Data-Structure-InheritedTree-Tree`4-RawNodeActivator 'GCore.Data.Structure.InheritedTree.Tree`4.RawNodeActivator')
   - [Root](#P-GCore-Data-Structure-InheritedTree-Tree`4-Root 'GCore.Data.Structure.InheritedTree.Tree`4.Root')
   - [Separator](#P-GCore-Data-Structure-InheritedTree-Tree`4-Separator 'GCore.Data.Structure.InheritedTree.Tree`4.Separator')
   - [CollectProperties()](#M-GCore-Data-Structure-InheritedTree-Tree`4-CollectProperties-`2- 'GCore.Data.Structure.InheritedTree.Tree`4.CollectProperties(`2)')
   - [CreateNode()](#M-GCore-Data-Structure-InheritedTree-Tree`4-CreateNode-System-String- 'GCore.Data.Structure.InheritedTree.Tree`4.CreateNode(System.String)')
+  - [CreateNode()](#M-GCore-Data-Structure-InheritedTree-Tree`4-CreateNode-System-String,System-Collections-Generic-IDictionary{`2,`3},`1[]- 'GCore.Data.Structure.InheritedTree.Tree`4.CreateNode(System.String,System.Collections.Generic.IDictionary{`2,`3},`1[])')
   - [CreateNode\`\`1()](#M-GCore-Data-Structure-InheritedTree-Tree`4-CreateNode``1-System-String- 'GCore.Data.Structure.InheritedTree.Tree`4.CreateNode``1(System.String)')
   - [CreateNode\`\`1()](#M-GCore-Data-Structure-InheritedTree-Tree`4-CreateNode``1-System-String,System-Collections-Generic-IDictionary{`2,`3},`1[]- 'GCore.Data.Structure.InheritedTree.Tree`4.CreateNode``1(System.String,System.Collections.Generic.IDictionary{`2,`3},`1[])')
   - [FindNode()](#M-GCore-Data-Structure-InheritedTree-Tree`4-FindNode-System-String- 'GCore.Data.Structure.InheritedTree.Tree`4.FindNode(System.String)')
@@ -172,6 +199,20 @@ Argument for [ChildrenChangedEventHandler\`1](#T-GCore-Data-Structure-InheritedT
 | Name | Description |
 | ---- | ----------- |
 | TNode | The used implementation |
+
+<a name='M-GCore-Data-Structure-InheritedTree-ChildrenChangedEventArgs`1-#ctor-`0,GCore-Data-Structure-InheritedTree-ChildrenChangeAction-'></a>
+### #ctor(child,action) `constructor`
+
+##### Summary
+
+ctor
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| child | [\`0](#T-`0 '`0') | The involved child node. |
+| action | [GCore.Data.Structure.InheritedTree.ChildrenChangeAction](#T-GCore-Data-Structure-InheritedTree-ChildrenChangeAction 'GCore.Data.Structure.InheritedTree.ChildrenChangeAction') | The kind of change that triggered this event. |
 
 <a name='P-GCore-Data-Structure-InheritedTree-ChildrenChangedEventArgs`1-Action'></a>
 ### Action `property`
@@ -740,9 +781,7 @@ Notifies the node if children changes.
 
 | Name | Description |
 | ---- | ----------- |
-| TNode |  |
-| TKey |  |
-| TValue |  |
+| TNode | The used implementation |
 
 <a name='T-GCore-Data-Structure-InheritedTree-INotifyPropertyChanged`3'></a>
 ## INotifyPropertyChanged\`3 `type`
@@ -911,6 +950,25 @@ Create a node with this tree as origin.
 | ---- | ---- | ----------- |
 | name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The name of this node |
 
+<a name='M-GCore-Data-Structure-InheritedTree-ITree`4-CreateNode-System-String,System-Collections-Generic-IDictionary{`2,`3},`1[]-'></a>
+### CreateNode(name,props,children) `method`
+
+##### Summary
+
+Create a node with this tree as origin.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The name of this node |
+| props | [System.Collections.Generic.IDictionary{\`2,\`3}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IDictionary 'System.Collections.Generic.IDictionary{`2,`3}') | The properties for the node |
+| children | [\`1[]](#T-`1[] '`1[]') | The children for the node |
+
 <a name='M-GCore-Data-Structure-InheritedTree-ITree`4-CreateNode``1-System-String-'></a>
 ### CreateNode\`\`1(name) `method`
 
@@ -927,6 +985,31 @@ Create a node with this tree as origin.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The name of this node |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| TNewNode | The type of the node |
+
+<a name='M-GCore-Data-Structure-InheritedTree-ITree`4-CreateNode``1-System-String,System-Collections-Generic-IDictionary{`2,`3},`1[]-'></a>
+### CreateNode\`\`1(name,props,children) `method`
+
+##### Summary
+
+Create a node with this tree as origin.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The name of this node |
+| props | [System.Collections.Generic.IDictionary{\`2,\`3}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IDictionary 'System.Collections.Generic.IDictionary{`2,`3}') | The properties for the node |
+| children | [\`1[]](#T-`1[] '`1[]') | The children for the node |
 
 ##### Generic Types
 
@@ -1014,6 +1097,18 @@ Updates the property with the given arguments.
 | ---- | ---- | ----------- |
 | args | [\`0](#T-`0 '`0') | The arguments for the update |
 
+<a name='T-GCore-Data-Structure-InheritedTree-Node'></a>
+## Node `type`
+
+##### Namespace
+
+GCore.Data.Structure.InheritedTree
+
+##### Summary
+
+Represents one node of a tree.
+Non generic version of .
+
 <a name='T-GCore-Data-Structure-InheritedTree-Node`1'></a>
 ## Node\`1 `type`
 
@@ -1023,12 +1118,32 @@ GCore.Data.Structure.InheritedTree
 
 ##### Summary
 
+Represents one node of a tree.
 More specified version of with as key.
 
 ##### Generic Types
 
 | Name | Description |
 | ---- | ----------- |
+| TValue | The type used for the value |
+
+<a name='T-GCore-Data-Structure-InheritedTree-Node`2'></a>
+## Node\`2 `type`
+
+##### Namespace
+
+GCore.Data.Structure.InheritedTree
+
+##### Summary
+
+Represents one node of a tree.
+More specified version of .
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| TKey | The type used for the keys |
 | TValue | The type used for the value |
 
 <a name='T-GCore-Data-Structure-InheritedTree-Node`4'></a>
@@ -1041,7 +1156,7 @@ GCore.Data.Structure.InheritedTree
 ##### Summary
 
 Represents one node of a tree.
-Generic implamentation.
+Generic implementation.
 
 ##### Generic Types
 
@@ -1051,6 +1166,45 @@ Generic implamentation.
 | TNode | The used implementation |
 | TKey | The type used for the key |
 | TValue | The type used for the value |
+
+<a name='M-GCore-Data-Structure-InheritedTree-Node`4-#ctor'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+ctor
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='F-GCore-Data-Structure-InheritedTree-Node`4-_children'></a>
+### _children `constants`
+
+##### Summary
+
+The children of this node.
+
+<a name='F-GCore-Data-Structure-InheritedTree-Node`4-_props'></a>
+### _props `constants`
+
+##### Summary
+
+The properties of this node.
+
+<a name='F-GCore-Data-Structure-InheritedTree-Node`4-_tree'></a>
+### _tree `constants`
+
+##### Summary
+
+The tree this node belongs to.
+
+<a name='P-GCore-Data-Structure-InheritedTree-Node`4-AsBase'></a>
+### AsBase `property`
+
+##### Summary
+
+Converts this to the base node type.
 
 <a name='P-GCore-Data-Structure-InheritedTree-Node`4-Children'></a>
 ### Children `property`
@@ -1346,6 +1500,17 @@ This method has no parameters.
 
 This method has no parameters.
 
+<a name='M-GCore-Data-Structure-InheritedTree-Node`4-RemoveParent'></a>
+### RemoveParent() `method`
+
+##### Summary
+
+Removes the parent from this node.
+
+##### Parameters
+
+This method has no parameters.
+
 <a name='M-GCore-Data-Structure-InheritedTree-Node`4-ResetDefinition-`2-'></a>
 ### ResetDefinition() `method`
 
@@ -1442,6 +1607,21 @@ Argument for [PropertyChangedEventHandler\`3](#T-GCore-Data-Structure-InheritedT
 | TKey | The type used for the key |
 | TValue | The type used for the value |
 
+<a name='M-GCore-Data-Structure-InheritedTree-PropertyChangedEventArgs`3-#ctor-GCore-Data-Structure-InheritedTree-IProperty{`0,`1,`2},`2,GCore-Data-Structure-InheritedTree-PropertyChangedMode-'></a>
+### #ctor(property,oldValue,mode) `constructor`
+
+##### Summary
+
+ctor
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| property | [GCore.Data.Structure.InheritedTree.IProperty{\`0,\`1,\`2}](#T-GCore-Data-Structure-InheritedTree-IProperty{`0,`1,`2} 'GCore.Data.Structure.InheritedTree.IProperty{`0,`1,`2}') | The property that changed |
+| oldValue | [\`2](#T-`2 '`2') | The old value before the change |
+| mode | [GCore.Data.Structure.InheritedTree.PropertyChangedMode](#T-GCore-Data-Structure-InheritedTree-PropertyChangedMode 'GCore.Data.Structure.InheritedTree.PropertyChangedMode') | The kind of change that triggered this event |
+
 <a name='P-GCore-Data-Structure-InheritedTree-PropertyChangedEventArgs`3-Mode'></a>
 ### Mode `property`
 
@@ -1532,6 +1712,21 @@ Default implementation of [IProperty\`3](#T-GCore-Data-Structure-InheritedTree-I
 | TKey | The type used for the key |
 | TValue | The type used for the value |
 
+<a name='M-GCore-Data-Structure-InheritedTree-Property`3-#ctor-`0,`1,`2-'></a>
+### #ctor(node,key,value) `constructor`
+
+##### Summary
+
+The key of the property
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| node | [\`0](#T-`0 '`0') | The node this property belongs to |
+| key | [\`1](#T-`1 '`1') | The identifier for this property |
+| value | [\`2](#T-`2 '`2') | The value this property defines |
+
 <a name='P-GCore-Data-Structure-InheritedTree-Property`3-DefinedNode'></a>
 ### DefinedNode `property`
 
@@ -1573,6 +1768,90 @@ This type is used as a intermediate structure for (de)serialization.
 | TKey | The type used for the key |
 | TValue | The type used for the value |
 
+<a name='P-GCore-Data-Structure-InheritedTree-RawNode`3-Children'></a>
+### Children `property`
+
+##### Summary
+
+The child nodes of the node.
+
+<a name='P-GCore-Data-Structure-InheritedTree-RawNode`3-Name'></a>
+### Name `property`
+
+##### Summary
+
+The name of the node.
+
+<a name='P-GCore-Data-Structure-InheritedTree-RawNode`3-NodeData'></a>
+### NodeData `property`
+
+##### Summary
+
+Additional properties of the node.
+
+<a name='P-GCore-Data-Structure-InheritedTree-RawNode`3-NodeType'></a>
+### NodeType `property`
+
+##### Summary
+
+The .NET type of the node.
+
+<a name='P-GCore-Data-Structure-InheritedTree-RawNode`3-Propertys'></a>
+### Propertys `property`
+
+##### Summary
+
+The properties of the node.
+
+<a name='T-GCore-Data-Structure-InheritedTree-Tree'></a>
+## Tree `type`
+
+##### Namespace
+
+GCore.Data.Structure.InheritedTree
+
+##### Summary
+
+Tree representation with inherited properties.
+Non generic version of .
+
+<a name='T-GCore-Data-Structure-InheritedTree-Tree`1'></a>
+## Tree\`1 `type`
+
+##### Namespace
+
+GCore.Data.Structure.InheritedTree
+
+##### Summary
+
+Tree representation with inherited properties.
+More specified version of with as key.
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| TValue | The type used for the value |
+
+<a name='T-GCore-Data-Structure-InheritedTree-Tree`2'></a>
+## Tree\`2 `type`
+
+##### Namespace
+
+GCore.Data.Structure.InheritedTree
+
+##### Summary
+
+Tree representation with inherited properties.
+More specified version of .
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| TKey | The type used for the keys |
+| TValue | The type used for the value |
+
 <a name='T-GCore-Data-Structure-InheritedTree-Tree`4'></a>
 ## Tree\`4 `type`
 
@@ -1583,7 +1862,7 @@ GCore.Data.Structure.InheritedTree
 ##### Summary
 
 Tree representation with inherited properties.
-Generic implamentation.
+Generic implementation.
 
 ##### Generic Types
 
@@ -1593,6 +1872,81 @@ Generic implamentation.
 | TNode | The used implementation |
 | TKey | The type used for the key |
 | TValue | The type used for the value |
+
+<a name='M-GCore-Data-Structure-InheritedTree-Tree`4-#ctor-`1,System-String,System-String-'></a>
+### #ctor(root,rootName,separator) `constructor`
+
+##### Summary
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| root | [\`1](#T-`1 '`1') |  |
+| rootName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| separator | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The string separating the node names in the path |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.Exception](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Exception 'System.Exception') |  |
+
+<a name='M-GCore-Data-Structure-InheritedTree-Tree`4-#ctor-System-String,System-String-'></a>
+### #ctor(root,separator) `constructor`
+
+##### Summary
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| root | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Name of the root node |
+| separator | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The string separating the node names in the path |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.Exception](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Exception 'System.Exception') |  |
+
+<a name='M-GCore-Data-Structure-InheritedTree-Tree`4-#ctor-GCore-Data-Structure-InheritedTree-RawNode{`1,`2,`3},System-String-'></a>
+### #ctor(rawNode,separator) `constructor`
+
+##### Summary
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| rawNode | [GCore.Data.Structure.InheritedTree.RawNode{\`1,\`2,\`3}](#T-GCore-Data-Structure-InheritedTree-RawNode{`1,`2,`3} 'GCore.Data.Structure.InheritedTree.RawNode{`1,`2,`3}') | Raw tree to build this one from |
+| separator | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The string separating the node names in the path |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.Exception](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Exception 'System.Exception') |  |
+
+<a name='F-GCore-Data-Structure-InheritedTree-Tree`4-_root'></a>
+### _root `constants`
+
+##### Summary
+
+The root node of the tree.
+
+<a name='P-GCore-Data-Structure-InheritedTree-Tree`4-AsBase'></a>
+### AsBase `property`
+
+##### Summary
+
+Converts this to the base tree type.
 
 <a name='P-GCore-Data-Structure-InheritedTree-Tree`4-RawNodeActivator'></a>
 ### RawNodeActivator `property`
@@ -1627,6 +1981,17 @@ Generic implamentation.
 This method has no parameters.
 
 <a name='M-GCore-Data-Structure-InheritedTree-Tree`4-CreateNode-System-String-'></a>
+### CreateNode() `method`
+
+##### Summary
+
+*Inherit from parent.*
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-GCore-Data-Structure-InheritedTree-Tree`4-CreateNode-System-String,System-Collections-Generic-IDictionary{`2,`3},`1[]-'></a>
 ### CreateNode() `method`
 
 ##### Summary

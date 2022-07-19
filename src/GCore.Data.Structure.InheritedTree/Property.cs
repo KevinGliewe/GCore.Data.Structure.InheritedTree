@@ -12,6 +12,13 @@ namespace GCore.Data.Structure.InheritedTree
     /// <typeparam name="TValue">The type used for the value</typeparam>
     public class Property<TNode, TKey, TValue> : IProperty<TNode, TKey, TValue>
     {
+
+        /// <summary>
+        /// The key of the property
+        /// </summary>
+        /// <param name="node">The node this property belongs to</param>
+        /// <param name="key">The identifier for this property</param>
+        /// <param name="value">The value this property defines</param>
         public Property(TNode node, TKey key, TValue value)
         {
             DefinedNode = node;
