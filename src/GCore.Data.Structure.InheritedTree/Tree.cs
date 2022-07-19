@@ -63,8 +63,8 @@ namespace GCore.Data.Structure.InheritedTree
         public Tree(String root = "root", String separator = ":")
         {
             Separator = separator ?? throw new Exception("Separator can't be null!");
-
-            _root = Activator.CreateInstance<TNode>();
+            
+            _root = new TNode();
             _root.InitNode(root ?? throw new Exception("Root node needs a name!"), this.AsBase);
         }
 
@@ -83,15 +83,13 @@ namespace GCore.Data.Structure.InheritedTree
             _root = this.RawNodeActivator?.Invoke(rawNode) ??
                     Activator.CreateInstance(type) as TNode ??
                     throw new Exception($"Can't create {rawNode.NodeType} instance");
-
-            //_root = Activator.CreateInstance<TNode>();
+            
             _root.InitNode(rawNode, this.AsBase);
         }
 
         /// <inheritdoc/>
         public TNewNode CreateNode<TNewNode>(string name) where TNewNode : TNode, new()
         {
-            //var node = Activator.CreateInstance<TNewNode>();
             var node = new TNewNode();
             node.InitNode(name ?? throw new Exception("Root node needs a name!"), this.AsBase);
             return node;
