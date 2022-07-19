@@ -5,10 +5,18 @@ using System.Text;
 
 namespace GCore.Data.Structure.InheritedTree
 {
+    /// <summary>
+    /// Represents one node of a tree.
+    /// Generic <seealso cref="INode{TTree, TNode, TKey, TValue}"/> implamentation.
+    /// </summary>
+    /// <typeparam name="TTree">The used <seealso cref="ITree{TTree, TNode, TKey, TValue}"/> implementation</typeparam>
+    /// <typeparam name="TNode">The used <seealso cref="INode{TTree, TNode, TKey, TValue}"/> implementation</typeparam>
+    /// <typeparam name="TKey">The type used for the key</typeparam>
+    /// <typeparam name="TValue">The type used for the value</typeparam>
     public class Node<TTree, TNode, TKey, TValue> :
         INode<TTree, TNode, TKey, TValue>
-        where TNode : Node<TTree, TNode, TKey, TValue>
-        where TTree : ITree<TTree, TNode, TKey, TValue>
+        where TNode : Node<TTree, TNode, TKey, TValue>, new()
+        where TTree : class, ITree<TTree, TNode, TKey, TValue>
     {
 
         protected List<Property<TNode, TKey, TValue>> _props = new List<Property<TNode, TKey, TValue>>();
@@ -298,7 +306,7 @@ namespace GCore.Data.Structure.InheritedTree
         }
 
         /// <inheritdoc />
-        public TNewNode CreateChild<TNewNode>(string name) where TNewNode : TNode
+        public TNewNode CreateChild<TNewNode>(string name) where TNewNode : TNode, new()
         {
             var node = _tree.CreateNode<TNewNode>(name);
 
@@ -306,6 +314,9 @@ namespace GCore.Data.Structure.InheritedTree
 
             return node;
         }
+
+        /// <inheritdoc />
+        public TNode CreateChild(string name) => CreateChild<TNode>(name);
 
         /// <inheritdoc />
         public bool RemoveChild(TNode child)
@@ -433,6 +444,15 @@ namespace GCore.Data.Structure.InheritedTree
             foreach (var child in _children)
                 child.UpdateOverrides();
         }
-
+        
     }
+
+    /// <summary>
+    /// More specified version of <seealso cref="Node{TTree, TNode, TKey, TValue}"/> with <seealso cref="String"/> as key.
+    /// </summary>
+    /// <typeparam name="TValue">The type used for the value</typeparam>
+    public class Node<TValue> :
+        Node<Tree<TValue>, Node<TValue>, String, TValue>
+    {
+    }      
 }

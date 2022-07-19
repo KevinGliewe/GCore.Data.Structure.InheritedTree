@@ -4,10 +4,17 @@ using System.Text;
 
 namespace GCore.Data.Structure.InheritedTree
 {
+    /// <summary>
+    /// Represents one node of a tree.
+    /// </summary>
+    /// <typeparam name="TTree">The used <seealso cref="ITree{TTree, TNode, TKey, TValue}"/> implementation</typeparam>
+    /// <typeparam name="TNode">The used <seealso cref="INode{TTree, TNode, TKey, TValue}"/> implementation</typeparam>
+    /// <typeparam name="TKey">The type used for the key</typeparam>
+    /// <typeparam name="TValue">The type used for the value</typeparam>
     public interface INode<TTree, TNode, TKey, TValue> :
         INotifyChildrenChanged<TNode, TKey, TValue>, INotifyPropertyChanged<TNode, TKey, TValue>
-        where TNode : INode<TTree, TNode, TKey, TValue>
-        where TTree : ITree<TTree, TNode, TKey, TValue>
+        where TNode : class, INode<TTree, TNode, TKey, TValue>
+        where TTree : class, ITree<TTree, TNode, TKey, TValue>
     {
         /// <summary>
         /// The name of this node.
@@ -189,7 +196,7 @@ namespace GCore.Data.Structure.InheritedTree
         void AddChild(TNode child);
 
         /// <summary>
-        /// Adds multible childs to this node.
+        /// Adds multible children to this node.
         /// </summary>
         /// <param name="child"></param>
         void AddChildren(IEnumerable<TNode> child);
@@ -199,7 +206,14 @@ namespace GCore.Data.Structure.InheritedTree
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        TNewNode CreateChild<TNewNode>(string name) where TNewNode : TNode;
+        TNewNode CreateChild<TNewNode>(string name) where TNewNode : TNode, new();
+
+        /// <summary>
+        /// Creates a new node and adds it as a child.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        TNode CreateChild(string name);
 
         /// <summary>
         /// Removes a child from this node.
@@ -229,15 +243,16 @@ namespace GCore.Data.Structure.InheritedTree
         RawNode<TNode, TKey, TValue> ToRawNode();
 
         /// <summary>
-        /// Spawns a update-wave
+        /// Calls <see cref="IUpdatableProperty{TArgs}.Update(TArgs)"/> on every property with this key.
         /// </summary>
-        /// <typeparam name="TArgs"></typeparam>
-        /// <param name="key"></param>
-        /// <param name="args"></param>
+        /// <typeparam name="TArgs">Argument type for <see cref="IUpdatableProperty{TArgs}"/></typeparam>
+        /// <param name="key">The key of the properties</param>
+        /// <param name="args">The argument for <see cref="IUpdatableProperty{TArgs}.Update(TArgs)"/></param>
         void Update<TArgs>(TKey key, TArgs args);
 
         /// <summary>
-        /// Spawns a update-wave for propertys implementing IOverridingProperty
+        /// Spawns a update-wave for propertys implementing <see cref="IOverridingProperty{TNode, TKey, TValue}"/>
+        /// and invokes <see cref="Node{TTree, TNode, TKey, TValue}.PropertyChanged"/>
         /// </summary>
         void UpdateOverrides();
     }
