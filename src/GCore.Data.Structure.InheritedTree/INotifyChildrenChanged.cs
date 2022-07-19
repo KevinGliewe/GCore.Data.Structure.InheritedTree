@@ -7,6 +7,7 @@ namespace GCore.Data.Structure.InheritedTree
     /// <summary>
     /// Possible trait for Node types.
     /// Notifies the node if children changes.
+    /// <a href="https://kevingliewe.github.io/GCore.Data.Structure.InheritedTree/api/GCore.Data.Structure.InheritedTree.INotifyChildrenChanged-1.html">see more</a>
     /// </summary>
     /// <typeparam name="TNode">The used <seealso cref="INode{TTree, TNode, TKey, TValue}"/> implementation</typeparam>
     public interface INotifyChildrenChanged<TNode>
@@ -19,6 +20,7 @@ namespace GCore.Data.Structure.InheritedTree
 
     /// <summary>
     /// The type of change.
+    /// <a href="https://kevingliewe.github.io/GCore.Data.Structure.InheritedTree/api/GCore.Data.Structure.InheritedTree.ChildrenChangeAction.html">see more</a>
     /// </summary>
     public enum ChildrenChangeAction
     {
@@ -35,6 +37,7 @@ namespace GCore.Data.Structure.InheritedTree
 
     /// <summary>
     /// Argument for <see cref="ChildrenChangedEventHandler{TNode}"/>.
+    /// <a href="https://kevingliewe.github.io/GCore.Data.Structure.InheritedTree/api/GCore.Data.Structure.InheritedTree.ChildrenChangedEventArgs-1.html">see more</a>
     /// </summary>
     /// <typeparam name="TNode">The used <seealso cref="INode{TTree, TNode, TKey, TValue}"/> implementation</typeparam>
     public class ChildrenChangedEventArgs<TNode>
@@ -63,6 +66,7 @@ namespace GCore.Data.Structure.InheritedTree
 
     /// <summary>
     /// Delegate for the <see cref="Node{TTree,TNode,TKey,TValue}.ChildrenChanged"/> event.
+    /// <a href="https://kevingliewe.github.io/GCore.Data.Structure.InheritedTree/api/GCore.Data.Structure.InheritedTree.ChildrenChangedEventHandler-1.html">see more</a>
     /// </summary>
     /// <typeparam name="TNode"></typeparam>
     /// <param name="sender"></param>

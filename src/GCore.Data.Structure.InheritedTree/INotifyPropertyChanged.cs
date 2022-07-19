@@ -7,6 +7,7 @@ namespace GCore.Data.Structure.InheritedTree
     /// <summary>
     /// Possible trait for Node types.
     /// Notifies the node if a property changes.
+    /// <a href="https://kevingliewe.github.io/GCore.Data.Structure.InheritedTree/api/GCore.Data.Structure.InheritedTree.INotifyPropertyChanged-3.html">see more</a>
     /// </summary>
     /// <typeparam name="TNode">The used <seealso cref="INode{TTree, TNode, TKey, TValue}"/> implementation</typeparam>
     /// <typeparam name="TKey">The type used for the key</typeparam>
@@ -21,6 +22,7 @@ namespace GCore.Data.Structure.InheritedTree
 
     /// <summary>
     /// The type of change.
+    /// <a href="https://kevingliewe.github.io/GCore.Data.Structure.InheritedTree/api/GCore.Data.Structure.InheritedTree.PropertyChangedMode.html">see more</a>
     /// </summary>
     public enum PropertyChangedMode
     {
@@ -37,6 +39,7 @@ namespace GCore.Data.Structure.InheritedTree
 
     /// <summary>
     /// Argument for <see cref="PropertyChangedEventHandler{TNode,TKey,TValue}"/>.
+    /// <a href="https://kevingliewe.github.io/GCore.Data.Structure.InheritedTree/api/GCore.Data.Structure.InheritedTree.PropertyChangedEventArgs-3.html">see more</a>
     /// </summary>
     /// <typeparam name="TNode">The used <seealso cref="INode{TTree, TNode, TKey, TValue}"/> implementation</typeparam>
     /// <typeparam name="TKey">The type used for the key</typeparam>
@@ -74,6 +77,7 @@ namespace GCore.Data.Structure.InheritedTree
 
     /// <summary>
     /// Delegate for the <see cref="Node{TTree,TNode,TKey,TValue}.PropertyChanged"/> event.
+    /// <a href="https://kevingliewe.github.io/GCore.Data.Structure.InheritedTree/api/GCore.Data.Structure.InheritedTree.PropertyChangedEventHandler-3.html">see more</a>
     /// </summary>
     /// <typeparam name="TNode">The used <seealso cref="INode{TTree, TNode, TKey, TValue}"/> implementation</typeparam>
     /// <typeparam name="TKey">The type used for the key</typeparam>

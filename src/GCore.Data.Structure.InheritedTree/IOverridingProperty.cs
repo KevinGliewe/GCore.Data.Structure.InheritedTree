@@ -3,6 +3,7 @@ namespace GCore.Data.Structure.InheritedTree
 {
     /// <summary>
     /// Possible trait for property values.
+    /// <a href="https://kevingliewe.github.io/GCore.Data.Structure.InheritedTree/api/GCore.Data.Structure.InheritedTree.IOverridingProperty-3.html">see more</a>
     /// </summary>
     /// <typeparam name="TNode">The used <seealso cref="INode{TTree, TNode, TKey, TValue}"/> implementation</typeparam>
     /// <typeparam name="TKey">The type used for the key</typeparam>

@@ -6,6 +6,7 @@ namespace GCore.Data.Structure.InheritedTree
 {
     /// <summary>
     /// Represents one node of a tree.
+    /// <a href="https://kevingliewe.github.io/GCore.Data.Structure.InheritedTree/api/GCore.Data.Structure.InheritedTree.INode-4.html">see more</a>
     /// </summary>
     /// <typeparam name="TTree">The used <seealso cref="ITree{TTree, TNode, TKey, TValue}"/> implementation</typeparam>
     /// <typeparam name="TNode">The used <seealso cref="INode{TTree, TNode, TKey, TValue}"/> implementation</typeparam>

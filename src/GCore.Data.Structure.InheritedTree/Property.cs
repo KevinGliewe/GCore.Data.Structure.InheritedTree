@@ -6,6 +6,7 @@ namespace GCore.Data.Structure.InheritedTree
 {
     /// <summary>
     /// Default implementation of <see cref="IProperty{TNode,TKey,TValue}"/>
+    /// <a href="https://kevingliewe.github.io/GCore.Data.Structure.InheritedTree/api/GCore.Data.Structure.InheritedTree.Property-3.html">see more</a>
     /// </summary>
     /// <typeparam name="TNode">The used <seealso cref="INode{TTree, TNode, TKey, TValue}"/> implementation</typeparam>
     /// <typeparam name="TKey">The type used for the key</typeparam>

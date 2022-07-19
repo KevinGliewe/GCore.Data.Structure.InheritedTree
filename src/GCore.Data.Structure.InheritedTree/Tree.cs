@@ -8,6 +8,7 @@ namespace GCore.Data.Structure.InheritedTree
     /// <summary>
     /// Tree representation with inherited properties.
     /// Generic <seealso cref="ITree{TTree, TNode, TKey, TValue}"/> implementation.
+    /// <a href="https://kevingliewe.github.io/GCore.Data.Structure.InheritedTree/api/GCore.Data.Structure.InheritedTree.Tree-4.html">see more</a>
     /// </summary>
     /// <typeparam name="TTree">The used <seealso cref="ITree{TTree, TNode, TKey, TValue}"/> implementation</typeparam>
     /// <typeparam name="TNode">The used <seealso cref="INode{TTree, TNode, TKey, TValue}"/> implementation</typeparam>
@@ -149,6 +150,7 @@ namespace GCore.Data.Structure.InheritedTree
     /// <summary>
     /// Tree representation with inherited properties.
     /// More specified version of <seealso cref="Tree{TTree, TNode, TKey, TValue}"/>.
+    /// <a href="https://kevingliewe.github.io/GCore.Data.Structure.InheritedTree/api/GCore.Data.Structure.InheritedTree.Tree-2.html">see more</a>
     /// </summary>
     /// <typeparam name="TKey">The type used for the keys</typeparam>
     /// <typeparam name="TValue">The type used for the value</typeparam>
@@ -161,6 +163,7 @@ namespace GCore.Data.Structure.InheritedTree
     /// <summary>
     /// Tree representation with inherited properties.
     /// More specified version of <seealso cref="Tree{TTree, TNode, TKey, TValue}"/> with <seealso cref="String"/> as key.
+    /// <a href="https://kevingliewe.github.io/GCore.Data.Structure.InheritedTree/api/GCore.Data.Structure.InheritedTree.Tree-1.html">see more</a>
     /// </summary>
     /// <typeparam name="TValue">The type used for the value</typeparam>
     public class Tree<TValue> :
@@ -171,6 +174,7 @@ namespace GCore.Data.Structure.InheritedTree
     /// <summary>
     /// Tree representation with inherited properties.
     /// Non generic version of <seealso cref="Tree{TTree, TNode, TKey, TValue}"/>.
+    /// <a href="https://kevingliewe.github.io/GCore.Data.Structure.InheritedTree/api/GCore.Data.Structure.InheritedTree.Tree.html">see more</a>
     /// </summary>
     public class Tree :
         Tree<Tree, Node, string, object?>

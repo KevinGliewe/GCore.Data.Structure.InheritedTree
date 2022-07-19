@@ -8,6 +8,7 @@ namespace GCore.Data.Structure.InheritedTree
     /// <summary>
     /// Raw representation of a Node.
     /// This type is used as a intermediate structure for (de)serialization.
+    /// <a href="https://kevingliewe.github.io/GCore.Data.Structure.InheritedTree/api/GCore.Data.Structure.InheritedTree.RawNode-3.html">see more</a>
     /// </summary>
     /// <typeparam name="TNode">The used <seealso cref="INode{TTree, TNode, TKey, TValue}"/> implementation</typeparam>
     /// <typeparam name="TKey">The type used for the key</typeparam>
