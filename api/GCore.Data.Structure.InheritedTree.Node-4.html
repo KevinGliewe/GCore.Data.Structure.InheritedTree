@@ -1,0 +1,1891 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+    
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class Node&lt;TTree, TNode, TKey, TValue&gt;
+     </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class Node&lt;TTree, TNode, TKey, TValue&gt;
+     ">
+      <meta name="generator" content="docfx 2.56.7.0">
+      
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="../styles/config.css">
+      <link rel="stylesheet" href="../styles/discord.css">
+      <link rel="stylesheet" href="../styles/singulink.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+      
+      
+      
+    </head>
+    <body>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+            
+            <a class="brand" href="../index.html">
+              <img src="../logo.svg" alt="" class="logomark">
+              <span class="brand-title"></span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+                    
+                    <div>
+                      <div class="mobile-hide">
+                        
+                        <a class="brand" href="../index.html">
+                          <img src="../logo.svg" alt="" class="logomark">
+                          <span class="brand-title"></span>
+                        </a>  </div>
+
+                    
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+                        
+                        <div id="sidetoggle">
+                          <div id="sidetoc"></div>
+                        </div>
+                </div>
+                <div class="footer">
+                  
+                  <strong><a href='https://dotnet.github.io/docfx/'>DocFX</a> + <a href='https://www.singulink.com'>Singulink</a> = ♥</strong>
+                </div>            </nav>
+
+            <main class="main-panel">
+
+                <div role="main" class="hide-when-search">
+                        
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                    <article class="content wrap" id="_content" data-uid="GCore.Data.Structure.InheritedTree.Node`4">
+  
+  
+  <h1 id="GCore_Data_Structure_InheritedTree_Node_4" data-uid="GCore.Data.Structure.InheritedTree.Node`4" class="text-break">Class Node&lt;TTree, TNode, TKey, TValue&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Represents one node of a tree.
+Generic <a class="xref" href="GCore.Data.Structure.InheritedTree.INode-4.html">INode&lt;TTree, TNode, TKey, TValue&gt;</a> implementation.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Node&lt;TTree, TNode, TKey, TValue&gt;</span></div>
+      <div class="level2"><a class="xref" href="GCore.Data.Structure.InheritedTree.Node.html">Node</a></div>
+      <div class="level2"><a class="xref" href="GCore.Data.Structure.InheritedTree.Node-1.html">Node&lt;TValue&gt;</a></div>
+      <div class="level2"><a class="xref" href="GCore.Data.Structure.InheritedTree.Node-2.html">Node&lt;TKey, TValue&gt;</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="GCore.Data.Structure.InheritedTree.INode-4.html">INode</a>&lt;TTree, TNode, TKey, TValue&gt;</div>
+    <div><a class="xref" href="GCore.Data.Structure.InheritedTree.INotifyChildrenChanged-1.html">INotifyChildrenChanged</a>&lt;TNode&gt;</div>
+    <div><a class="xref" href="GCore.Data.Structure.InheritedTree.INotifyPropertyChanged-3.html">INotifyPropertyChanged</a>&lt;TNode, TKey, TValue&gt;</div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="GCore.Data.Structure.InheritedTree.html">GCore.Data.Structure.InheritedTree</a></h6>
+  <h6><strong>Assembly</strong>: GCore.Data.Structure.InheritedTree.dll</h6>
+  <h5 id="GCore_Data_Structure_InheritedTree_Node_4_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Node&lt;TTree, TNode, TKey, TValue&gt; : object, INode&lt;TTree, TNode, TKey, TValue&gt;, INotifyChildrenChanged&lt;TNode&gt;, INotifyPropertyChanged&lt;TNode, TKey, TValue&gt; where TTree : class, ITree&lt;TTree, TNode, TKey, TValue&gt; where TNode : Node&lt;TTree, TNode, TKey, TValue&gt;, new()</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TTree</span></td>
+        <td><p>The used <a class="xref" href="GCore.Data.Structure.InheritedTree.ITree-4.html">ITree&lt;TTree, TNode, TKey, TValue&gt;</a> implementation</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TNode</span></td>
+        <td><p>The used <a class="xref" href="GCore.Data.Structure.InheritedTree.INode-4.html">INode&lt;TTree, TNode, TKey, TValue&gt;</a> implementation</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td><p>The type used for the key</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TValue</span></td>
+        <td><p>The type used for the value</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4__ctor.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L94">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4__ctor_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.#ctor*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4__ctor" data-uid="GCore.Data.Structure.InheritedTree.Node`4.#ctor">Node()</h4>
+  <div class="markdown level1 summary"><p>ctor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Node()</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4__children.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604._children%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L30">View Source</a>
+  </span>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4__children" data-uid="GCore.Data.Structure.InheritedTree.Node`4._children">_children</h4>
+  <div class="markdown level1 summary"><p>The children of this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected List&lt;TNode&gt; _children</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;TNode&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4__props.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604._props%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L25">View Source</a>
+  </span>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4__props" data-uid="GCore.Data.Structure.InheritedTree.Node`4._props">_props</h4>
+  <div class="markdown level1 summary"><p>The properties of this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected List&lt;Property&lt;TNode, TKey, TValue&gt;&gt; _props</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="GCore.Data.Structure.InheritedTree.Property-3.html">Property</a>&lt;TNode, TKey, TValue&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4__tree.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604._tree%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L35">View Source</a>
+  </span>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4__tree" data-uid="GCore.Data.Structure.InheritedTree.Node`4._tree">_tree</h4>
+  <div class="markdown level1 summary"><p>The tree this node belongs to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TTree _tree</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TTree</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_AsBase.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.AsBase%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L40">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_AsBase_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.AsBase*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_AsBase" data-uid="GCore.Data.Structure.InheritedTree.Node`4.AsBase">AsBase</h4>
+  <div class="markdown level1 summary"><p>Converts this to the base node type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TNode AsBase { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_Children.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.Children%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L89">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_Children_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Children*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_Children" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Children">Children</h4>
+  <div class="markdown level1 summary"><p>Direct children of this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;TNode&gt; Children { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;TNode&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_Depth.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.Depth%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L58">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_Depth_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Depth*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_Depth" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Depth">Depth</h4>
+  <div class="markdown level1 summary"><p>Distance from the root node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint Depth { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_Item__2_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.Item(%602)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L49">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_Item_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Item*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_Item__2_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Item(`2)">Item[TKey]</h4>
+  <div class="markdown level1 summary"><p>Returns the property the node has either througth inheritance of self defining.
+Returns null if the property is not denined for this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TValue this[TKey key] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_Name.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L52">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_Name_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Name*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_Name" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Name">Name</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_Parent.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.Parent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L61">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_Parent_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Parent*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_Parent" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Parent">Parent</h4>
+  <div class="markdown level1 summary"><p>The parent node of this node.
+Null if this node is the root node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TNode Parent { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_Path.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.Path%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L55">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_Path_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Path*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_Path" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Path">Path</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Path { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_Propertys.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.Propertys%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L64">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_Propertys_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Propertys*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_Propertys" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Propertys">Propertys</h4>
+  <div class="markdown level1 summary"><p>All propertys this node has.
+Inherited or self-defined.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;IProperty&lt;TNode, TKey, TValue&gt;&gt; Propertys { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="GCore.Data.Structure.InheritedTree.IProperty-3.html">IProperty</a>&lt;TNode, TKey, TValue&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_SelfPropertys.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.SelfPropertys%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L86">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_SelfPropertys_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.SelfPropertys*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_SelfPropertys" data-uid="GCore.Data.Structure.InheritedTree.Node`4.SelfPropertys">SelfPropertys</h4>
+  <div class="markdown level1 summary"><p>All propertys this node defines itfelf.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;IProperty&lt;TNode, TKey, TValue&gt;&gt; SelfPropertys { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="GCore.Data.Structure.InheritedTree.IProperty-3.html">IProperty</a>&lt;TNode, TKey, TValue&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_Tree.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.Tree%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L83">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_Tree_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Tree*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_Tree" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Tree">Tree</h4>
+  <div class="markdown level1 summary"><p>The tree this node belongs to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TTree Tree { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TTree</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_AddChild__1_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.AddChild(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L99">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_AddChild_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.AddChild*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_AddChild__1_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.AddChild(`1)">AddChild(TNode)</h4>
+  <div class="markdown level1 summary"><p>Adds a new child to this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddChild(TNode child)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td><span class="parametername">child</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_AddChildren_IEnumerable__1__.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.AddChildren(IEnumerable%7B%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L110">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_AddChildren_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.AddChildren*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_AddChildren_IEnumerable__1__" data-uid="GCore.Data.Structure.InheritedTree.Node`4.AddChildren(IEnumerable{`1})">AddChildren(IEnumerable&lt;TNode&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds multible children to this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddChildren(IEnumerable&lt;TNode&gt; child)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;TNode&gt;</td>
+        <td><span class="parametername">child</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_CollectPropertys__2_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.CollectPropertys(%602)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L154">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_CollectPropertys_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.CollectPropertys*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_CollectPropertys__2_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.CollectPropertys(`2)">CollectPropertys(TKey)</h4>
+  <div class="markdown level1 summary"><p>Returns all propertys beween the root and this nodes in order.
+Ignores if the property is overritten by a child node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;IProperty&lt;TNode, TKey, TValue&gt;&gt; CollectPropertys(TKey keys)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">keys</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="GCore.Data.Structure.InheritedTree.IProperty-3.html">IProperty</a>&lt;TNode, TKey, TValue&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_CreateChild_System_String_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.CreateChild(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L347">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_CreateChild_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.CreateChild*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_CreateChild_System_String_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.CreateChild(System.String)">CreateChild(String)</h4>
+  <div class="markdown level1 summary"><p>Creates a new node and adds it as a child.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TNode CreateChild(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_CreateChild__1_System_String_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.CreateChild%60%601(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L337">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_CreateChild_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.CreateChild*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_CreateChild__1_System_String_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.CreateChild``1(System.String)">CreateChild&lt;TNewNode&gt;(String)</h4>
+  <div class="markdown level1 summary"><p>Creates a new node and adds it as a child.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TNewNode CreateChild&lt;TNewNode&gt;(string name)
+    where TNewNode : TNode, new()</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNewNode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TNewNode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_Defines__2_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.Defines(%602)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L119">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_Defines_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Defines*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_Defines__2_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Defines(`2)">Defines(TKey)</h4>
+  <div class="markdown level1 summary"><p>Returns true if this node (re)defines this property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Defines(TKey key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The property identifier</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_FindNode_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.FindNode(IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L368">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_FindNode_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.FindNode*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_FindNode_IEnumerable_System_String__" data-uid="GCore.Data.Structure.InheritedTree.Node`4.FindNode(IEnumerable{System.String})">FindNode(IEnumerable&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Find a node by its relative path.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TNode FindNode(IEnumerable&lt;string&gt; path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">path</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_FindNode_System_String_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.FindNode(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L361">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_FindNode_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.FindNode*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_FindNode_System_String_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.FindNode(System.String)">FindNode(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TNode FindNode(string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_Get__2_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.Get(%602)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L122">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_Get_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Get*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_Get__2_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Get(`2)">Get(TKey)</h4>
+  <div class="markdown level1 summary"><p>Returns the property the node has either througth inheritance of self defining.
+Returns null if the property is not denined for this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TValue Get(TKey key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_GetAll.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.GetAll%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L160">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_GetAll_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.GetAll*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_GetAll" data-uid="GCore.Data.Structure.InheritedTree.Node`4.GetAll">GetAll()</h4>
+  <div class="markdown level1 summary"><p>Gets all propertys this node has.
+Either througth inheritance of self defining.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;IProperty&lt;TNode, TKey, TValue&gt;&gt; GetAll()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="GCore.Data.Structure.InheritedTree.IProperty-3.html">IProperty</a>&lt;TNode, TKey, TValue&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_GetChild_System_String_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.GetChild(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L331">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_GetChild_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.GetChild*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_GetChild_System_String_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.GetChild(System.String)">GetChild(String)</h4>
+  <div class="markdown level1 summary"><p>Gets the child node by its name.
+This is NOT recursive!</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TNode GetChild(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_GetChildren_System_UInt32_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.GetChildren(System.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L175">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_GetChildren_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.GetChildren*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_GetChildren_System_UInt32_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.GetChildren(System.UInt32)">GetChildren(UInt32)</h4>
+  <div class="markdown level1 summary"><p>Get all child nodes beneeth this node recursive.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;TNode&gt; GetChildren(uint maxDepth = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">maxDepth</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;TNode&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_GetParents.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.GetParents%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L190">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_GetParents_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.GetParents*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_GetParents" data-uid="GCore.Data.Structure.InheritedTree.Node`4.GetParents">GetParents()</h4>
+  <div class="markdown level1 summary"><p>Returns all nodes from the root node to this node (inclusive) in this order.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;TNode&gt; GetParents()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;TNode&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_Has__2_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.Has(%602)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L207">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_Has_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Has*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_Has__2_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Has(`2)">Has(TKey)</h4>
+  <div class="markdown level1 summary"><p>Returns true if this node has the defined property.
+Either througth inheritance of self defining.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Has(TKey key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The property identifier</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_InitNode_GCore_Data_Structure_InheritedTree_RawNode__1__2__3___0_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.InitNode(GCore.Data.Structure.InheritedTree.RawNode%7B%601%2C%602%2C%603%7D%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L243">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_InitNode_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.InitNode*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_InitNode_GCore_Data_Structure_InheritedTree_RawNode__1__2__3___0_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.InitNode(GCore.Data.Structure.InheritedTree.RawNode{`1,`2,`3},`0)">InitNode(RawNode&lt;TNode, TKey, TValue&gt;, TTree)</h4>
+  <div class="markdown level1 summary"><p>Initializes the tree node</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InitNode(RawNode&lt;TNode, TKey, TValue&gt; rawNode, TTree tree)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GCore.Data.Structure.InheritedTree.RawNode-3.html">RawNode</a>&lt;TNode, TKey, TValue&gt;</td>
+        <td><span class="parametername">rawNode</span></td>
+        <td><p>The serializeable node representation</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TTree</span></td>
+        <td><span class="parametername">tree</span></td>
+        <td><p>The tree ths node belongs to</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_InitNode_String__0_System_Nullable_IDictionary__2__3___System_Nullable_IEnumerable__1___.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.InitNode(String%2C%600%2CSystem.Nullable%7BIDictionary%7B%602%2C%603%7D%7D%2CSystem.Nullable%7BIEnumerable%7B%601%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L223">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_InitNode_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.InitNode*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_InitNode_String__0_System_Nullable_IDictionary__2__3___System_Nullable_IEnumerable__1___" data-uid="GCore.Data.Structure.InheritedTree.Node`4.InitNode(String,`0,System.Nullable{IDictionary{`2,`3}},System.Nullable{IEnumerable{`1}})">InitNode(String, TTree, Nullable&lt;IDictionary&lt;TKey, TValue&gt;&gt;, Nullable&lt;IEnumerable&lt;TNode&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes the tree node</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InitNode(String name, TTree tree, IDictionary&lt;TKey, TValue&gt;? props = null, IEnumerable&lt;TNode&gt;? children = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of this node</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TTree</span></td>
+        <td><span class="parametername">tree</span></td>
+        <td><p>The tree ths node belongs to</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">IDictionary</span>&lt;TKey, TValue&gt;&gt;</td>
+        <td><span class="parametername">props</span></td>
+        <td><p>Pre-populate with Properties</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">IEnumerable</span>&lt;TNode&gt;&gt;</td>
+        <td><span class="parametername">children</span></td>
+        <td><p>Pre-populate with Children</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_InitNode_System_String__0_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.InitNode(System.String%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L216">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_InitNode_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.InitNode*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_InitNode_System_String__0_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.InitNode(System.String,`0)">InitNode(String, TTree)</h4>
+  <div class="markdown level1 summary"><p>Initializes the tree node</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InitNode(string nodeName, TTree tree)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">nodeName</span></td>
+        <td><p>The name of this node</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TTree</span></td>
+        <td><span class="parametername">tree</span></td>
+        <td><p>The tree ths node belongs to</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_IsInherted__2_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.IsInherted(%602)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L272">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_IsInherted_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.IsInherted*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_IsInherted__2_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.IsInherted(`2)">IsInherted(TKey)</h4>
+  <div class="markdown level1 summary"><p>Returns true if the property is defined by by a parent and not
+by this nodes itself.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsInherted(TKey key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The property identifier</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_RaiseChildrenChanged_GCore_Data_Structure_InheritedTree_ChildrenChangedEventArgs__1__.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.RaiseChildrenChanged(GCore.Data.Structure.InheritedTree.ChildrenChangedEventArgs%7B%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L391">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_RaiseChildrenChanged_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.RaiseChildrenChanged*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_RaiseChildrenChanged_GCore_Data_Structure_InheritedTree_ChildrenChangedEventArgs__1__" data-uid="GCore.Data.Structure.InheritedTree.Node`4.RaiseChildrenChanged(GCore.Data.Structure.InheritedTree.ChildrenChangedEventArgs{`1})">RaiseChildrenChanged(ChildrenChangedEventArgs&lt;TNode&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void RaiseChildrenChanged(ChildrenChangedEventArgs&lt;TNode&gt; args)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GCore.Data.Structure.InheritedTree.ChildrenChangedEventArgs-1.html">ChildrenChangedEventArgs</a>&lt;TNode&gt;</td>
+        <td><span class="parametername">args</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_RaisePropertyChanged_GCore_Data_Structure_InheritedTree_PropertyChangedEventArgs__1__2__3__.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.RaisePropertyChanged(GCore.Data.Structure.InheritedTree.PropertyChangedEventArgs%7B%601%2C%602%2C%603%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L383">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_RaisePropertyChanged_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.RaisePropertyChanged*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_RaisePropertyChanged_GCore_Data_Structure_InheritedTree_PropertyChangedEventArgs__1__2__3__" data-uid="GCore.Data.Structure.InheritedTree.Node`4.RaisePropertyChanged(GCore.Data.Structure.InheritedTree.PropertyChangedEventArgs{`1,`2,`3})">RaisePropertyChanged(PropertyChangedEventArgs&lt;TNode, TKey, TValue&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void RaisePropertyChanged(PropertyChangedEventArgs&lt;TNode, TKey, TValue&gt; args)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GCore.Data.Structure.InheritedTree.PropertyChangedEventArgs-3.html">PropertyChangedEventArgs</a>&lt;TNode, TKey, TValue&gt;</td>
+        <td><span class="parametername">args</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_RemoveChild__1_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.RemoveChild(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L350">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_RemoveChild_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.RemoveChild*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_RemoveChild__1_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.RemoveChild(`1)">RemoveChild(TNode)</h4>
+  <div class="markdown level1 summary"><p>Removes a child from this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RemoveChild(TNode child)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td><span class="parametername">child</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>False if it wasn't a child of this node</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_RemoveParent.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.RemoveParent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L280">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_RemoveParent_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.RemoveParent*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_RemoveParent" data-uid="GCore.Data.Structure.InheritedTree.Node`4.RemoveParent">RemoveParent()</h4>
+  <div class="markdown level1 summary"><p>Removes the parent from this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveParent()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_ResetDefinition__2_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.ResetDefinition(%602)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L135">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_ResetDefinition_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.ResetDefinition*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_ResetDefinition__2_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.ResetDefinition(`2)">ResetDefinition(TKey)</h4>
+  <div class="markdown level1 summary"><p>Removes the definition of a property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ResetDefinition(TKey key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_Set__2__3_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.Set(%602%2C%603)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L291">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_Set_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Set*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_Set__2__3_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Set(`2,`3)">Set(TKey, TValue)</h4>
+  <div class="markdown level1 summary"><p>(Re)Defines the property for this node.
+This overrides a inherted property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Set(TKey key, TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_SetParent__1_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.SetParent(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L307">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_SetParent_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.SetParent*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_SetParent__1_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.SetParent(`1)">SetParent(TNode)</h4>
+  <div class="markdown level1 summary"><p>Sets the parent of this node.
+Throws exception if a parent is already defined.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetParent(TNode parent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>The new parent node</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_ToRawNode.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.ToRawNode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L431">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_ToRawNode_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.ToRawNode*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_ToRawNode" data-uid="GCore.Data.Structure.InheritedTree.Node`4.ToRawNode">ToRawNode()</h4>
+  <div class="markdown level1 summary"><p>Converts the node to a serializeable RawNode</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RawNode&lt;TNode, TKey, TValue&gt; ToRawNode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GCore.Data.Structure.InheritedTree.RawNode-3.html">RawNode</a>&lt;TNode, TKey, TValue&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_Update__1__2___0_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.Update%60%601(%602%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L451">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_Update_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Update*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_Update__1__2___0_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Update``1(`2,``0)">Update&lt;TArgs&gt;(TKey, TArgs)</h4>
+  <div class="markdown level1 summary"><p>Calls <a class="xref" href="GCore.Data.Structure.InheritedTree.IUpdatableProperty-1.html#GCore_Data_Structure_InheritedTree_IUpdatableProperty_1_Update__0_">Update(TArgs)</a> on every property with this key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Update&lt;TArgs&gt;(TKey key, TArgs args)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the properties</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TArgs</span></td>
+        <td><span class="parametername">args</span></td>
+        <td><p>The argument for <a class="xref" href="GCore.Data.Structure.InheritedTree.IUpdatableProperty-1.html#GCore_Data_Structure_InheritedTree_IUpdatableProperty_1_Update__0_">Update(TArgs)</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TArgs</span></td>
+        <td><p>Argument type for <a class="xref" href="GCore.Data.Structure.InheritedTree.IUpdatableProperty-1.html">IUpdatableProperty&lt;TArgs&gt;</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_UpdateIOverridingProperty__2_System_Boolean_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.UpdateIOverridingProperty(%602%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L398">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_UpdateIOverridingProperty_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.UpdateIOverridingProperty*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_UpdateIOverridingProperty__2_System_Boolean_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.UpdateIOverridingProperty(`2,System.Boolean)">UpdateIOverridingProperty(TKey, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void UpdateIOverridingProperty(TKey key, bool raisePropertyChangedEvent = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">raisePropertyChangedEvent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_UpdateOverrides.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.UpdateOverrides%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L471">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_UpdateOverrides_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.UpdateOverrides*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_UpdateOverrides" data-uid="GCore.Data.Structure.InheritedTree.Node`4.UpdateOverrides">UpdateOverrides()</h4>
+  <div class="markdown level1 summary"><p>Spawns a update-wave for propertys implementing <a class="xref" href="GCore.Data.Structure.InheritedTree.IOverridingProperty-3.html">IOverridingProperty&lt;TNode, TKey, TValue&gt;</a>
+and invokes <a class="xref" href="GCore.Data.Structure.InheritedTree.Node-4.html#GCore_Data_Structure_InheritedTree_Node_4_PropertyChanged">PropertyChanged</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateOverrides()</code></pre>
+  </div>
+  <h3 id="events">Events
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_ChildrenChanged.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.ChildrenChanged%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L46">View Source</a>
+  </span>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_ChildrenChanged" data-uid="GCore.Data.Structure.InheritedTree.Node`4.ChildrenChanged">ChildrenChanged</h4>
+  <div class="markdown level1 summary"><p>Gets invoked after a child node changes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event ChildrenChangedEventHandler&lt;TNode&gt; ChildrenChanged</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GCore.Data.Structure.InheritedTree.ChildrenChangedEventHandler-1.html">ChildrenChangedEventHandler</a>&lt;TNode&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_PropertyChanged.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.PropertyChanged%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L43">View Source</a>
+  </span>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_PropertyChanged" data-uid="GCore.Data.Structure.InheritedTree.Node`4.PropertyChanged">PropertyChanged</h4>
+  <div class="markdown level1 summary"><p>Gets invoked after a property changes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event PropertyChangedEventHandler&lt;TNode, TKey, TValue&gt; PropertyChanged</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GCore.Data.Structure.InheritedTree.PropertyChangedEventHandler-3.html">PropertyChangedEventHandler</a>&lt;TNode, TKey, TValue&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="GCore.Data.Structure.InheritedTree.INode-4.html">INode&lt;TTree, TNode, TKey, TValue&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="GCore.Data.Structure.InheritedTree.INotifyChildrenChanged-1.html">INotifyChildrenChanged&lt;TNode&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="GCore.Data.Structure.InheritedTree.INotifyPropertyChanged-3.html">INotifyPropertyChanged&lt;TNode, TKey, TValue&gt;</a>
+  </div>
+</article>
+                </div>
+
+            </main>
+        </div>
+
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+        <script type="text/javascript" src="../styles/jquery.twbsPagination.js"></script>
+        <script type="text/javascript" src="../styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+        <script type="text/javascript" src="../styles/docfx.js"></script>
+        <script type="text/javascript" src="../styles/singulink.js"></script>
+        <script type="text/javascript" src="../styles/main.js"></script>    </body>
+</html>
