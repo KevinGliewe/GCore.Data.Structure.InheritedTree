@@ -70,7 +70,7 @@ namespace GCore.Data.Structure.InheritedTree
                 {
                     foreach(var prop in this.Parent.Properties)
                     {
-                        if (_props.FirstOrDefault( p => p.Key.Equals(prop.Key)) != null)
+                        if (_props.FirstOrDefault( p => p.Key.Equals(prop.Key)) is null)
                             yield return prop;
                     }
                 }
@@ -345,7 +345,20 @@ namespace GCore.Data.Structure.InheritedTree
         }
 
         /// <inheritdoc />
+        public TNewNode CreateChild<TNewNode>(string name, IDictionary<TKey, TValue?>? props = null, params TNode[] children) where TNewNode : TNode, new()
+        {
+            var node = _tree?.CreateNode<TNewNode>(name, props, children) ?? throw new Exception("Can't create node from null tree");
+
+            AddChild(node);
+
+            return node;
+        }
+
+        /// <inheritdoc />
         public TNode CreateChild(string name) => CreateChild<TNode>(name);
+
+        /// <inheritdoc />
+        public TNode CreateChild(string name, IDictionary<TKey, TValue?>? props = null, params TNode[] children) => CreateChild<TNode>(name, props, children);
 
         /// <inheritdoc />
         public bool RemoveChild(TNode child)

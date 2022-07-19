@@ -210,11 +210,31 @@ namespace GCore.Data.Structure.InheritedTree
         TNewNode CreateChild<TNewNode>(string name) where TNewNode : TNode, new();
 
         /// <summary>
+        /// Create a node and adds it as a child.
+        /// </summary>
+        /// <typeparam name="TNewNode">The type of the node</typeparam>
+        /// <param name="name">The name of this node</param>
+        /// <param name="props">The properties for the node</param>
+        /// <param name="children">The children for the node</param>
+        /// <returns></returns>
+        TNewNode CreateChild<TNewNode>(string name, IDictionary<TKey, TValue>? props = null,
+            params TNode[] children) where TNewNode : TNode, new();
+
+        /// <summary>
         /// Creates a new node and adds it as a child.
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
         TNode CreateChild(string name);
+
+        /// <summary>
+        /// Create a node and adds it as a child.
+        /// </summary>
+        /// <param name="name">The name of this node</param>
+        /// <param name="props">The properties for the node</param>
+        /// <param name="children">The children for the node</param>
+        /// <returns></returns>
+        TNode CreateChild(string name, IDictionary<TKey, TValue>? props = null, params TNode[] children);        
 
         /// <summary>
         /// Removes a child from this node.

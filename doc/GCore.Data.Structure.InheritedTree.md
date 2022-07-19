@@ -25,7 +25,9 @@
   - [AddChildren(child)](#M-GCore-Data-Structure-InheritedTree-INode`4-AddChildren-System-Collections-Generic-IEnumerable{`1}- 'GCore.Data.Structure.InheritedTree.INode`4.AddChildren(System.Collections.Generic.IEnumerable{`1})')
   - [CollectProperties(keys)](#M-GCore-Data-Structure-InheritedTree-INode`4-CollectProperties-`2- 'GCore.Data.Structure.InheritedTree.INode`4.CollectProperties(`2)')
   - [CreateChild(name)](#M-GCore-Data-Structure-InheritedTree-INode`4-CreateChild-System-String- 'GCore.Data.Structure.InheritedTree.INode`4.CreateChild(System.String)')
+  - [CreateChild(name,props,children)](#M-GCore-Data-Structure-InheritedTree-INode`4-CreateChild-System-String,System-Collections-Generic-IDictionary{`2,`3},`1[]- 'GCore.Data.Structure.InheritedTree.INode`4.CreateChild(System.String,System.Collections.Generic.IDictionary{`2,`3},`1[])')
   - [CreateChild\`\`1(name)](#M-GCore-Data-Structure-InheritedTree-INode`4-CreateChild``1-System-String- 'GCore.Data.Structure.InheritedTree.INode`4.CreateChild``1(System.String)')
+  - [CreateChild\`\`1(name,props,children)](#M-GCore-Data-Structure-InheritedTree-INode`4-CreateChild``1-System-String,System-Collections-Generic-IDictionary{`2,`3},`1[]- 'GCore.Data.Structure.InheritedTree.INode`4.CreateChild``1(System.String,System.Collections.Generic.IDictionary{`2,`3},`1[])')
   - [Defines(key)](#M-GCore-Data-Structure-InheritedTree-INode`4-Defines-`2- 'GCore.Data.Structure.InheritedTree.INode`4.Defines(`2)')
   - [FindNode(path)](#M-GCore-Data-Structure-InheritedTree-INode`4-FindNode-System-String- 'GCore.Data.Structure.InheritedTree.INode`4.FindNode(System.String)')
   - [FindNode(path)](#M-GCore-Data-Structure-InheritedTree-INode`4-FindNode-System-Collections-Generic-IEnumerable{System-String}- 'GCore.Data.Structure.InheritedTree.INode`4.FindNode(System.Collections.Generic.IEnumerable{System.String})')
@@ -91,7 +93,9 @@
   - [AddChildren()](#M-GCore-Data-Structure-InheritedTree-Node`4-AddChildren-System-Collections-Generic-IEnumerable{`1}- 'GCore.Data.Structure.InheritedTree.Node`4.AddChildren(System.Collections.Generic.IEnumerable{`1})')
   - [CollectProperties()](#M-GCore-Data-Structure-InheritedTree-Node`4-CollectProperties-`2- 'GCore.Data.Structure.InheritedTree.Node`4.CollectProperties(`2)')
   - [CreateChild()](#M-GCore-Data-Structure-InheritedTree-Node`4-CreateChild-System-String- 'GCore.Data.Structure.InheritedTree.Node`4.CreateChild(System.String)')
+  - [CreateChild()](#M-GCore-Data-Structure-InheritedTree-Node`4-CreateChild-System-String,System-Collections-Generic-IDictionary{`2,`3},`1[]- 'GCore.Data.Structure.InheritedTree.Node`4.CreateChild(System.String,System.Collections.Generic.IDictionary{`2,`3},`1[])')
   - [CreateChild\`\`1()](#M-GCore-Data-Structure-InheritedTree-Node`4-CreateChild``1-System-String- 'GCore.Data.Structure.InheritedTree.Node`4.CreateChild``1(System.String)')
+  - [CreateChild\`\`1()](#M-GCore-Data-Structure-InheritedTree-Node`4-CreateChild``1-System-String,System-Collections-Generic-IDictionary{`2,`3},`1[]- 'GCore.Data.Structure.InheritedTree.Node`4.CreateChild``1(System.String,System.Collections.Generic.IDictionary{`2,`3},`1[])')
   - [Defines()](#M-GCore-Data-Structure-InheritedTree-Node`4-Defines-`2- 'GCore.Data.Structure.InheritedTree.Node`4.Defines(`2)')
   - [FindNode()](#M-GCore-Data-Structure-InheritedTree-Node`4-FindNode-System-String- 'GCore.Data.Structure.InheritedTree.Node`4.FindNode(System.String)')
   - [FindNode()](#M-GCore-Data-Structure-InheritedTree-Node`4-FindNode-System-Collections-Generic-IEnumerable{System-String}- 'GCore.Data.Structure.InheritedTree.Node`4.FindNode(System.Collections.Generic.IEnumerable{System.String})')
@@ -408,6 +412,25 @@ Creates a new node and adds it as a child.
 | ---- | ---- | ----------- |
 | name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
 
+<a name='M-GCore-Data-Structure-InheritedTree-INode`4-CreateChild-System-String,System-Collections-Generic-IDictionary{`2,`3},`1[]-'></a>
+### CreateChild(name,props,children) `method`
+
+##### Summary
+
+Create a node and adds it as a child.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The name of this node |
+| props | [System.Collections.Generic.IDictionary{\`2,\`3}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IDictionary 'System.Collections.Generic.IDictionary{`2,`3}') | The properties for the node |
+| children | [\`1[]](#T-`1[] '`1[]') | The children for the node |
+
 <a name='M-GCore-Data-Structure-InheritedTree-INode`4-CreateChild``1-System-String-'></a>
 ### CreateChild\`\`1(name) `method`
 
@@ -424,6 +447,31 @@ Creates a new node and adds it as a child.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+<a name='M-GCore-Data-Structure-InheritedTree-INode`4-CreateChild``1-System-String,System-Collections-Generic-IDictionary{`2,`3},`1[]-'></a>
+### CreateChild\`\`1(name,props,children) `method`
+
+##### Summary
+
+Create a node and adds it as a child.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The name of this node |
+| props | [System.Collections.Generic.IDictionary{\`2,\`3}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IDictionary 'System.Collections.Generic.IDictionary{`2,`3}') | The properties for the node |
+| children | [\`1[]](#T-`1[] '`1[]') | The children for the node |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| TNewNode | The type of the node |
 
 <a name='M-GCore-Data-Structure-InheritedTree-INode`4-Defines-`2-'></a>
 ### Defines(key) `method`
@@ -1313,7 +1361,29 @@ This method has no parameters.
 
 This method has no parameters.
 
+<a name='M-GCore-Data-Structure-InheritedTree-Node`4-CreateChild-System-String,System-Collections-Generic-IDictionary{`2,`3},`1[]-'></a>
+### CreateChild() `method`
+
+##### Summary
+
+*Inherit from parent.*
+
+##### Parameters
+
+This method has no parameters.
+
 <a name='M-GCore-Data-Structure-InheritedTree-Node`4-CreateChild``1-System-String-'></a>
+### CreateChild\`\`1() `method`
+
+##### Summary
+
+*Inherit from parent.*
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-GCore-Data-Structure-InheritedTree-Node`4-CreateChild``1-System-String,System-Collections-Generic-IDictionary{`2,`3},`1[]-'></a>
 ### CreateChild\`\`1() `method`
 
 ##### Summary
