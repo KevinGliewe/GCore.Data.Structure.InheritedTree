@@ -62,13 +62,13 @@ namespace GCore.Data.Structure.InheritedTree
         public TNode? Parent { get; protected set; }
 
         /// <inheritdoc />
-        public IEnumerable<IProperty<TNode, TKey, TValue?>> Propertys
+        public IEnumerable<IProperty<TNode, TKey, TValue?>> Properties
         {
             get
             {
                 if(this.Parent != null)
                 {
-                    foreach(var prop in this.Parent.Propertys)
+                    foreach(var prop in this.Parent.Properties)
                     {
                         if (_props.FirstOrDefault( p => p.Key.Equals(prop.Key)) != null)
                             yield return prop;
@@ -84,7 +84,7 @@ namespace GCore.Data.Structure.InheritedTree
         public TTree Tree => _tree ?? throw new Exception("Node is not part of a tree!");
 
         /// <inheritdoc />
-        public IEnumerable<IProperty<TNode, TKey, TValue?>> SelfPropertys => _props;
+        public IEnumerable<IProperty<TNode, TKey, TValue?>> SelfProperties => _props;
 
         /// <inheritdoc />
         public IEnumerable<TNode> Children => _children;
@@ -152,7 +152,7 @@ namespace GCore.Data.Structure.InheritedTree
         }
 
         /// <inheritdoc />
-        public IEnumerable<IProperty<TNode, TKey, TValue?>> CollectPropertys(TKey keys)
+        public IEnumerable<IProperty<TNode, TKey, TValue?>> CollectProperties(TKey keys)
         {
             return GetAll().Where(p => p.Key.Equals(keys));
         }
@@ -162,7 +162,7 @@ namespace GCore.Data.Structure.InheritedTree
         {
             if (this.Parent != null)
             {
-                foreach (var prop in this.Parent.Propertys)
+                foreach (var prop in this.Parent.Properties)
                 {
                     if (_props.FirstOrDefault(p => p.Key.Equals(prop.Key)) != null)
                         yield return prop;
@@ -246,8 +246,8 @@ namespace GCore.Data.Structure.InheritedTree
             _tree = tree;
             Name = rawNode.Name ?? throw new Exception("Node name is null!");
 
-            if(rawNode.Propertys is not null)
-                foreach (var kv in rawNode.Propertys)
+            if(rawNode.Properties is not null)
+                foreach (var kv in rawNode.Properties)
                 {
                     _props.Add(new Property<TNode, TKey, TValue?>(this.AsBase, kv.Key, kv.Value));
 #pragma warning disable RECS0021
@@ -410,7 +410,7 @@ namespace GCore.Data.Structure.InheritedTree
 
             try
             {
-                lastProp = CollectPropertys(key).Reverse().Skip(1).First();
+                lastProp = CollectProperties(key).Reverse().Skip(1).First();
             }
             catch { }
 
@@ -443,7 +443,7 @@ namespace GCore.Data.Structure.InheritedTree
                 NodeType = typeName,
                 NodeData = null, // No data for this implementation
                 Name = this.Name,
-                Propertys = props,
+                Properties = props,
                 Children = _children.Select(c => (c as TNode).ToRawNode()).ToArray()
             };
         }
@@ -457,7 +457,7 @@ namespace GCore.Data.Structure.InheritedTree
             while(updateQueue.Count > 0)
             {
                 var node = updateQueue.Dequeue();
-                var prop = node.SelfPropertys.FirstOrDefault(
+                var prop = node.SelfProperties.FirstOrDefault(
                     p => p.Key.Equals(key) && p.Value is IUpdatableProperty<TArgs>);
 
                 if(prop != null)

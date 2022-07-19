@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Kevin Gliewe</Authors>
     <Company>Kevin Gliewe</Company>
-    <Description>A tree structure with inherited propertys.</Description>
+    <Description>A tree structure with inherited properties.</Description>
     <Copyright>Kevin Gliewe</Copyright>
     <PackageLicenseUrl>https://raw.githubusercontent.com/kevingliewe/GCore.Data.Structure.InheritedTree/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree</RepositoryUrl>
@@ -12,9 +12,9 @@
     <PackageProjectUrl>https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/kevingliewe/GCore.Data.Structure.InheritedTree/master/doc/icon.jpg</PackageIconUrl>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Version>1.4.1</Version>
-    <AssemblyVersion>1.4.1.0</AssemblyVersion>
-    <FileVersion>1.4.1.0</FileVersion>
+    <Version>1.5.0</Version>
+    <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <FileVersion>1.5.0.0</FileVersion>
 
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>

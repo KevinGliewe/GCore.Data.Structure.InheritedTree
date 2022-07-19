@@ -38,6 +38,6 @@ namespace GCore.Data.Structure.InheritedTree
         /// <summary>
         /// The properties of the node.
         /// </summary>
-        public Dictionary<TKey, TValue>? Propertys { get; set; }
+        public Dictionary<TKey, TValue>? Properties { get; set; }
     }
 }

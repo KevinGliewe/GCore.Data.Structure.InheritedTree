@@ -49,15 +49,15 @@ namespace GCore.Data.Structure.InheritedTree
         TTree Tree { get; }
 
         /// <summary>
-        /// All propertys this node defines itfelf.
+        /// All properties this node defines itself.
         /// </summary>
-        IEnumerable<IProperty<TNode, TKey, TValue>> SelfPropertys { get; }
+        IEnumerable<IProperty<TNode, TKey, TValue>> SelfProperties { get; }
 
         /// <summary>
-        /// All propertys this node has.
+        /// All properties this node has.
         /// Inherited or self-defined.
         /// </summary>
-        IEnumerable<IProperty<TNode, TKey, TValue>> Propertys { get; }
+        IEnumerable<IProperty<TNode, TKey, TValue>> Properties { get; }
 
         /// <summary>
         /// Initializes the tree node
@@ -79,7 +79,7 @@ namespace GCore.Data.Structure.InheritedTree
         /// <summary>
         /// Initializes the tree node
         /// </summary>
-        /// <param name="rawNode">The serializeable node representation</param>
+        /// <param name="rawNode">The serializable node representation</param>
         /// <param name="tree">The tree ths node belongs to</param>
         void InitNode(RawNode<TNode, TKey, TValue> rawNode, TTree tree);
 
@@ -100,15 +100,15 @@ namespace GCore.Data.Structure.InheritedTree
 
         /// <summary>
         /// Returns true if this node has the defined property.
-        /// Either througth inheritance of self defining.
+        /// Either by inheritance of self defining.
         /// </summary>
         /// <param name="key">The property identifier</param>
         /// <returns></returns>
         bool Has(TKey key);
 
         /// <summary>
-        /// Returns the property the node has either througth inheritance of self defining.
-        /// Returns null if the property is not denined for this node.
+        /// Returns the property the node has either by inheritance of self defining.
+        /// Returns null if the property is not denied for this node.
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
@@ -116,7 +116,7 @@ namespace GCore.Data.Structure.InheritedTree
 
         /// <summary>
         /// (Re)Defines the property for this node.
-        /// This overrides a inherted property.
+        /// This overrides a inherited property.
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>
@@ -131,15 +131,15 @@ namespace GCore.Data.Structure.InheritedTree
         bool ResetDefinition(TKey key);
 
         /// <summary>
-        /// Gets all propertys this node has.
-        /// Either througth inheritance of self defining.
+        /// Gets all properties this node has.
+        /// Either by inheritance of self defining.
         /// </summary>
         /// <returns></returns>
         IEnumerable<IProperty<TNode, TKey, TValue>> GetAll();
 
         /// <summary>
-        /// Returns the property the node has either througth inheritance of self defining.
-        /// Returns null if the property is not denined for this node.
+        /// Returns the property the node has either by inheritance of self defining.
+        /// Returns null if the property is not defined for this node.
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
@@ -150,15 +150,15 @@ namespace GCore.Data.Structure.InheritedTree
         }
 
         /// <summary>
-        /// Returns all propertys beween the root and this nodes in order.
-        /// Ignores if the property is overritten by a child node.
+        /// Returns all properties between the root and this nodes in order.
+        /// Ignores if the property is overwritten by a child node.
         /// </summary>
         /// <param name="keys"></param>
         /// <returns></returns>
-        IEnumerable<IProperty<TNode, TKey, TValue>> CollectPropertys(TKey keys);
+        IEnumerable<IProperty<TNode, TKey, TValue>> CollectProperties(TKey keys);
 
         /// <summary>
-        /// Get all child nodes beneeth this node recursive.
+        /// Get all child nodes beneath this node recursive.
         /// </summary>
         /// <param name="mexDepth">The maximal depth for the recursion</param>
         /// <returns></returns>
@@ -197,7 +197,7 @@ namespace GCore.Data.Structure.InheritedTree
         void AddChild(TNode child);
 
         /// <summary>
-        /// Adds multible children to this node.
+        /// Adds multiple children to this node.
         /// </summary>
         /// <param name="child"></param>
         void AddChildren(IEnumerable<TNode> child);
@@ -238,7 +238,7 @@ namespace GCore.Data.Structure.InheritedTree
         TNode? FindNode(IEnumerable<string> path);
 
         /// <summary>
-        /// Converts the node to a serializeable RawNode
+        /// Converts the node to a serializable RawNode
         /// </summary>
         /// <returns></returns>
         RawNode<TNode, TKey, TValue> ToRawNode();
@@ -252,7 +252,7 @@ namespace GCore.Data.Structure.InheritedTree
         void Update<TArgs>(TKey key, TArgs args);
 
         /// <summary>
-        /// Spawns a update-wave for propertys implementing <see cref="IOverridingProperty{TNode, TKey, TValue}"/>
+        /// Spawns a update-wave for properties implementing <see cref="IOverridingProperty{TNode, TKey, TValue}"/>
         /// and invokes <see cref="Node{TTree, TNode, TKey, TValue}.PropertyChanged"/>
         /// </summary>
         void UpdateOverrides();

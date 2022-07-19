@@ -90,7 +90,7 @@ namespace GCore.Data.Structure.InheritedTree
         void Update<TArgs>(TKey key, TArgs args);
 
         /// <summary>
-        /// Spawns a update-wave for propertys implementing <see cref="IOverridingProperty{TNode, TKey, TValue}"/>
+        /// Spawns a update-wave for properties implementing <see cref="IOverridingProperty{TNode, TKey, TValue}"/>
         /// and invokes <see cref="Node{TTree, TNode, TKey, TValue}.PropertyChanged"/>
         /// </summary>
         void UpdateOverrides();

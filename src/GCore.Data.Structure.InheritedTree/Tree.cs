@@ -125,7 +125,7 @@ namespace GCore.Data.Structure.InheritedTree
         /// <inheritdoc/>
         public IEnumerable<IProperty<TNode, TKey, TValue?>> CollectProperties(TKey keys)
         {
-            return _root?.CollectPropertys(keys) ?? new IProperty<TNode, TKey, TValue?>[0];
+            return _root?.CollectProperties(keys) ?? new IProperty<TNode, TKey, TValue?>[0];
         }
 
         /// <inheritdoc/>
