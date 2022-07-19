@@ -9,7 +9,6 @@ jobs:
   doc:
     name: Update Documentation
     runs-on: ubuntu-latest
-    needs: build
     steps:
       - name: Checkout
         uses: actions/checkout@v2.3.3
