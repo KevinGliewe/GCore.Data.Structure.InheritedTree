@@ -5,6 +5,7 @@ on:
     branches:
       - master
 
+jobs:
   doc:
     name: Update Documentation
     runs-on: ubuntu-latest
