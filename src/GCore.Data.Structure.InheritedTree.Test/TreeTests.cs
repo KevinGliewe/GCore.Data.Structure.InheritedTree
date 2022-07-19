@@ -137,7 +137,7 @@ namespace GCore.Data.Structure.InheritedTree.Test
         [Test]
         public void ChildrenChangedEvent()
         {
-            ChildrenChangedEventArgs<StringIntNode, String, int> e1 = null;
+            ChildrenChangedEventArgs<StringIntNode> e1 = null;
 
             int count = tree.Root.GetChildren(int.MaxValue).Count();
 

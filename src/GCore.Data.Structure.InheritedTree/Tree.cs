@@ -17,14 +17,21 @@ namespace GCore.Data.Structure.InheritedTree
         ITree<TTree, TNode, TKey, TValue>
         where TNode : class, INode<TTree, TNode, TKey, TValue>, new()
         where TTree : Tree<TTree, TNode, TKey, TValue>
+        where TKey : notnull    
     {
 
         protected TNode _root;
+
+        /// <inheritdoc/>
         public TNode Root => _root;
 
+        /// <inheritdoc/>
         public string Separator { get; private set; }
 
-        public Tree(TNode root, String rootName = null, String separator = ":")
+        /// <inheritdoc/>
+        public Func<RawNode<TNode, TKey, TValue?>, TNode?>? RawNodeActivator { get; set; }
+
+        public Tree(TNode root, String? rootName = null, String separator = ":")
         {
             Separator = separator;
 
@@ -62,7 +69,7 @@ namespace GCore.Data.Structure.InheritedTree
 
         /// <inheritdoc/>
 
-        public TNewNode CreateNode<TNewNode>(string name, IDictionary<TKey, TValue> props = null, params TNode[] children) where TNewNode : TNode, new()
+        public TNewNode CreateNode<TNewNode>(string name, IDictionary<TKey, TValue>? props = null, params TNode[] children) where TNewNode : TNode, new()
         {
             var node = new TNewNode();
             node.InitNode(name ?? throw new Exception("Root node needs a name!"), (TTree)this, props, children);
@@ -71,7 +78,7 @@ namespace GCore.Data.Structure.InheritedTree
         }
 
         /// <inheritdoc/>
-        public TNode FindNode(string path)
+        public TNode? FindNode(string path)
         {
             var p = path.Split(new []{ Separator }, StringSplitOptions.None);
             if (p[0] == _root.Name)
@@ -89,7 +96,7 @@ namespace GCore.Data.Structure.InheritedTree
         /// <inheritdoc/>
         public RawNode<TNode, TKey, TValue> ToRawNodes()
         {
-            return _root?.ToRawNode();
+            return _root?.ToRawNode() ?? throw new Exception("Root node is null!");
         }
 
         /// <inheritdoc/>
@@ -106,7 +113,7 @@ namespace GCore.Data.Structure.InheritedTree
     }
 
     public class Tree<TValue> :
-        Tree<Tree<TValue>, Node<TValue>, String, TValue>
+        Tree<Tree<TValue>, Node<TValue>, String, TValue?>
     {
     }
 }

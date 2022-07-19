@@ -14,10 +14,10 @@ namespace GCore.Data.Structure.InheritedTree
     /// <typeparam name="TValue">The type used for the value</typeparam>
     public class RawNode<TNode, TKey, TValue>
     {
-        public String NodeType { get; set; }
-        public Object NodeData { get; set; }
-        public String Name { get; set; }
-        public RawNode<TNode, TKey, TValue>[] Children { get; set; }
-        public Dictionary<TKey, TValue> Propertys { get; set; }
+        public String? NodeType { get; set; }
+        public Object? NodeData { get; set; }
+        public String? Name { get; set; }
+        public RawNode<TNode, TKey, TValue>[]? Children { get; set; }
+        public Dictionary<TKey, TValue>? Propertys { get; set; }
     }
 }

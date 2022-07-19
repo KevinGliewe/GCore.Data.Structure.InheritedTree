@@ -22,6 +22,11 @@ namespace GCore.Data.Structure.InheritedTree
         string Separator { get; }
 
         /// <summary>
+        /// Callback to create a TNode instance from a RawNode.
+        /// </summary>
+        Func<RawNode<TNode, TKey, TValue?>, TNode?>? RawNodeActivator { get; set; }
+
+        /// <summary>
         /// The Root node
         /// </summary>
         TNode Root { get; }
@@ -46,7 +51,7 @@ namespace GCore.Data.Structure.InheritedTree
         /// </summary>
         /// <param name="path">node names separeted by <see cref="ITree{TTree, TNode, TKey, TValue}.Separator"/></param>
         /// <returns>The node found in this path</returns>
-        TNode FindNode(string path);
+        TNode? FindNode(string path);
 
         /// <summary>
         /// Collects all properties with the specified key inside the tree.

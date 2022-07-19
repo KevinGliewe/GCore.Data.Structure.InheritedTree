@@ -12,7 +12,7 @@ namespace GCore.Data.Structure.InheritedTree
     /// <typeparam name="TKey">The type used for the key</typeparam>
     /// <typeparam name="TValue">The type used for the value</typeparam>
     public interface INode<TTree, TNode, TKey, TValue> :
-        INotifyChildrenChanged<TNode, TKey, TValue>, INotifyPropertyChanged<TNode, TKey, TValue>
+        INotifyChildrenChanged<TNode>, INotifyPropertyChanged<TNode, TKey, TValue>
         where TNode : class, INode<TTree, TNode, TKey, TValue>
         where TTree : class, ITree<TTree, TNode, TKey, TValue>
     {
@@ -35,7 +35,7 @@ namespace GCore.Data.Structure.InheritedTree
         /// The parent node of this node.
         /// Null if this node is the root node.
         /// </summary>
-        TNode Parent { get; }
+        TNode? Parent { get; }
 
         /// <summary>
         /// Direct children of this node.
@@ -72,8 +72,8 @@ namespace GCore.Data.Structure.InheritedTree
         /// <param name="tree">The tree ths node belongs to</param>
         /// <param name="props">Pre-populate with Properties</param>
         /// <param name="children">Pre-populate with Children</param>
-        void InitNode(String name, TTree tree, IDictionary<TKey, TValue> props = null,
-            IEnumerable<TNode> children = null);
+        void InitNode(String name, TTree tree, IDictionary<TKey, TValue>? props = null,
+            IEnumerable<TNode>? children = null);
 
         /// <summary>
         /// Initializes the tree node
@@ -111,7 +111,7 @@ namespace GCore.Data.Structure.InheritedTree
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        TValue Get(TKey key);
+        TValue? Get(TKey key);
 
         /// <summary>
         /// (Re)Defines the property for this node.
@@ -120,7 +120,7 @@ namespace GCore.Data.Structure.InheritedTree
         /// <param name="key"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        bool Set(TKey key, TValue value);
+        bool Set(TKey key, TValue? value);
 
         /// <summary>
         /// Removes the definition of a property.
@@ -142,7 +142,7 @@ namespace GCore.Data.Structure.InheritedTree
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        TValue this[TKey key]
+        TValue? this[TKey key]
         {
             get;
             set;
@@ -227,14 +227,14 @@ namespace GCore.Data.Structure.InheritedTree
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
-        TNode FindNode(String path);
+        TNode? FindNode(String path);
 
         /// <summary>
         /// Find a node by its relative path.
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
-        TNode FindNode(IEnumerable<string> path);
+        TNode? FindNode(IEnumerable<string> path);
 
         /// <summary>
         /// Converts the node to a serializeable RawNode

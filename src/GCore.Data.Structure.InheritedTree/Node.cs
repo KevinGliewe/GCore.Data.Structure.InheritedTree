@@ -14,26 +14,29 @@ namespace GCore.Data.Structure.InheritedTree
     /// <typeparam name="TKey">The type used for the key</typeparam>
     /// <typeparam name="TValue">The type used for the value</typeparam>
     public class Node<TTree, TNode, TKey, TValue> :
-        INode<TTree, TNode, TKey, TValue>
-        where TNode : Node<TTree, TNode, TKey, TValue>, new()
-        where TTree : class, ITree<TTree, TNode, TKey, TValue>
+        INode<TTree, TNode, TKey, TValue?>
+        where TNode : Node<TTree, TNode, TKey, TValue?>, new()
+        where TTree : class, ITree<TTree, TNode, TKey, TValue?>
+        where TKey : notnull
     {
 
-        protected List<Property<TNode, TKey, TValue>> _props = new List<Property<TNode, TKey, TValue>>();
+        protected List<Property<TNode, TKey, TValue?>> _props = new List<Property<TNode, TKey, TValue?>>();
         protected List<TNode> _children = new List<TNode>();
-        protected TTree _tree;
+        protected TTree? _tree;
+
+        public TNode AsBase => this as TNode ?? throw new Exception("this is not convert able to " + typeof(TNode));
 
         /// <inheritdoc />
-        public event PropertyChangedEventHandler<TNode, TKey, TValue> PropertyChanged;
+        public event PropertyChangedEventHandler<TNode, TKey, TValue?>? PropertyChanged;
 
         /// <inheritdoc />
-        public event ChildrenChangedEventHandler<TNode, TKey, TValue> ChildrenChanged;
+        public event ChildrenChangedEventHandler<TNode>? ChildrenChanged;
 
         /// <inheritdoc />
-        public TValue this[TKey key] { get => Get(key); set => Set(key, value); }
+        public TValue? this[TKey key] { get => Get(key); set => Set(key, value); }
 
         /// <inheritdoc />
-        public string Name { get; protected set; } = null;
+        public string Name { get; protected set; } = string.Empty;
 
         /// <inheritdoc />
         public string Path => String.Join(Tree.Separator, this.GetParents().Select(p => p.Name)) + Tree.Separator + Name;
@@ -42,10 +45,10 @@ namespace GCore.Data.Structure.InheritedTree
         public uint Depth => (uint)this.GetParents().Count();
 
         /// <inheritdoc />
-        public TNode Parent { get; protected set; }
+        public TNode? Parent { get; protected set; }
 
         /// <inheritdoc />
-        public IEnumerable<IProperty<TNode, TKey, TValue>> Propertys
+        public IEnumerable<IProperty<TNode, TKey, TValue?>> Propertys
         {
             get
             {
@@ -64,10 +67,10 @@ namespace GCore.Data.Structure.InheritedTree
         }
 
         /// <inheritdoc />
-        public TTree Tree => _tree;
+        public TTree Tree => _tree ?? throw new Exception("Node is not part of a tree!");
 
         /// <inheritdoc />
-        public IEnumerable<IProperty<TNode, TKey, TValue>> SelfPropertys => _props;
+        public IEnumerable<IProperty<TNode, TKey, TValue?>> SelfPropertys => _props;
 
         /// <inheritdoc />
         public IEnumerable<TNode> Children => _children;
@@ -82,9 +85,9 @@ namespace GCore.Data.Structure.InheritedTree
             if (_children.Contains(child))
                 return;
             _children.Add(child);
-            child.SetParent((TNode)this);
+            child.SetParent(this.AsBase);
 
-            RaiseChildrenChanged(new ChildrenChangedEventArgs<TNode, TKey, TValue>(child, ChildrenChangeAction.Added));
+            RaiseChildrenChanged(new ChildrenChangedEventArgs<TNode>(child, ChildrenChangeAction.Added));
         }
 
         /// <inheritdoc />
@@ -100,7 +103,7 @@ namespace GCore.Data.Structure.InheritedTree
         public bool Defines(TKey key) => _props.FirstOrDefault(p => p.Key.Equals(key)) != null;
 
         /// <inheritdoc />
-        public TValue Get(TKey key)
+        public TValue? Get(TKey key)
         {
             var val = _props.FirstOrDefault(p => p.Key.Equals(key));
             if (val != null)
@@ -119,26 +122,26 @@ namespace GCore.Data.Structure.InheritedTree
 
             if (prop is null)
                 return false;
-
+            
             _props.Remove(prop);
-
+            
             RaisePropertyChanged(
-                new PropertyChangedEventArgs<TNode, TKey, TValue>(
-                    new Property<TNode, TKey, TValue>((TNode)this, prop.Key, default(TValue)),
+                new PropertyChangedEventArgs<TNode, TKey, TValue?>(
+                    new Property<TNode, TKey, TValue?>(this.AsBase, prop.Key, default(TValue)),
                     prop.Value,
-                    PropertyChangedEventArgs<TNode, TKey, TValue>.PropertyChangedMode.Removed));
+                    PropertyChangedMode.Removed));
 
             return true;
         }
 
         /// <inheritdoc />
-        public IEnumerable<IProperty<TNode, TKey, TValue>> CollectPropertys(TKey keys)
+        public IEnumerable<IProperty<TNode, TKey, TValue?>> CollectPropertys(TKey keys)
         {
             return GetAll().Where(p => p.Key.Equals(keys));
         }
 
         /// <inheritdoc />
-        public IEnumerable<IProperty<TNode, TKey, TValue>> GetAll()
+        public IEnumerable<IProperty<TNode, TKey, TValue?>> GetAll()
         {
             if (this.Parent != null)
             {
@@ -200,7 +203,7 @@ namespace GCore.Data.Structure.InheritedTree
         }
 
         /// <inheritdoc />
-        public void InitNode(String name, TTree tree, IDictionary<TKey, TValue> props = null, IEnumerable<TNode> children = null)
+        public void InitNode(String name, TTree tree, IDictionary<TKey, TValue?>? props = null, IEnumerable<TNode>? children = null)
         {
             _tree = tree;
             Name = name;
@@ -208,7 +211,7 @@ namespace GCore.Data.Structure.InheritedTree
             if (props != null)
                 foreach (var kv in props)
                 {
-                    _props.Add(new Property<TNode, TKey, TValue>((TNode)this, kv.Key, kv.Value));
+                    _props.Add(new Property<TNode, TKey, TValue?>(this.AsBase, kv.Key, kv.Value));
 #pragma warning disable RECS0021
                     UpdateIOverridingProperty(kv.Key);
 #pragma warning restore RECS0021
@@ -220,27 +223,32 @@ namespace GCore.Data.Structure.InheritedTree
         }
 
         /// <inheritdoc />
-        public void InitNode(RawNode<TNode, TKey, TValue> rawNode, TTree tree)
+        public void InitNode(RawNode<TNode, TKey, TValue?> rawNode, TTree tree)
         {
             _tree = tree;
-            Name = rawNode.Name;
+            Name = rawNode.Name ?? throw new Exception("Node name is null!");
 
-            foreach (var kv in rawNode.Propertys)
-            {
-                _props.Add(new Property<TNode, TKey, TValue>((TNode)this, kv.Key, kv.Value));
+            if(rawNode.Propertys is not null)
+                foreach (var kv in rawNode.Propertys)
+                {
+                    _props.Add(new Property<TNode, TKey, TValue?>(this.AsBase, kv.Key, kv.Value));
 #pragma warning disable RECS0021
-                UpdateIOverridingProperty(kv.Key);
+                    UpdateIOverridingProperty(kv.Key);
 #pragma warning restore RECS0021
-            }
+                }
 
-            foreach (var child in rawNode.Children)
-            {
-                var type = Type.GetType(child.NodeType);
-                var node = Activator.CreateInstance(type) as TNode ?? throw new Exception($"Can't create {child.NodeType} instance");
-                
-                node.InitNode(child, tree);
-                this.AddChild(node);
-            }
+            if(rawNode.Children is not null)
+                foreach (var child in rawNode.Children)
+                {
+                    var type = Type.GetType(child.NodeType);
+                    
+                    var node = tree.RawNodeActivator?.Invoke(child) ??
+                               Activator.CreateInstance(type) as TNode ??
+                               throw new Exception($"Can't create {child.NodeType} instance");
+                    
+                    node.InitNode(child, tree);
+                    this.AddChild(node);
+                }
         }
 
         /// <inheritdoc />
@@ -254,23 +262,23 @@ namespace GCore.Data.Structure.InheritedTree
             if (Parent != null)
             {
                 Parent.PropertyChanged -= Parent_PropertyChanged;
-                Parent.RemoveChild((TNode)this);
+                Parent.RemoveChild(this.AsBase);
             }
             Parent = null;
         }
 
         /// <inheritdoc />
-        public bool Set(TKey key, TValue value)
+        public bool Set(TKey key, TValue? value)
         {
             var old = Get(key);
 
             _props.RemoveAll(p => p.Key.Equals(key));
 
-            var prop = new Property<TNode, TKey, TValue>((TNode)this, key, value);
+            var prop = new Property<TNode, TKey, TValue?>(this.AsBase, key, value);
 
             _props.Add(prop);
 
-            RaisePropertyChanged(new PropertyChangedEventArgs<TNode, TKey, TValue>(prop, old));
+            RaisePropertyChanged(new PropertyChangedEventArgs<TNode, TKey, TValue?>(prop, old));
 
             return old == null ? false : !old.Equals(value);
         }
@@ -278,7 +286,7 @@ namespace GCore.Data.Structure.InheritedTree
         /// <inheritdoc />
         public void SetParent(TNode parent)
         {
-            if (!_tree.Equals(parent.Tree))
+            if (!_tree?.Equals(parent.Tree) ?? throw new Exception("Can't set parent to node from different tree"))
                 throw new Exception("Nodes are not from the same Tree");
 
             var tmp = parent;
@@ -308,7 +316,7 @@ namespace GCore.Data.Structure.InheritedTree
         /// <inheritdoc />
         public TNewNode CreateChild<TNewNode>(string name) where TNewNode : TNode, new()
         {
-            var node = _tree.CreateNode<TNewNode>(name);
+            var node = _tree?.CreateNode<TNewNode>(name) ?? throw new Exception("Can't create node from null tree");
 
             AddChild(node);
 
@@ -323,41 +331,41 @@ namespace GCore.Data.Structure.InheritedTree
         {
             if (_children.Remove(child))
             {
-                RaiseChildrenChanged(new ChildrenChangedEventArgs<TNode, TKey, TValue>(child, ChildrenChangeAction.Removed));
+                RaiseChildrenChanged(new ChildrenChangedEventArgs<TNode>(child, ChildrenChangeAction.Removed));
                 return true;
             }
             return false;
         }
 
         /// <inheritdoc />
-        public TNode FindNode(string path)
+        public TNode? FindNode(string path)
         {
             
             return FindNode(path.Split(new []{ Tree.Separator }, StringSplitOptions.None));
         }
 
         /// <inheritdoc />
-        public TNode FindNode(IEnumerable<string> path)
+        public TNode? FindNode(IEnumerable<string> path)
         {
             if (path.Count() == 0)
-                return (TNode)this;
+                return this.AsBase;
 
             return GetChild(path.ElementAt(0))?.FindNode(path.Skip(1)) ?? null;
         }
 
         /// <inheritdoc />
-        protected void RaisePropertyChanged(PropertyChangedEventArgs<TNode, TKey, TValue> args)
+        protected void RaisePropertyChanged(PropertyChangedEventArgs<TNode, TKey, TValue?> args)
         {
-            if(args.Mode != PropertyChangedEventArgs<TNode, TKey, TValue>.PropertyChangedMode.Removed)
+            if(args.Mode != PropertyChangedMode.Removed)
                 UpdateIOverridingProperty(args.Property.Key, false);
-            PropertyChanged?.Invoke((TNode)this, args);
+            PropertyChanged?.Invoke(this.AsBase, args);
         }
 
         /// <inheritdoc />
-        protected void RaiseChildrenChanged(ChildrenChangedEventArgs<TNode, TKey, TValue> args)
+        protected void RaiseChildrenChanged(ChildrenChangedEventArgs<TNode> args)
         {
             args.Child.UpdateOverrides();
-            ChildrenChanged?.Invoke((TNode)this, args);
+            ChildrenChanged?.Invoke(this.AsBase, args);
         }
 
         /// <inheritdoc />
@@ -371,24 +379,21 @@ namespace GCore.Data.Structure.InheritedTree
             if (!(thisProp.Value is IOverridingProperty<TNode, TKey, TValue>))
                 return;
 
-            IProperty<TNode, TKey, TValue> lastProp = null;
+            IProperty<TNode, TKey, TValue?>? lastProp = null;
 
             try
             {
                 lastProp = CollectPropertys(key).Reverse().Skip(1).First();
             }
-            catch (Exception ex) { }
+            catch { }
 
-            //if (lastProp is null)
-            //    return;
-
-            (thisProp.Value as IOverridingProperty<TNode, TKey, TValue>).OnOverridesProperty(lastProp);
+            (thisProp.Value as IOverridingProperty<TNode, TKey, TValue?>)?.OnOverridesProperty(lastProp);
 
             if(raisePropertyChangedEvent)
-                RaisePropertyChanged(new PropertyChangedEventArgs<TNode, TKey, TValue>(thisProp, thisProp.Value));
+                RaisePropertyChanged(new PropertyChangedEventArgs<TNode, TKey, TValue?>(thisProp, thisProp.Value));
         }
 
-        private void Parent_PropertyChanged(TNode sender, PropertyChangedEventArgs<TNode, TKey, TValue> e)
+        private void Parent_PropertyChanged(TNode sender, PropertyChangedEventArgs<TNode, TKey, TValue?> e)
         {
             if (!this.Defines(e.Property.Key))
                 RaisePropertyChanged(e);
@@ -397,16 +402,16 @@ namespace GCore.Data.Structure.InheritedTree
         }
 
         /// <inheritdoc />
-        public RawNode<TNode, TKey, TValue> ToRawNode()
+        public RawNode<TNode, TKey, TValue?> ToRawNode()
         {
-            var props = new Dictionary<TKey, TValue>();
+            var props = new Dictionary<TKey, TValue?>();
             foreach (var prop in this._props)
                 props[prop.Key] = prop.Value;
 
             var typeNameElements = this.GetType().AssemblyQualifiedName.Split(',');
             var typeName = typeNameElements[0] + "," + typeNameElements[1];
 
-            return new RawNode<TNode, TKey, TValue>()
+            return new RawNode<TNode, TKey, TValue?>()
             {
                 NodeType = typeName,
                 NodeData = null, // No data for this implementation
@@ -420,7 +425,7 @@ namespace GCore.Data.Structure.InheritedTree
         public void Update<TArgs>(TKey key, TArgs args)
         {
             var updateQueue = new Queue<TNode>();
-            updateQueue.Enqueue((TNode)this);
+            updateQueue.Enqueue(this.AsBase);
 
             while(updateQueue.Count > 0)
             {
@@ -452,7 +457,7 @@ namespace GCore.Data.Structure.InheritedTree
     /// </summary>
     /// <typeparam name="TValue">The type used for the value</typeparam>
     public class Node<TValue> :
-        Node<Tree<TValue>, Node<TValue>, String, TValue>
+        Node<Tree<TValue>, Node<TValue>, String, TValue?>
     {
     }      
 }
