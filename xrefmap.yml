@@ -155,23 +155,23 @@ references:
   fullName.vb: GCore.Data.Structure.InheritedTree.INode(Of TTree, TNode, TKey, TValue).Children
   nameWithType: INode<TTree, TNode, TKey, TValue>.Children
   nameWithType.vb: INode(Of TTree, TNode, TKey, TValue).Children
-- uid: GCore.Data.Structure.InheritedTree.INode`4.CollectPropertys(`2)
-  name: CollectPropertys(TKey)
-  href: api/GCore.Data.Structure.InheritedTree.INode-4.html#GCore_Data_Structure_InheritedTree_INode_4_CollectPropertys__2_
-  commentId: M:GCore.Data.Structure.InheritedTree.INode`4.CollectPropertys(`2)
-  fullName: GCore.Data.Structure.InheritedTree.INode<TTree, TNode, TKey, TValue>.CollectPropertys(TKey)
-  fullName.vb: GCore.Data.Structure.InheritedTree.INode(Of TTree, TNode, TKey, TValue).CollectPropertys(TKey)
-  nameWithType: INode<TTree, TNode, TKey, TValue>.CollectPropertys(TKey)
-  nameWithType.vb: INode(Of TTree, TNode, TKey, TValue).CollectPropertys(TKey)
-- uid: GCore.Data.Structure.InheritedTree.INode`4.CollectPropertys*
-  name: CollectPropertys
-  href: api/GCore.Data.Structure.InheritedTree.INode-4.html#GCore_Data_Structure_InheritedTree_INode_4_CollectPropertys_
-  commentId: Overload:GCore.Data.Structure.InheritedTree.INode`4.CollectPropertys
+- uid: GCore.Data.Structure.InheritedTree.INode`4.CollectProperties(`2)
+  name: CollectProperties(TKey)
+  href: api/GCore.Data.Structure.InheritedTree.INode-4.html#GCore_Data_Structure_InheritedTree_INode_4_CollectProperties__2_
+  commentId: M:GCore.Data.Structure.InheritedTree.INode`4.CollectProperties(`2)
+  fullName: GCore.Data.Structure.InheritedTree.INode<TTree, TNode, TKey, TValue>.CollectProperties(TKey)
+  fullName.vb: GCore.Data.Structure.InheritedTree.INode(Of TTree, TNode, TKey, TValue).CollectProperties(TKey)
+  nameWithType: INode<TTree, TNode, TKey, TValue>.CollectProperties(TKey)
+  nameWithType.vb: INode(Of TTree, TNode, TKey, TValue).CollectProperties(TKey)
+- uid: GCore.Data.Structure.InheritedTree.INode`4.CollectProperties*
+  name: CollectProperties
+  href: api/GCore.Data.Structure.InheritedTree.INode-4.html#GCore_Data_Structure_InheritedTree_INode_4_CollectProperties_
+  commentId: Overload:GCore.Data.Structure.InheritedTree.INode`4.CollectProperties
   isSpec: "True"
-  fullName: GCore.Data.Structure.InheritedTree.INode<TTree, TNode, TKey, TValue>.CollectPropertys
-  fullName.vb: GCore.Data.Structure.InheritedTree.INode(Of TTree, TNode, TKey, TValue).CollectPropertys
-  nameWithType: INode<TTree, TNode, TKey, TValue>.CollectPropertys
-  nameWithType.vb: INode(Of TTree, TNode, TKey, TValue).CollectPropertys
+  fullName: GCore.Data.Structure.InheritedTree.INode<TTree, TNode, TKey, TValue>.CollectProperties
+  fullName.vb: GCore.Data.Structure.InheritedTree.INode(Of TTree, TNode, TKey, TValue).CollectProperties
+  nameWithType: INode<TTree, TNode, TKey, TValue>.CollectProperties
+  nameWithType.vb: INode(Of TTree, TNode, TKey, TValue).CollectProperties
 - uid: GCore.Data.Structure.InheritedTree.INode`4.CreateChild(System.String)
   name: CreateChild(String)
   href: api/GCore.Data.Structure.InheritedTree.INode-4.html#GCore_Data_Structure_InheritedTree_INode_4_CreateChild_System_String_
@@ -481,23 +481,23 @@ references:
   fullName.vb: GCore.Data.Structure.InheritedTree.INode(Of TTree, TNode, TKey, TValue).Path
   nameWithType: INode<TTree, TNode, TKey, TValue>.Path
   nameWithType.vb: INode(Of TTree, TNode, TKey, TValue).Path
-- uid: GCore.Data.Structure.InheritedTree.INode`4.Propertys
-  name: Propertys
-  href: api/GCore.Data.Structure.InheritedTree.INode-4.html#GCore_Data_Structure_InheritedTree_INode_4_Propertys
-  commentId: P:GCore.Data.Structure.InheritedTree.INode`4.Propertys
-  fullName: GCore.Data.Structure.InheritedTree.INode<TTree, TNode, TKey, TValue>.Propertys
-  fullName.vb: GCore.Data.Structure.InheritedTree.INode(Of TTree, TNode, TKey, TValue).Propertys
-  nameWithType: INode<TTree, TNode, TKey, TValue>.Propertys
-  nameWithType.vb: INode(Of TTree, TNode, TKey, TValue).Propertys
-- uid: GCore.Data.Structure.InheritedTree.INode`4.Propertys*
-  name: Propertys
-  href: api/GCore.Data.Structure.InheritedTree.INode-4.html#GCore_Data_Structure_InheritedTree_INode_4_Propertys_
-  commentId: Overload:GCore.Data.Structure.InheritedTree.INode`4.Propertys
+- uid: GCore.Data.Structure.InheritedTree.INode`4.Properties
+  name: Properties
+  href: api/GCore.Data.Structure.InheritedTree.INode-4.html#GCore_Data_Structure_InheritedTree_INode_4_Properties
+  commentId: P:GCore.Data.Structure.InheritedTree.INode`4.Properties
+  fullName: GCore.Data.Structure.InheritedTree.INode<TTree, TNode, TKey, TValue>.Properties
+  fullName.vb: GCore.Data.Structure.InheritedTree.INode(Of TTree, TNode, TKey, TValue).Properties
+  nameWithType: INode<TTree, TNode, TKey, TValue>.Properties
+  nameWithType.vb: INode(Of TTree, TNode, TKey, TValue).Properties
+- uid: GCore.Data.Structure.InheritedTree.INode`4.Properties*
+  name: Properties
+  href: api/GCore.Data.Structure.InheritedTree.INode-4.html#GCore_Data_Structure_InheritedTree_INode_4_Properties_
+  commentId: Overload:GCore.Data.Structure.InheritedTree.INode`4.Properties
   isSpec: "True"
-  fullName: GCore.Data.Structure.InheritedTree.INode<TTree, TNode, TKey, TValue>.Propertys
-  fullName.vb: GCore.Data.Structure.InheritedTree.INode(Of TTree, TNode, TKey, TValue).Propertys
-  nameWithType: INode<TTree, TNode, TKey, TValue>.Propertys
-  nameWithType.vb: INode(Of TTree, TNode, TKey, TValue).Propertys
+  fullName: GCore.Data.Structure.InheritedTree.INode<TTree, TNode, TKey, TValue>.Properties
+  fullName.vb: GCore.Data.Structure.InheritedTree.INode(Of TTree, TNode, TKey, TValue).Properties
+  nameWithType: INode<TTree, TNode, TKey, TValue>.Properties
+  nameWithType.vb: INode(Of TTree, TNode, TKey, TValue).Properties
 - uid: GCore.Data.Structure.InheritedTree.INode`4.RemoveChild(`1)
   name: RemoveChild(TNode)
   href: api/GCore.Data.Structure.InheritedTree.INode-4.html#GCore_Data_Structure_InheritedTree_INode_4_RemoveChild__1_
@@ -549,23 +549,23 @@ references:
   fullName.vb: GCore.Data.Structure.InheritedTree.INode(Of TTree, TNode, TKey, TValue).ResetDefinition
   nameWithType: INode<TTree, TNode, TKey, TValue>.ResetDefinition
   nameWithType.vb: INode(Of TTree, TNode, TKey, TValue).ResetDefinition
-- uid: GCore.Data.Structure.InheritedTree.INode`4.SelfPropertys
-  name: SelfPropertys
-  href: api/GCore.Data.Structure.InheritedTree.INode-4.html#GCore_Data_Structure_InheritedTree_INode_4_SelfPropertys
-  commentId: P:GCore.Data.Structure.InheritedTree.INode`4.SelfPropertys
-  fullName: GCore.Data.Structure.InheritedTree.INode<TTree, TNode, TKey, TValue>.SelfPropertys
-  fullName.vb: GCore.Data.Structure.InheritedTree.INode(Of TTree, TNode, TKey, TValue).SelfPropertys
-  nameWithType: INode<TTree, TNode, TKey, TValue>.SelfPropertys
-  nameWithType.vb: INode(Of TTree, TNode, TKey, TValue).SelfPropertys
-- uid: GCore.Data.Structure.InheritedTree.INode`4.SelfPropertys*
-  name: SelfPropertys
-  href: api/GCore.Data.Structure.InheritedTree.INode-4.html#GCore_Data_Structure_InheritedTree_INode_4_SelfPropertys_
-  commentId: Overload:GCore.Data.Structure.InheritedTree.INode`4.SelfPropertys
+- uid: GCore.Data.Structure.InheritedTree.INode`4.SelfProperties
+  name: SelfProperties
+  href: api/GCore.Data.Structure.InheritedTree.INode-4.html#GCore_Data_Structure_InheritedTree_INode_4_SelfProperties
+  commentId: P:GCore.Data.Structure.InheritedTree.INode`4.SelfProperties
+  fullName: GCore.Data.Structure.InheritedTree.INode<TTree, TNode, TKey, TValue>.SelfProperties
+  fullName.vb: GCore.Data.Structure.InheritedTree.INode(Of TTree, TNode, TKey, TValue).SelfProperties
+  nameWithType: INode<TTree, TNode, TKey, TValue>.SelfProperties
+  nameWithType.vb: INode(Of TTree, TNode, TKey, TValue).SelfProperties
+- uid: GCore.Data.Structure.InheritedTree.INode`4.SelfProperties*
+  name: SelfProperties
+  href: api/GCore.Data.Structure.InheritedTree.INode-4.html#GCore_Data_Structure_InheritedTree_INode_4_SelfProperties_
+  commentId: Overload:GCore.Data.Structure.InheritedTree.INode`4.SelfProperties
   isSpec: "True"
-  fullName: GCore.Data.Structure.InheritedTree.INode<TTree, TNode, TKey, TValue>.SelfPropertys
-  fullName.vb: GCore.Data.Structure.InheritedTree.INode(Of TTree, TNode, TKey, TValue).SelfPropertys
-  nameWithType: INode<TTree, TNode, TKey, TValue>.SelfPropertys
-  nameWithType.vb: INode(Of TTree, TNode, TKey, TValue).SelfPropertys
+  fullName: GCore.Data.Structure.InheritedTree.INode<TTree, TNode, TKey, TValue>.SelfProperties
+  fullName.vb: GCore.Data.Structure.InheritedTree.INode(Of TTree, TNode, TKey, TValue).SelfProperties
+  nameWithType: INode<TTree, TNode, TKey, TValue>.SelfProperties
+  nameWithType.vb: INode(Of TTree, TNode, TKey, TValue).SelfProperties
 - uid: GCore.Data.Structure.InheritedTree.INode`4.Set(`2,`3)
   name: Set(TKey, TValue)
   href: api/GCore.Data.Structure.InheritedTree.INode-4.html#GCore_Data_Structure_InheritedTree_INode_4_Set__2__3_
@@ -1140,23 +1140,23 @@ references:
   fullName.vb: GCore.Data.Structure.InheritedTree.Node(Of TTree, TNode, TKey, TValue).ChildrenChanged
   nameWithType: Node<TTree, TNode, TKey, TValue>.ChildrenChanged
   nameWithType.vb: Node(Of TTree, TNode, TKey, TValue).ChildrenChanged
-- uid: GCore.Data.Structure.InheritedTree.Node`4.CollectPropertys(`2)
-  name: CollectPropertys(TKey)
-  href: api/GCore.Data.Structure.InheritedTree.Node-4.html#GCore_Data_Structure_InheritedTree_Node_4_CollectPropertys__2_
-  commentId: M:GCore.Data.Structure.InheritedTree.Node`4.CollectPropertys(`2)
-  fullName: GCore.Data.Structure.InheritedTree.Node<TTree, TNode, TKey, TValue>.CollectPropertys(TKey)
-  fullName.vb: GCore.Data.Structure.InheritedTree.Node(Of TTree, TNode, TKey, TValue).CollectPropertys(TKey)
-  nameWithType: Node<TTree, TNode, TKey, TValue>.CollectPropertys(TKey)
-  nameWithType.vb: Node(Of TTree, TNode, TKey, TValue).CollectPropertys(TKey)
-- uid: GCore.Data.Structure.InheritedTree.Node`4.CollectPropertys*
-  name: CollectPropertys
-  href: api/GCore.Data.Structure.InheritedTree.Node-4.html#GCore_Data_Structure_InheritedTree_Node_4_CollectPropertys_
-  commentId: Overload:GCore.Data.Structure.InheritedTree.Node`4.CollectPropertys
+- uid: GCore.Data.Structure.InheritedTree.Node`4.CollectProperties(`2)
+  name: CollectProperties(TKey)
+  href: api/GCore.Data.Structure.InheritedTree.Node-4.html#GCore_Data_Structure_InheritedTree_Node_4_CollectProperties__2_
+  commentId: M:GCore.Data.Structure.InheritedTree.Node`4.CollectProperties(`2)
+  fullName: GCore.Data.Structure.InheritedTree.Node<TTree, TNode, TKey, TValue>.CollectProperties(TKey)
+  fullName.vb: GCore.Data.Structure.InheritedTree.Node(Of TTree, TNode, TKey, TValue).CollectProperties(TKey)
+  nameWithType: Node<TTree, TNode, TKey, TValue>.CollectProperties(TKey)
+  nameWithType.vb: Node(Of TTree, TNode, TKey, TValue).CollectProperties(TKey)
+- uid: GCore.Data.Structure.InheritedTree.Node`4.CollectProperties*
+  name: CollectProperties
+  href: api/GCore.Data.Structure.InheritedTree.Node-4.html#GCore_Data_Structure_InheritedTree_Node_4_CollectProperties_
+  commentId: Overload:GCore.Data.Structure.InheritedTree.Node`4.CollectProperties
   isSpec: "True"
-  fullName: GCore.Data.Structure.InheritedTree.Node<TTree, TNode, TKey, TValue>.CollectPropertys
-  fullName.vb: GCore.Data.Structure.InheritedTree.Node(Of TTree, TNode, TKey, TValue).CollectPropertys
-  nameWithType: Node<TTree, TNode, TKey, TValue>.CollectPropertys
-  nameWithType.vb: Node(Of TTree, TNode, TKey, TValue).CollectPropertys
+  fullName: GCore.Data.Structure.InheritedTree.Node<TTree, TNode, TKey, TValue>.CollectProperties
+  fullName.vb: GCore.Data.Structure.InheritedTree.Node(Of TTree, TNode, TKey, TValue).CollectProperties
+  nameWithType: Node<TTree, TNode, TKey, TValue>.CollectProperties
+  nameWithType.vb: Node(Of TTree, TNode, TKey, TValue).CollectProperties
 - uid: GCore.Data.Structure.InheritedTree.Node`4.CreateChild(System.String)
   name: CreateChild(String)
   href: api/GCore.Data.Structure.InheritedTree.Node-4.html#GCore_Data_Structure_InheritedTree_Node_4_CreateChild_System_String_
@@ -1466,6 +1466,23 @@ references:
   fullName.vb: GCore.Data.Structure.InheritedTree.Node(Of TTree, TNode, TKey, TValue).Path
   nameWithType: Node<TTree, TNode, TKey, TValue>.Path
   nameWithType.vb: Node(Of TTree, TNode, TKey, TValue).Path
+- uid: GCore.Data.Structure.InheritedTree.Node`4.Properties
+  name: Properties
+  href: api/GCore.Data.Structure.InheritedTree.Node-4.html#GCore_Data_Structure_InheritedTree_Node_4_Properties
+  commentId: P:GCore.Data.Structure.InheritedTree.Node`4.Properties
+  fullName: GCore.Data.Structure.InheritedTree.Node<TTree, TNode, TKey, TValue>.Properties
+  fullName.vb: GCore.Data.Structure.InheritedTree.Node(Of TTree, TNode, TKey, TValue).Properties
+  nameWithType: Node<TTree, TNode, TKey, TValue>.Properties
+  nameWithType.vb: Node(Of TTree, TNode, TKey, TValue).Properties
+- uid: GCore.Data.Structure.InheritedTree.Node`4.Properties*
+  name: Properties
+  href: api/GCore.Data.Structure.InheritedTree.Node-4.html#GCore_Data_Structure_InheritedTree_Node_4_Properties_
+  commentId: Overload:GCore.Data.Structure.InheritedTree.Node`4.Properties
+  isSpec: "True"
+  fullName: GCore.Data.Structure.InheritedTree.Node<TTree, TNode, TKey, TValue>.Properties
+  fullName.vb: GCore.Data.Structure.InheritedTree.Node(Of TTree, TNode, TKey, TValue).Properties
+  nameWithType: Node<TTree, TNode, TKey, TValue>.Properties
+  nameWithType.vb: Node(Of TTree, TNode, TKey, TValue).Properties
 - uid: GCore.Data.Structure.InheritedTree.Node`4.PropertyChanged
   name: PropertyChanged
   href: api/GCore.Data.Structure.InheritedTree.Node-4.html#GCore_Data_Structure_InheritedTree_Node_4_PropertyChanged
@@ -1474,23 +1491,6 @@ references:
   fullName.vb: GCore.Data.Structure.InheritedTree.Node(Of TTree, TNode, TKey, TValue).PropertyChanged
   nameWithType: Node<TTree, TNode, TKey, TValue>.PropertyChanged
   nameWithType.vb: Node(Of TTree, TNode, TKey, TValue).PropertyChanged
-- uid: GCore.Data.Structure.InheritedTree.Node`4.Propertys
-  name: Propertys
-  href: api/GCore.Data.Structure.InheritedTree.Node-4.html#GCore_Data_Structure_InheritedTree_Node_4_Propertys
-  commentId: P:GCore.Data.Structure.InheritedTree.Node`4.Propertys
-  fullName: GCore.Data.Structure.InheritedTree.Node<TTree, TNode, TKey, TValue>.Propertys
-  fullName.vb: GCore.Data.Structure.InheritedTree.Node(Of TTree, TNode, TKey, TValue).Propertys
-  nameWithType: Node<TTree, TNode, TKey, TValue>.Propertys
-  nameWithType.vb: Node(Of TTree, TNode, TKey, TValue).Propertys
-- uid: GCore.Data.Structure.InheritedTree.Node`4.Propertys*
-  name: Propertys
-  href: api/GCore.Data.Structure.InheritedTree.Node-4.html#GCore_Data_Structure_InheritedTree_Node_4_Propertys_
-  commentId: Overload:GCore.Data.Structure.InheritedTree.Node`4.Propertys
-  isSpec: "True"
-  fullName: GCore.Data.Structure.InheritedTree.Node<TTree, TNode, TKey, TValue>.Propertys
-  fullName.vb: GCore.Data.Structure.InheritedTree.Node(Of TTree, TNode, TKey, TValue).Propertys
-  nameWithType: Node<TTree, TNode, TKey, TValue>.Propertys
-  nameWithType.vb: Node(Of TTree, TNode, TKey, TValue).Propertys
 - uid: GCore.Data.Structure.InheritedTree.Node`4.RaiseChildrenChanged(GCore.Data.Structure.InheritedTree.ChildrenChangedEventArgs{`1})
   name: RaiseChildrenChanged(ChildrenChangedEventArgs<TNode>)
   href: api/GCore.Data.Structure.InheritedTree.Node-4.html#GCore_Data_Structure_InheritedTree_Node_4_RaiseChildrenChanged_GCore_Data_Structure_InheritedTree_ChildrenChangedEventArgs__1__
@@ -1578,23 +1578,23 @@ references:
   fullName.vb: GCore.Data.Structure.InheritedTree.Node(Of TTree, TNode, TKey, TValue).ResetDefinition
   nameWithType: Node<TTree, TNode, TKey, TValue>.ResetDefinition
   nameWithType.vb: Node(Of TTree, TNode, TKey, TValue).ResetDefinition
-- uid: GCore.Data.Structure.InheritedTree.Node`4.SelfPropertys
-  name: SelfPropertys
-  href: api/GCore.Data.Structure.InheritedTree.Node-4.html#GCore_Data_Structure_InheritedTree_Node_4_SelfPropertys
-  commentId: P:GCore.Data.Structure.InheritedTree.Node`4.SelfPropertys
-  fullName: GCore.Data.Structure.InheritedTree.Node<TTree, TNode, TKey, TValue>.SelfPropertys
-  fullName.vb: GCore.Data.Structure.InheritedTree.Node(Of TTree, TNode, TKey, TValue).SelfPropertys
-  nameWithType: Node<TTree, TNode, TKey, TValue>.SelfPropertys
-  nameWithType.vb: Node(Of TTree, TNode, TKey, TValue).SelfPropertys
-- uid: GCore.Data.Structure.InheritedTree.Node`4.SelfPropertys*
-  name: SelfPropertys
-  href: api/GCore.Data.Structure.InheritedTree.Node-4.html#GCore_Data_Structure_InheritedTree_Node_4_SelfPropertys_
-  commentId: Overload:GCore.Data.Structure.InheritedTree.Node`4.SelfPropertys
+- uid: GCore.Data.Structure.InheritedTree.Node`4.SelfProperties
+  name: SelfProperties
+  href: api/GCore.Data.Structure.InheritedTree.Node-4.html#GCore_Data_Structure_InheritedTree_Node_4_SelfProperties
+  commentId: P:GCore.Data.Structure.InheritedTree.Node`4.SelfProperties
+  fullName: GCore.Data.Structure.InheritedTree.Node<TTree, TNode, TKey, TValue>.SelfProperties
+  fullName.vb: GCore.Data.Structure.InheritedTree.Node(Of TTree, TNode, TKey, TValue).SelfProperties
+  nameWithType: Node<TTree, TNode, TKey, TValue>.SelfProperties
+  nameWithType.vb: Node(Of TTree, TNode, TKey, TValue).SelfProperties
+- uid: GCore.Data.Structure.InheritedTree.Node`4.SelfProperties*
+  name: SelfProperties
+  href: api/GCore.Data.Structure.InheritedTree.Node-4.html#GCore_Data_Structure_InheritedTree_Node_4_SelfProperties_
+  commentId: Overload:GCore.Data.Structure.InheritedTree.Node`4.SelfProperties
   isSpec: "True"
-  fullName: GCore.Data.Structure.InheritedTree.Node<TTree, TNode, TKey, TValue>.SelfPropertys
-  fullName.vb: GCore.Data.Structure.InheritedTree.Node(Of TTree, TNode, TKey, TValue).SelfPropertys
-  nameWithType: Node<TTree, TNode, TKey, TValue>.SelfPropertys
-  nameWithType.vb: Node(Of TTree, TNode, TKey, TValue).SelfPropertys
+  fullName: GCore.Data.Structure.InheritedTree.Node<TTree, TNode, TKey, TValue>.SelfProperties
+  fullName.vb: GCore.Data.Structure.InheritedTree.Node(Of TTree, TNode, TKey, TValue).SelfProperties
+  nameWithType: Node<TTree, TNode, TKey, TValue>.SelfProperties
+  nameWithType.vb: Node(Of TTree, TNode, TKey, TValue).SelfProperties
 - uid: GCore.Data.Structure.InheritedTree.Node`4.Set(`2,`3)
   name: Set(TKey, TValue)
   href: api/GCore.Data.Structure.InheritedTree.Node-4.html#GCore_Data_Structure_InheritedTree_Node_4_Set__2__3_
@@ -1974,23 +1974,23 @@ references:
   fullName.vb: GCore.Data.Structure.InheritedTree.RawNode(Of TNode, TKey, TValue).NodeType
   nameWithType: RawNode<TNode, TKey, TValue>.NodeType
   nameWithType.vb: RawNode(Of TNode, TKey, TValue).NodeType
-- uid: GCore.Data.Structure.InheritedTree.RawNode`3.Propertys
-  name: Propertys
-  href: api/GCore.Data.Structure.InheritedTree.RawNode-3.html#GCore_Data_Structure_InheritedTree_RawNode_3_Propertys
-  commentId: P:GCore.Data.Structure.InheritedTree.RawNode`3.Propertys
-  fullName: GCore.Data.Structure.InheritedTree.RawNode<TNode, TKey, TValue>.Propertys
-  fullName.vb: GCore.Data.Structure.InheritedTree.RawNode(Of TNode, TKey, TValue).Propertys
-  nameWithType: RawNode<TNode, TKey, TValue>.Propertys
-  nameWithType.vb: RawNode(Of TNode, TKey, TValue).Propertys
-- uid: GCore.Data.Structure.InheritedTree.RawNode`3.Propertys*
-  name: Propertys
-  href: api/GCore.Data.Structure.InheritedTree.RawNode-3.html#GCore_Data_Structure_InheritedTree_RawNode_3_Propertys_
-  commentId: Overload:GCore.Data.Structure.InheritedTree.RawNode`3.Propertys
+- uid: GCore.Data.Structure.InheritedTree.RawNode`3.Properties
+  name: Properties
+  href: api/GCore.Data.Structure.InheritedTree.RawNode-3.html#GCore_Data_Structure_InheritedTree_RawNode_3_Properties
+  commentId: P:GCore.Data.Structure.InheritedTree.RawNode`3.Properties
+  fullName: GCore.Data.Structure.InheritedTree.RawNode<TNode, TKey, TValue>.Properties
+  fullName.vb: GCore.Data.Structure.InheritedTree.RawNode(Of TNode, TKey, TValue).Properties
+  nameWithType: RawNode<TNode, TKey, TValue>.Properties
+  nameWithType.vb: RawNode(Of TNode, TKey, TValue).Properties
+- uid: GCore.Data.Structure.InheritedTree.RawNode`3.Properties*
+  name: Properties
+  href: api/GCore.Data.Structure.InheritedTree.RawNode-3.html#GCore_Data_Structure_InheritedTree_RawNode_3_Properties_
+  commentId: Overload:GCore.Data.Structure.InheritedTree.RawNode`3.Properties
   isSpec: "True"
-  fullName: GCore.Data.Structure.InheritedTree.RawNode<TNode, TKey, TValue>.Propertys
-  fullName.vb: GCore.Data.Structure.InheritedTree.RawNode(Of TNode, TKey, TValue).Propertys
-  nameWithType: RawNode<TNode, TKey, TValue>.Propertys
-  nameWithType.vb: RawNode(Of TNode, TKey, TValue).Propertys
+  fullName: GCore.Data.Structure.InheritedTree.RawNode<TNode, TKey, TValue>.Properties
+  fullName.vb: GCore.Data.Structure.InheritedTree.RawNode(Of TNode, TKey, TValue).Properties
+  nameWithType: RawNode<TNode, TKey, TValue>.Properties
+  nameWithType.vb: RawNode(Of TNode, TKey, TValue).Properties
 - uid: GCore.Data.Structure.InheritedTree.Tree
   name: Tree
   href: api/GCore.Data.Structure.InheritedTree.Tree.html
