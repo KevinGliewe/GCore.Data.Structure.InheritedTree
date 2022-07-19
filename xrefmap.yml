@@ -180,6 +180,15 @@ references:
   fullName.vb: GCore.Data.Structure.InheritedTree.INode(Of TTree, TNode, TKey, TValue).CreateChild(System.String)
   nameWithType: INode<TTree, TNode, TKey, TValue>.CreateChild(String)
   nameWithType.vb: INode(Of TTree, TNode, TKey, TValue).CreateChild(String)
+- uid: GCore.Data.Structure.InheritedTree.INode`4.CreateChild(System.String,System.Nullable{IDictionary{`2,`3}},`1[])
+  name: CreateChild(String, Nullable<IDictionary<TKey, TValue>>, TNode[])
+  href: api/GCore.Data.Structure.InheritedTree.INode-4.html#GCore_Data_Structure_InheritedTree_INode_4_CreateChild_System_String_System_Nullable_IDictionary__2__3____1___
+  commentId: M:GCore.Data.Structure.InheritedTree.INode`4.CreateChild(System.String,System.Nullable{IDictionary{`2,`3}},`1[])
+  name.vb: CreateChild(String, Nullable(Of IDictionary(Of TKey, TValue)), TNode())
+  fullName: GCore.Data.Structure.InheritedTree.INode<TTree, TNode, TKey, TValue>.CreateChild(System.String, System.Nullable<IDictionary<TKey, TValue>>, TNode[])
+  fullName.vb: GCore.Data.Structure.InheritedTree.INode(Of TTree, TNode, TKey, TValue).CreateChild(System.String, System.Nullable(Of IDictionary(Of TKey, TValue)), TNode())
+  nameWithType: INode<TTree, TNode, TKey, TValue>.CreateChild(String, Nullable<IDictionary<TKey, TValue>>, TNode[])
+  nameWithType.vb: INode(Of TTree, TNode, TKey, TValue).CreateChild(String, Nullable(Of IDictionary(Of TKey, TValue)), TNode())
 - uid: GCore.Data.Structure.InheritedTree.INode`4.CreateChild*
   name: CreateChild
   href: api/GCore.Data.Structure.InheritedTree.INode-4.html#GCore_Data_Structure_InheritedTree_INode_4_CreateChild_
@@ -198,6 +207,15 @@ references:
   fullName.vb: GCore.Data.Structure.InheritedTree.INode(Of TTree, TNode, TKey, TValue).CreateChild(Of TNewNode)(System.String)
   nameWithType: INode<TTree, TNode, TKey, TValue>.CreateChild<TNewNode>(String)
   nameWithType.vb: INode(Of TTree, TNode, TKey, TValue).CreateChild(Of TNewNode)(String)
+- uid: GCore.Data.Structure.InheritedTree.INode`4.CreateChild``1(System.String,System.Nullable{IDictionary{`2,`3}},`1[])
+  name: CreateChild<TNewNode>(String, Nullable<IDictionary<TKey, TValue>>, TNode[])
+  href: api/GCore.Data.Structure.InheritedTree.INode-4.html#GCore_Data_Structure_InheritedTree_INode_4_CreateChild__1_System_String_System_Nullable_IDictionary__2__3____1___
+  commentId: M:GCore.Data.Structure.InheritedTree.INode`4.CreateChild``1(System.String,System.Nullable{IDictionary{`2,`3}},`1[])
+  name.vb: CreateChild(Of TNewNode)(String, Nullable(Of IDictionary(Of TKey, TValue)), TNode())
+  fullName: GCore.Data.Structure.InheritedTree.INode<TTree, TNode, TKey, TValue>.CreateChild<TNewNode>(System.String, System.Nullable<IDictionary<TKey, TValue>>, TNode[])
+  fullName.vb: GCore.Data.Structure.InheritedTree.INode(Of TTree, TNode, TKey, TValue).CreateChild(Of TNewNode)(System.String, System.Nullable(Of IDictionary(Of TKey, TValue)), TNode())
+  nameWithType: INode<TTree, TNode, TKey, TValue>.CreateChild<TNewNode>(String, Nullable<IDictionary<TKey, TValue>>, TNode[])
+  nameWithType.vb: INode(Of TTree, TNode, TKey, TValue).CreateChild(Of TNewNode)(String, Nullable(Of IDictionary(Of TKey, TValue)), TNode())
 - uid: GCore.Data.Structure.InheritedTree.INode`4.Defines(`2)
   name: Defines(TKey)
   href: api/GCore.Data.Structure.InheritedTree.INode-4.html#GCore_Data_Structure_InheritedTree_INode_4_Defines__2_
@@ -1165,6 +1183,15 @@ references:
   fullName.vb: GCore.Data.Structure.InheritedTree.Node(Of TTree, TNode, TKey, TValue).CreateChild(System.String)
   nameWithType: Node<TTree, TNode, TKey, TValue>.CreateChild(String)
   nameWithType.vb: Node(Of TTree, TNode, TKey, TValue).CreateChild(String)
+- uid: GCore.Data.Structure.InheritedTree.Node`4.CreateChild(System.String,System.Nullable{IDictionary{`2,`3}},`1[])
+  name: CreateChild(String, Nullable<IDictionary<TKey, TValue>>, TNode[])
+  href: api/GCore.Data.Structure.InheritedTree.Node-4.html#GCore_Data_Structure_InheritedTree_Node_4_CreateChild_System_String_System_Nullable_IDictionary__2__3____1___
+  commentId: M:GCore.Data.Structure.InheritedTree.Node`4.CreateChild(System.String,System.Nullable{IDictionary{`2,`3}},`1[])
+  name.vb: CreateChild(String, Nullable(Of IDictionary(Of TKey, TValue)), TNode())
+  fullName: GCore.Data.Structure.InheritedTree.Node<TTree, TNode, TKey, TValue>.CreateChild(System.String, System.Nullable<IDictionary<TKey, TValue>>, TNode[])
+  fullName.vb: GCore.Data.Structure.InheritedTree.Node(Of TTree, TNode, TKey, TValue).CreateChild(System.String, System.Nullable(Of IDictionary(Of TKey, TValue)), TNode())
+  nameWithType: Node<TTree, TNode, TKey, TValue>.CreateChild(String, Nullable<IDictionary<TKey, TValue>>, TNode[])
+  nameWithType.vb: Node(Of TTree, TNode, TKey, TValue).CreateChild(String, Nullable(Of IDictionary(Of TKey, TValue)), TNode())
 - uid: GCore.Data.Structure.InheritedTree.Node`4.CreateChild*
   name: CreateChild
   href: api/GCore.Data.Structure.InheritedTree.Node-4.html#GCore_Data_Structure_InheritedTree_Node_4_CreateChild_
@@ -1183,6 +1210,15 @@ references:
   fullName.vb: GCore.Data.Structure.InheritedTree.Node(Of TTree, TNode, TKey, TValue).CreateChild(Of TNewNode)(System.String)
   nameWithType: Node<TTree, TNode, TKey, TValue>.CreateChild<TNewNode>(String)
   nameWithType.vb: Node(Of TTree, TNode, TKey, TValue).CreateChild(Of TNewNode)(String)
+- uid: GCore.Data.Structure.InheritedTree.Node`4.CreateChild``1(System.String,System.Nullable{IDictionary{`2,`3}},`1[])
+  name: CreateChild<TNewNode>(String, Nullable<IDictionary<TKey, TValue>>, TNode[])
+  href: api/GCore.Data.Structure.InheritedTree.Node-4.html#GCore_Data_Structure_InheritedTree_Node_4_CreateChild__1_System_String_System_Nullable_IDictionary__2__3____1___
+  commentId: M:GCore.Data.Structure.InheritedTree.Node`4.CreateChild``1(System.String,System.Nullable{IDictionary{`2,`3}},`1[])
+  name.vb: CreateChild(Of TNewNode)(String, Nullable(Of IDictionary(Of TKey, TValue)), TNode())
+  fullName: GCore.Data.Structure.InheritedTree.Node<TTree, TNode, TKey, TValue>.CreateChild<TNewNode>(System.String, System.Nullable<IDictionary<TKey, TValue>>, TNode[])
+  fullName.vb: GCore.Data.Structure.InheritedTree.Node(Of TTree, TNode, TKey, TValue).CreateChild(Of TNewNode)(System.String, System.Nullable(Of IDictionary(Of TKey, TValue)), TNode())
+  nameWithType: Node<TTree, TNode, TKey, TValue>.CreateChild<TNewNode>(String, Nullable<IDictionary<TKey, TValue>>, TNode[])
+  nameWithType.vb: Node(Of TTree, TNode, TKey, TValue).CreateChild(Of TNewNode)(String, Nullable(Of IDictionary(Of TKey, TValue)), TNode())
 - uid: GCore.Data.Structure.InheritedTree.Node`4.Defines(`2)
   name: Defines(TKey)
   href: api/GCore.Data.Structure.InheritedTree.Node-4.html#GCore_Data_Structure_InheritedTree_Node_4_Defines__2_

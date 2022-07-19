@@ -701,7 +701,7 @@ Ignores if the property is overwritten by a child node.</p>
     <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_CreateChild_System_String_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.CreateChild(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L348">View Source</a>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L358">View Source</a>
   </span>
   <a id="GCore_Data_Structure_InheritedTree_Node_4_CreateChild_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.CreateChild*"></a>
   <h4 id="GCore_Data_Structure_InheritedTree_Node_4_CreateChild_System_String_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.CreateChild(System.String)">CreateChild(String)</h4>
@@ -726,6 +726,67 @@ Ignores if the property is overwritten by a child node.</p>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">name</span></td>
         <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_CreateChild_System_String_System_Nullable_IDictionary__2__3____1___.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.CreateChild(System.String%2CSystem.Nullable%7BIDictionary%7B%602%2C%603%7D%7D%2C%601%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L361">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_CreateChild_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.CreateChild*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_CreateChild_System_String_System_Nullable_IDictionary__2__3____1___" data-uid="GCore.Data.Structure.InheritedTree.Node`4.CreateChild(System.String,System.Nullable{IDictionary{`2,`3}},`1[])">CreateChild(String, Nullable&lt;IDictionary&lt;TKey, TValue&gt;&gt;, TNode[])</h4>
+  <div class="markdown level1 summary"><p>Create a node and adds it as a child.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TNode CreateChild(string name, IDictionary&lt;TKey, TValue&gt;? props = null, params TNode[] children)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of this node</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">IDictionary</span>&lt;TKey, TValue&gt;&gt;</td>
+        <td><span class="parametername">props</span></td>
+        <td><p>The properties for the node</p>
+</td>
+      </tr>
+      <tr>
+        <td>TNode[]</td>
+        <td><span class="parametername">children</span></td>
+        <td><p>The children for the node</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -810,6 +871,84 @@ Ignores if the property is overwritten by a child node.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_CreateChild__1_System_String_System_Nullable_IDictionary__2__3____1___.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.CreateChild%60%601(System.String%2CSystem.Nullable%7BIDictionary%7B%602%2C%603%7D%7D%2C%601%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L348">View Source</a>
+  </span>
+  <a id="GCore_Data_Structure_InheritedTree_Node_4_CreateChild_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.CreateChild*"></a>
+  <h4 id="GCore_Data_Structure_InheritedTree_Node_4_CreateChild__1_System_String_System_Nullable_IDictionary__2__3____1___" data-uid="GCore.Data.Structure.InheritedTree.Node`4.CreateChild``1(System.String,System.Nullable{IDictionary{`2,`3}},`1[])">CreateChild&lt;TNewNode&gt;(String, Nullable&lt;IDictionary&lt;TKey, TValue&gt;&gt;, TNode[])</h4>
+  <div class="markdown level1 summary"><p>Create a node and adds it as a child.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TNewNode CreateChild&lt;TNewNode&gt;(string name, IDictionary&lt;TKey, TValue&gt;? props = null, params TNode[] children)
+    where TNewNode : TNode, new()</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of this node</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">IDictionary</span>&lt;TKey, TValue&gt;&gt;</td>
+        <td><span class="parametername">props</span></td>
+        <td><p>The properties for the node</p>
+</td>
+      </tr>
+      <tr>
+        <td>TNode[]</td>
+        <td><span class="parametername">children</span></td>
+        <td><p>The children for the node</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNewNode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TNewNode</span></td>
+        <td><p>The type of the node</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_Defines__2_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.Defines(%602)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -862,7 +1001,7 @@ Ignores if the property is overwritten by a child node.</p>
     <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_FindNode_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.FindNode(IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L369">View Source</a>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L382">View Source</a>
   </span>
   <a id="GCore_Data_Structure_InheritedTree_Node_4_FindNode_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.FindNode*"></a>
   <h4 id="GCore_Data_Structure_InheritedTree_Node_4_FindNode_IEnumerable_System_String__" data-uid="GCore.Data.Structure.InheritedTree.Node`4.FindNode(IEnumerable{System.String})">FindNode(IEnumerable&lt;String&gt;)</h4>
@@ -910,7 +1049,7 @@ Ignores if the property is overwritten by a child node.</p>
     <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_FindNode_System_String_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.FindNode(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L362">View Source</a>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L375">View Source</a>
   </span>
   <a id="GCore_Data_Structure_InheritedTree_Node_4_FindNode_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.FindNode*"></a>
   <h4 id="GCore_Data_Structure_InheritedTree_Node_4_FindNode_System_String_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.FindNode(System.String)">FindNode(String)</h4>
@@ -1398,7 +1537,7 @@ by this nodes itself.</p>
     <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_RaiseChildrenChanged_GCore_Data_Structure_InheritedTree_ChildrenChangedEventArgs__1__.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.RaiseChildrenChanged(GCore.Data.Structure.InheritedTree.ChildrenChangedEventArgs%7B%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L392">View Source</a>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L405">View Source</a>
   </span>
   <a id="GCore_Data_Structure_InheritedTree_Node_4_RaiseChildrenChanged_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.RaiseChildrenChanged*"></a>
   <h4 id="GCore_Data_Structure_InheritedTree_Node_4_RaiseChildrenChanged_GCore_Data_Structure_InheritedTree_ChildrenChangedEventArgs__1__" data-uid="GCore.Data.Structure.InheritedTree.Node`4.RaiseChildrenChanged(GCore.Data.Structure.InheritedTree.ChildrenChangedEventArgs{`1})">RaiseChildrenChanged(ChildrenChangedEventArgs&lt;TNode&gt;)</h4>
@@ -1430,7 +1569,7 @@ by this nodes itself.</p>
     <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_RaisePropertyChanged_GCore_Data_Structure_InheritedTree_PropertyChangedEventArgs__1__2__3__.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.RaisePropertyChanged(GCore.Data.Structure.InheritedTree.PropertyChangedEventArgs%7B%601%2C%602%2C%603%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L384">View Source</a>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L397">View Source</a>
   </span>
   <a id="GCore_Data_Structure_InheritedTree_Node_4_RaisePropertyChanged_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.RaisePropertyChanged*"></a>
   <h4 id="GCore_Data_Structure_InheritedTree_Node_4_RaisePropertyChanged_GCore_Data_Structure_InheritedTree_PropertyChangedEventArgs__1__2__3__" data-uid="GCore.Data.Structure.InheritedTree.Node`4.RaisePropertyChanged(GCore.Data.Structure.InheritedTree.PropertyChangedEventArgs{`1,`2,`3})">RaisePropertyChanged(PropertyChangedEventArgs&lt;TNode, TKey, TValue&gt;)</h4>
@@ -1462,7 +1601,7 @@ by this nodes itself.</p>
     <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_RemoveChild__1_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.RemoveChild(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L351">View Source</a>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L364">View Source</a>
   </span>
   <a id="GCore_Data_Structure_InheritedTree_Node_4_RemoveChild_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.RemoveChild*"></a>
   <h4 id="GCore_Data_Structure_InheritedTree_Node_4_RemoveChild__1_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.RemoveChild(`1)">RemoveChild(TNode)</h4>
@@ -1664,7 +1803,7 @@ Throws exception if a parent is already defined.</p>
     <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_ToRawNode.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.ToRawNode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L432">View Source</a>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L445">View Source</a>
   </span>
   <a id="GCore_Data_Structure_InheritedTree_Node_4_ToRawNode_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.ToRawNode*"></a>
   <h4 id="GCore_Data_Structure_InheritedTree_Node_4_ToRawNode" data-uid="GCore.Data.Structure.InheritedTree.Node`4.ToRawNode">ToRawNode()</h4>
@@ -1695,7 +1834,7 @@ Throws exception if a parent is already defined.</p>
     <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_Update__1__2___0_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.Update%60%601(%602%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L452">View Source</a>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L465">View Source</a>
   </span>
   <a id="GCore_Data_Structure_InheritedTree_Node_4_Update_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Update*"></a>
   <h4 id="GCore_Data_Structure_InheritedTree_Node_4_Update__1__2___0_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.Update``1(`2,``0)">Update&lt;TArgs&gt;(TKey, TArgs)</h4>
@@ -1751,7 +1890,7 @@ Throws exception if a parent is already defined.</p>
     <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_UpdateIOverridingProperty__2_System_Boolean_.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.UpdateIOverridingProperty(%602%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L399">View Source</a>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L412">View Source</a>
   </span>
   <a id="GCore_Data_Structure_InheritedTree_Node_4_UpdateIOverridingProperty_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.UpdateIOverridingProperty*"></a>
   <h4 id="GCore_Data_Structure_InheritedTree_Node_4_UpdateIOverridingProperty__2_System_Boolean_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.UpdateIOverridingProperty(`2,System.Boolean)">UpdateIOverridingProperty(TKey, Boolean)</h4>
@@ -1788,7 +1927,7 @@ Throws exception if a parent is already defined.</p>
     <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/new/master/apiSpec/new?filename=GCore_Data_Structure_InheritedTree_Node_4_UpdateOverrides.md&amp;value=---%0Auid%3A%20GCore.Data.Structure.InheritedTree.Node%604.UpdateOverrides%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L472">View Source</a>
+    <a href="https://github.com/KevinGliewe/GCore.Data.Structure.InheritedTree/blob/master/src/GCore.Data.Structure.InheritedTree/Node.cs/#L485">View Source</a>
   </span>
   <a id="GCore_Data_Structure_InheritedTree_Node_4_UpdateOverrides_" data-uid="GCore.Data.Structure.InheritedTree.Node`4.UpdateOverrides*"></a>
   <h4 id="GCore_Data_Structure_InheritedTree_Node_4_UpdateOverrides" data-uid="GCore.Data.Structure.InheritedTree.Node`4.UpdateOverrides">UpdateOverrides()</h4>
